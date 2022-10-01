@@ -31,6 +31,7 @@ export const Products = [
     product_name: "Procter & Gamble Manufacturing Co.",
     description: "Displ spiral fx shaft of r fibula, 7thQ",
     price: 182,
+    old_price: 292,
     product_code: "7676275903",
     image_url: "https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/thumbs/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/f1777f49-2adf-4564-9f69-79d5a4cc9456-thumbnail-370x370-70.jpg",
   },

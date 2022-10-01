@@ -9,19 +9,32 @@ import FooterComp from "./components/Footer";
 import { flowbiteTheme as theme } from "./theme";
 import { Flowbite, Spinner } from "flowbite-react";
 import Cart from "./pages/Cart";
-
+import Register from "./components/Register";
+import Login from "./components/Login.jsx"
 
 function App() {
   const dispatch = useDispatch();
   const orderId = useSelector((state) => state.order.id);
+  const [scroll , setScroll]=useState(false)
+  const [scrollY , setScrollY]=useState(0)
   const [ currentPath ] = useState(window.location.pathname);
-  console.log("🚀 ~ file: App.js ~ line 14 ~ App ~ currentPath", currentPath);
+  //console.log("🚀 ~ file: App.js ~ line 14 ~ App ~ currentPath", currentPath);
+  window.addEventListener("scroll" , (e)=>{
+    setScrollY(window.scrollY)
+    if(scrollY > window.scrollY ) {
+      setScroll(true)
+    }else{
+      setScroll(false)
+    }
+    
+  })
+
   useEffect(
     () => {
       if (!orderId && currentPath !== "/") {
         dispatch(setId(currentPath.split("/")[1]));
       }
-      console.log("orderId is:", orderId);
+    //  console.log("orderId is:", orderId);
     },
     [ orderId, currentPath, dispatch ]
   );
@@ -34,11 +47,14 @@ function App() {
     }
   >
     <Flowbite theme={{ theme }}>
-    <NavBar />
+    <NavBar  scrollY={scrollY} scroll={scroll}/>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+
       </Routes>
     </Router>
     <FooterComp />

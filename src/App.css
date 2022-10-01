@@ -1,3 +1,10 @@
+*{
+  padding: 0; margin: 0 ;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  user-select: none;
+}
 .App {
   text-align: center;
 }
@@ -12,6 +19,57 @@
     animation: App-logo-float infinite 3s ease-in-out;
   }
 }
+/*=== this code by ahmed yasser from egypt  */
+.category{
+  height: max-content;
+  user-select: none;
+}
+.footer {
+  width: 90%;
+  margin: 0 auto;
+}
+footer li {
+  color: white;
+  font-weight: 100;
+}
+.links{
+  transition: all 0.5s;
+  height: 45px;
+}
+.login{
+  display: none;
+   overflow: hidden;
+   transition: all 0.5s;
+   height: 45px;
+}
+.login.hide {
+  height: 0;
+}
+.login button{
+  user-select: none;
+}
+.login.hide button {
+  display: none;
+}
+.links.hide{
+  height: 0;
+  overflow: hidden;
+}
+
+.social .face{
+  margin: 0 0 0 20px ; 
+}
+/*==============*/
+
+
+
+
+
+
+
+
+
+
 
 .App-header {
   min-height: 100vh;
@@ -36,4 +94,39 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+@media screen and (max-width : 767px ){
+  .links{
+    height: max-content;
+    overflow: hidden;
+    height: 0;
+  }
+   .links ul{
+    display: flex;
+    flex-direction: column;
+   }
+   .links.show-menu{
+    height: 160px;
+   }
+   .input-search{
+    display: block;
+   }
+
+   .con-register {
+    height: 650px;
+   }
+  .con-register .register{
+    height: 600px;
+   }
+   .con-register .txt{
+    flex: 100%;
+   }
+   .con-register .form{
+    padding: 0 25px 0 0;
+   }
+   .con-register .form{
+    flex: 100%;
+   }
+   
 }

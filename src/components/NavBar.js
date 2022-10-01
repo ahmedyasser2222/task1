@@ -1,9 +1,20 @@
+import {  useState } from "react";
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import {CgProfile} from "react-icons/cg"
-export default function NavBar() {
+import { useNavigate } from "react-router-dom";
+export default function NavBar({scrollY , scroll}) {
+  const [showMenu , setShowMenu]=useState(false)
+   const focus=(e)=>{
+    e.target.style.backgroundColor="white"
+    e.target.style.color="black"
+   }
+   const blur=(e)=>{
+    e.target.style.backgroundColor="#374151"
+    e.target.style.color="white"
+   }
   return (
     <header className="fixed top-0 left-0 z-20 flex w-full flex-col">
-      <nav className="w-full py-2 justify-center  flex-row hidden sm:flex bg-prim border-b-2 border-white px-5">
+      <nav className={`w-full py-2 justify-center  flex-row hidden sm:flex bg-prim border-b-2 border-white px-5 login ${scrollY > 100 ? "hide" :""}`}>
         <div className="flex flex-row items-center justify-between w-full xL:w-8/12  2xl:w-7/12" >
           <button className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
           <CgProfile className=" text-white text-xl"/>
@@ -25,7 +36,7 @@ export default function NavBar() {
         style={{ backgroundColor: "#977aba" }}
       >
         <div className="w-full xL:w-8/12  2xl:w-7/12 container mx-auto flex flex-wrap items-center justify-between">
-          <button href="#" className="flex items-center">
+          <button  className="flex items-center">
             <img
               src="https://media.zid.store/cdn-cgi/image/h=175,q=85/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/8a9125e0-a000-4c37-a9ed-344d3f47954a.png"
               className="me-3 h-20 w-20"
@@ -40,7 +51,7 @@ export default function NavBar() {
               ariaExpanded="false"
               className="mr-1 rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700 md:hidden"
             >
-              <svg
+              <svg   // search icon 
                 className="h-5 w-5"
                 ariaHidden="true"
                 fill="currentColor"
@@ -55,7 +66,7 @@ export default function NavBar() {
               </svg>
               <span className="sr-only">Search</span>
             </button>
-            <div className="relative hidden md:block " style={{width:"40rem"}}>
+            <div className="relative hidden md:block div-search" style={{width:"40rem"}}>
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 " >
                 <svg
                   className="h-5 w-5 text-gray-500"
@@ -75,8 +86,10 @@ export default function NavBar() {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
+                className="input-search block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
                 placeholder="ابحث ..."
+                onFocus={e=>focus(e)}
+                onBlur={e=>blur(e)}
               />
             </div>
             <button
@@ -93,6 +106,7 @@ export default function NavBar() {
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
+                onClick={e=>setShowMenu(!showMenu)}
               >
                 <path
                   fillRule="evenodd"
@@ -136,7 +150,7 @@ export default function NavBar() {
         </div>
       </nav>
       <nav
-        className="bg-gray-50 dark:bg-gray-700"
+        className={`bg-gray-50 dark:bg-gray-700 links ${showMenu ? "show-menu" : ""}  ${scroll ? "" : scrollY > 100 ? "hide" : ""}`}
         style={{ backgroundColor: "#796295" }}
       >
         <div className="mx-auto max-w-screen-xl py-3 px-4 md:px-6 ">

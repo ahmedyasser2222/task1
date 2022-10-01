@@ -1,0 +1,71 @@
+.con-register{
+    margin-top:200px ;
+    position: relative;
+    height:  560px;
+}
+.con-register .register{
+    position: absolute;
+    width: 80%; 
+    height:max-content;
+    top: 45%; left: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    gap: 35px ;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.con-register .txt{
+    width: 30%;
+    justify-content: right;
+    padding: 30px 0;
+    text-align: center;
+    background: linear-gradient(270deg , #977ABA , #ffff);
+}
+.con-register .head{
+    font-size: 28px;
+    margin: 7px 0;
+    font-weight: bold;
+}
+.con-register .p{
+    font-weight: 100;
+    margin: 10px 0;
+}
+.con-register button{
+    margin: 20px ;
+    border: 1px solid white;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+.con-register button:active{
+    background-color: white;
+    color: black;
+}
+.con-register .form{
+    width: 50%;
+}
+.con-register input:not(.form-check-input){
+    display: block;
+    width: 75%;
+    padding: 5px 12px;
+    border-radius: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+}
+.con-register .form-check-input{
+    margin: 0 10px;
+    border-radius: 2px;
+}
+.con-register .btn{
+    background-color: #977ABA;
+    color: white;
+    width: 20%;
+    padding: 5px 12px;
+}
+.con-register .forget-pass{
+    cursor: pointer;
+}
+.con-register .forget-pass:hover{
+    text-decoration: underline;
+}

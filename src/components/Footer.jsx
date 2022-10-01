@@ -4,9 +4,10 @@ import React from "react";
 export default function FooterComp() {
   return (
     <footer className="bg-prim text-white mt-10" style={{backgroundColor:"#977aba"}}>
-    <div className="w-full flex flex-col md:flex-row justify-between px-5  py-10">
+      <div className="footer">
+      <div className="w-full flex flex-col md:flex-row justify-between px-5  py-10">
         <div>
-            <h2 className="mb-6 text-base font-bold uppercase dark:text-gray-400">من نحن</h2>
+            <h2 className="mb-6 text-base font-bold uppercase dark:text-gray-400 " style={{color:"white" ,fontWeight :"bolder"}}>من نحن</h2>
             <ul className=" dark:text-gray-400">
                 <li className="mb-4">
                     <a href="#" className=" hover:underline">لي مور هي صيدلية مهتمة بتوفير جميع احتياجاتك الصحية والتجميلية.</a>
@@ -15,7 +16,7 @@ export default function FooterComp() {
             </ul>
         </div>
         <div>
-            <h2 className="mb-6 text-base font-bold uppercase dark:text-gray-400">الأحكام العامة</h2>
+            <h2 className="mb-6 text-base font-bold uppercase dark:text-gray-400" style={{color:"white" ,fontWeight :"bolder"}}>الأحكام العامة</h2>
             <ul className=" dark:text-gray-400">
                 <li className="mb-4">
                     <a href="#" className="hover:underline">خيارات الدفع و التوصيل</a>
@@ -30,7 +31,7 @@ export default function FooterComp() {
             </ul>
         </div>
         <div>
-            <h2 className="mb-6 text-base font-bold uppercase dark:text-gray-400">العنوان</h2>
+            <h2 className="mb-6 text-base font-bold uppercase dark:text-gray-400" style={{color:"white" ,fontWeight :"bolder"}}>العنوان</h2>
             <ul className=" dark:text-gray-400">
                 <li className="mb-4">
                     <a href="#" className="hover:underline">طريق أنس بن مالك</a>
@@ -43,11 +44,12 @@ export default function FooterComp() {
         </div>
    
     </div>
-    <div className="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+      </div>
+      <div className="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-700 dark:text-gray-300 sm:text-center">© 2022 <a href="https://flowbite.com/">Le Mure™</a>. All Rights Reserved.
         </span>
-        <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+        <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0 social">
+            <a href="#" className="face text-gray-400 hover:text-gray-900 dark:hover:text-white">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
                 <span className="sr-only">Facebook page</span>
             </a>

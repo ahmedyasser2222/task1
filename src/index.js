@@ -5,6 +5,7 @@ import { store } from "./redux/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const container = document.getElementById("root");
 const root = createRoot(container);

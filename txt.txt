@@ -1,0 +1,11 @@
+<div className=" flex h-full flex-col " key={index}>
+                  <div className="relative w-44 h-44 " >
+                    <img className="object-contain" src={prod.image_url}  objectFit="contain"
+                    layout="fill" alt=""/>
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg ">{prod.product_name}</p>
+                    <p className="font-bold text-prim">{prod.price} ر.س</p>
+                  </div>
+                </div>
+                /* <Card  date={prod}/> */

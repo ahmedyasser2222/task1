@@ -3,7 +3,7 @@ import {AiOutlineShoppingCart} from "react-icons/ai"
 
 export default function EmptyCart() {
   return (
-    <div className="h-[80vh] w-full flex justify-center items-center">
+    <div className="h-[80vh] w-full flex justify-center items-center" style={{marginTop :"50px"}}>
         <div className="flex flex-col justify-center items-center gap-4">
           <AiOutlineShoppingCart className="text-prim text-7xl"/>
           <p className="text-2xl font-semibold">السلة فارغة</p>

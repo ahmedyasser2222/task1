@@ -1,47 +1,87 @@
 import { Carousel } from "flowbite-react";
-import React from "react";
-
+import React, { useState } from "react";
+import Card from "./Card"
+import "../style/card.css"
+import CardSkeleton from '../Skeleton/CardSkeleton'
 export default function CategorySection(props) {
   const { title, products } = props;
+  const [width ,setWidth] =useState(1500)
+  window.addEventListener("resize" , ()=>{
+    setWidth(window.innerWidth)
+  })
   return (
-    <div>
+    <div className="category">
       <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
-      <div className="my-10 h-72 w-full" >
-
+      <div className="my-10   xl:h-96 h-96   " >
+        {width > 767  ? 
         <Carousel indicators={false} slideInterval={20000} >
-           <div className="flex flex-row gap-4 items-center justify-between" dir="rtl">
-            {products?.slice(0,4).map((prod, index)=>{ 
-                return(
-                <div className=" flex h-full flex-col " key={index}>
-                  <div className="relative w-44 h-44 " >
-                    <img className="object-contain" src={prod.image_url}  objectFit="contain"
-                    layout="fill" alt=""/>
-                  </div>
-                  <div>
-                    <p className="font-bold text-lg ">{prod.product_name}</p>
-                    <p className="font-bold text-prim">{prod.price} ر.س</p>
-                  </div>
-                </div>
-                )
-              })}  
-          </div>
-           <div className="flex flex-row gap-4 items-center justify-between" dir="rtl">
-            {products?.slice(4,9).map((prod, index)=>{ 
-                return(
-                <div className=" flex h-full flex-col " key={index}>
-                  <div className="relative w-44 h-44 " >
-                    <img className="object-contain"  objectFit="contain"
-                    layout="fill" alt=""/>
-                  </div>
-                  <div>
-                    <p className="font-bold text-lg ">{prod.product_name}</p>
-                    <p className="font-bold text-prim">{prod.price} ر.س</p>
-                  </div>
-                </div>
-                )
-              })}  
-          </div>
-          </Carousel>
+        <div className="flex flex-row gap-4 items-center justify-center " dir="rtl">
+         {products?products.slice(0,4).map((prod, index)=>{ 
+             return(
+               <Card data={prod} />
+             )
+           }) :
+              <CardSkeleton count={4}/>
+           }  
+       </div>
+        <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+         {products ?products.slice(4,8).map((prod, index)=>{ 
+             return(
+               <Card data={prod} />
+             )
+           }) : 
+           <CardSkeleton count={4}/>
+           }  
+       </div>
+       </Carousel> 
+       :<Carousel indicators={false} slideInterval={20000} >
+       <div className="flex flex-row gap-4 items-center justify-center " dir="rtl">
+        {products?products.slice(0,2).map((prod, index)=>{ 
+            return(
+              <Card data={prod} />
+            )
+          }) :
+             <CardSkeleton count={2}/>
+          }  
+      </div>
+       <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+        {products ?products.slice(2,4).map((prod, index)=>{ 
+            return(
+              <Card data={prod} />
+            )
+          }) : 
+          <CardSkeleton count={2}/>
+          }  
+      </div>
+      <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+        {products ?products.slice(4,6).map((prod, index)=>{ 
+            return(
+              <Card data={prod} />
+            )
+          }) : 
+          <CardSkeleton count={2}/>
+          }  
+      </div>
+      <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+        {products ?products.slice(6,8).map((prod, index)=>{ 
+            return(
+              <Card data={prod} />
+            )
+          }) : 
+          <CardSkeleton count={2}/>
+          }  
+      </div>
+      <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+        {products ?products.slice(8,10).map((prod, index)=>{ 
+            return(
+              <Card data={prod} />
+            )
+          }) : 
+          <CardSkeleton count={2}/>
+          }  
+      </div>
+      </Carousel>
+      }
         </div>
       <div className="flex items-center justify-center">
         <button className="rounded-xl border border-prim bg-white px-10 py-3 text-lg text-prim">
