@@ -6,92 +6,63 @@ function CardSkeleton({count}) {
    const Style=()=>{
     switch(count){
       case 2 : return (
-        <SkeletonTheme
-        baseColor="#ddd"
-        highlightColor="#ffff"
-        height={""}
-        width={"200px"}
-      >
-        <SkeletonTheme
-            baseColor="#ddd"
-            highlightColor="#ffff"
-            height={"345px"}
-            width={"200px"}
-          >
-            <p>
-              {" "}
-              <Skeleton count={1} />
-            </p>
-          </SkeletonTheme>
-          <SkeletonTheme
-            baseColor="#ddd"
-            highlightColor="#ffff"
-            height={"345px"}
-            width={"200px"}
-          >
-            <p>
-              {" "}
-              <Skeleton count={1} />
-            </p>
-          </SkeletonTheme>
+        <div className="skeleton">
+        <div>
+           <Skeleton height={200}/>
+           <Skeleton />
+           <Skeleton />
+           <Skeleton />
+           <Skeleton  width={90} height={40} style={{margin:"0 60px"}}/>
+
+        </div>
+        <div>
+           <Skeleton height={200}/>
+           <Skeleton />
+           <Skeleton />
+           <Skeleton />
+           <Skeleton  width={90} height={40} style={{margin:"0 60px"}}/>
+        </div>
+        </div>
         
-      </SkeletonTheme>
-      )
+        )
       break ;
   
       case 4 : return(
-        <SkeletonTheme
-        baseColor="#ddd"
-        highlightColor="#ffff"
-        height={""}
-        width={"200px"}
-      >
-        <SkeletonTheme
-            baseColor="#ddd"
-            highlightColor="#ffff"
-            height={"345px"}
-            width={"200px"}
-          >
-            <p>
-              {" "}
-              <Skeleton count={1} />
-            </p>
-          </SkeletonTheme>
-          <SkeletonTheme
-            baseColor="#ddd"
-            highlightColor="#ffff"
-            height={"345px"}
-            width={"200px"}
-          >
-            <p>
-              {" "}
-              <Skeleton count={1} />
-            </p>
-          </SkeletonTheme>
-          <SkeletonTheme
-            baseColor="#ddd"
-            highlightColor="#ffff"
-            height={"345px"}
-            width={"200px"}
-          >
-            <p>
-              {" "}
-              <Skeleton count={1} />
-            </p>
-          </SkeletonTheme>
-          <SkeletonTheme
-            baseColor="#ddd"
-            highlightColor="#ffff"
-            height={"345px"}
-            width={"200px"}
-          >
-            <p>
-              {" "}
-              <Skeleton count={1} />
-            </p>
-          </SkeletonTheme>
         
-      </SkeletonTheme>
+        <div className="skeleton">
+        <div>
+           <Skeleton height={200}/>
+           <Skeleton />
+           <Skeleton />
+           <Skeleton />
+           <Skeleton  width={90} height={40} style={{margin:"0 60px"}}/>
+
+        </div>
+        <div>
+           <Skeleton height={200}/>
+           <Skeleton />
+           <Skeleton />
+           <Skeleton />
+           <Skeleton  width={90} height={40} style={{margin:"0 60px"}}/>
+        </div>
+        <div>
+           <Skeleton height={200}/>
+           <Skeleton />
+           <Skeleton />
+           <Skeleton />
+           <Skeleton  width={90} height={40} style={{margin:"0 60px"}}/>
+
+        </div>
+        <div>
+           <Skeleton height={200}/>
+           <Skeleton />
+           <Skeleton />
+           <Skeleton />
+           <Skeleton  width={90} height={40} style={{margin:"0 60px"}}/>
+
+        </div>
+        </div>
+        
   
       )
      }

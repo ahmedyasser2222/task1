@@ -1,42 +1,68 @@
+import { useRef } from "react";
 import {  useState } from "react";
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import {CgProfile} from "react-icons/cg"
-import { useNavigate } from "react-router-dom";
+import { Products } from "../data/products";
+
 export default function NavBar({scrollY , scroll}) {
+  const itemSearch=useRef()
   const [showMenu , setShowMenu]=useState(false)
+  const [searchText , setSearchText]=useState("")
+  const [items , setItems]=useState([])
+  const [width , setWidth]=useState(0)  
+  console.log(width)
+  const handelChange=(e)=>{
+     setSearchText(e.target.value)
+     let Items=[]
+     for (let index = 0; index < Products.length; index++) {
+        if(Products[index].product_name.includes(e.target.value)) {
+          Items.push(Products[index])
+        }     
+     }
+     setItems(Items)
+  }
+   window.addEventListener("resize" , ()=>{
+    setWidth(window.innerWidth)
+   })
+
    const focus=(e)=>{
     e.target.style.backgroundColor="white"
     e.target.style.color="black"
+    itemSearch.current.style.display="block"
+    e.target.style.borderBottomLeftRadius ="0"
+    e.target.style.borderBottomRightRadius ="0"
    }
    const blur=(e)=>{
     e.target.style.backgroundColor="#374151"
     e.target.style.color="white"
+    itemSearch.current.style.display="none"
+    e.target.style.borderBottomLeftRadius ="5px"
+    e.target.style.borderBottomRightRadius ="5px"
    }
   return (
     <header className="fixed top-0 left-0 z-20 flex w-full flex-col">
-      <nav className={`w-full py-2 justify-center  flex-row hidden sm:flex bg-prim border-b-2 border-white px-5 login ${scrollY > 100 ? "hide" :""}`}>
-        <div className="flex flex-row items-center justify-between w-full xL:w-8/12  2xl:w-7/12" >
+      <nav className={`nav-top py-2 justify-center  flex-row hidden sm:flex bg-prim border-b-2 border-white px-5 login ${scrollY > 100 ? "hide" :""}`}>
+        <div className=" flex flex-row items-center justify-between w-full xL:w-8/12  2xl:w-7/12" >
           <button className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
           <CgProfile className=" text-white text-xl"/>
             <span>  
                 تسجيل الدخول 
             </span>
-            
           </button>
           <button className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
             <span>  
                 السعودية
             </span>
-            
           </button>
         </div>
-      </nav>  
+      </nav> 
+         {/* /////////// */}
       <nav
-        className="border-gray-200  px-2 py-2.5 dark:bg-gray-900  sm:px-4"
+        className="border-gray-200  px-2 py-2.5 dark:bg-gray-900  sm:px-4 nav-center"
         style={{ backgroundColor: "#977aba" }}
       >
         <div className="w-full xL:w-8/12  2xl:w-7/12 container mx-auto flex flex-wrap items-center justify-between">
-          <button  className="flex items-center">
+          <button  className="flex items-center" >
             <img
               src="https://media.zid.store/cdn-cgi/image/h=175,q=85/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/8a9125e0-a000-4c37-a9ed-344d3f47954a.png"
               className="me-3 h-20 w-20"
@@ -90,7 +116,20 @@ export default function NavBar({scrollY , scroll}) {
                 placeholder="ابحث ..."
                 onFocus={e=>focus(e)}
                 onBlur={e=>blur(e)}
+                onChange={e=>handelChange(e)}
               />
+              <div className="items-search" ref={itemSearch}>
+                  <ul>
+                    {items ?
+                    items.map((product , index) =>{
+                      if(index < 5)
+                      {return (
+                        <li>{product.product_name}</li>
+                      )}
+                    }) :<></>
+                  }           
+                  </ul>
+              </div>
             </div>
             <button
               data-collapse-toggle="navbar-search"
@@ -115,6 +154,7 @@ export default function NavBar({scrollY , scroll}) {
                 />
               </svg>
             </button>
+            
           </div>
           <div
             className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
@@ -144,11 +184,18 @@ export default function NavBar({scrollY , scroll}) {
               />
             </div>
           </div>
+
+          <div className="cursor-pointer order-2 icon" >
           <a href="/Cart" className="cursor-pointer order-2">
            <AiOutlineShoppingCart className=" text-white" style={{fontSize:"2rem"}}/>
           </a>
+          <a href="/register" className={`cursor-pointer order-3 mm  ${width < 767 ? "m" :""} ${scrollY < 100 ? "m" :""} `}>
+             <CgProfile className=" text-white text-xl" style={{fontSize:"2rem"}} />         
+              </a>
+          </div>
         </div>
       </nav>
+         {/* /////////// */}
       <nav
         className={`bg-gray-50 dark:bg-gray-700 links ${showMenu ? "show-menu" : ""}  ${scroll ? "" : scrollY > 100 ? "hide" : ""}`}
         style={{ backgroundColor: "#796295" }}
@@ -184,6 +231,7 @@ export default function NavBar({scrollY , scroll}) {
           </div>
         </div>
       </nav>
+
     </header>
   );
 }

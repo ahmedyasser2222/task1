@@ -25,7 +25,7 @@ const Register = () => {
                        <button onClick={e=>history("/login")}>تسجيل الدخول</button>
                    </div>
                    <div className="form">
-                       <h1 className="head ">تسجيل حساب جديد</h1>
+                       <h1 className="head">تسجيل حساب جديد</h1>
                        <form  >
                            <div class="form-input">
                                 <label for="name" class="form-label">اسم المستخدم</label>

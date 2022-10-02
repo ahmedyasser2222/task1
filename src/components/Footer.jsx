@@ -71,6 +71,47 @@ export default function FooterComp() {
             </a>
         </div>
     </div>
+    <div className="end-footer">
+         <div className="con-end-footer">
+         <div className="app-download">
+               <button>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEedHzUYeJ01Bakt9GdDE9Wd44Jij__ozd_A&usqp=CAU"/>
+               </button>
+               <button>
+                    <img src="https://www.glasswire.com/blog/wp-content/uploads/2017/03/2000px-Get_it_on_Google_play.svg_-768x226.png"/>
+               </button>
+         </div>
+         <div className="pay">
+                <button>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL8fHwZukNYpgLr9BwSLlBhijQcG9l1d4ijAsB_FYH06x2uqxpyAXEqOFo4ixC2nWqpDA&usqp=CAU"/>
+               </button>
+               <button>
+                    <img src="https://files1.directapp.net/wp-content/uploads/2022/04/mada-39383jj883-1649631184.jpg"/>
+               </button>
+               <button>
+                    <img src="https://i.pcmag.com/imagery/reviews/02RJy7OTtPnQQjh37yQDNqx-15..v1598973550.png"/>
+               </button>
+               <button>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Former_Visa_%28company%29_logo.svg/1280px-Former_Visa_%28company%29_logo.svg.png"/>
+               </button>
+               <button>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png"/>
+               </button>
+               <button>
+                    <img src="https://telr.com/wp-content/uploads/2021/06/tabby-logo-21622023082logo.png"/>
+               </button>
+         </div>
+         <div className="dev">
+                 <button>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxaZNRsbN070OPWVl-Xlq42HHRj67Jop6vubdrZTwbo3POVoKNHddPe236fBZWmYIA208&usqp=CAU"/>
+               </button>
+               <div>
+                  <p>الرقم الضريبي : 310991279500003   رقم السجل التجاري : 1010370699</p>
+                  <p>Develop by : Le Mure Group </p>
+               </div>
+         </div>
+         </div>
+    </div>
 </footer>
   );
 }
