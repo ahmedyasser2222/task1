@@ -45,7 +45,8 @@ export default function FooterComp() {
    
     </div>
       </div>
-      <div className="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+      <div className=" social-nav  bg-gray-100 dark:bg-gray-700 ">
+        <div className="social-con py-4 px-4  md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-700 dark:text-gray-300 sm:text-center">© 2022 <a href="https://flowbite.com/">Le Mure™</a>. All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0 social">
@@ -70,7 +71,9 @@ export default function FooterComp() {
                 <span className="sr-only">Dribbble account</span>
             </a>
         </div>
+        </div>
     </div>
+
     <div className="end-footer">
          <div className="con-end-footer">
          <div className="app-download">
@@ -89,7 +92,7 @@ export default function FooterComp() {
                     <img src="https://files1.directapp.net/wp-content/uploads/2022/04/mada-39383jj883-1649631184.jpg"/>
                </button>
                <button>
-                    <img src="https://i.pcmag.com/imagery/reviews/02RJy7OTtPnQQjh37yQDNqx-15..v1598973550.png"/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/2560px-Apple_Pay_logo.svg.png"/>
                </button>
                <button>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Former_Visa_%28company%29_logo.svg/1280px-Former_Visa_%28company%29_logo.svg.png"/>
@@ -98,7 +101,7 @@ export default function FooterComp() {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png"/>
                </button>
                <button>
-                    <img src="https://telr.com/wp-content/uploads/2021/06/tabby-logo-21622023082logo.png"/>
+                    <img style={{objectFit:"cover"}} src="https://telr.com/wp-content/uploads/2021/06/tabby-logo-21622023082logo.png"/>
                </button>
          </div>
          <div className="dev">
@@ -106,8 +109,12 @@ export default function FooterComp() {
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxaZNRsbN070OPWVl-Xlq42HHRj67Jop6vubdrZTwbo3POVoKNHddPe236fBZWmYIA208&usqp=CAU"/>
                </button>
                <div>
-                  <p>الرقم الضريبي : 310991279500003   رقم السجل التجاري : 1010370699</p>
-                  <p>Develop by : Le Mure Group </p>
+                  <div className="p">
+                      <p> الرقم الضريبي : 310991279500003</p>
+                      <p> رقم السجل التجاري : 1010370699</p>
+                  </div>
+                 
+                  <p className="devlop">Develop by : Le Mure Group </p>
                </div>
          </div>
          </div>

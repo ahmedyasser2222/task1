@@ -48,15 +48,14 @@ function App() {
   >
     <Flowbite theme={{ theme }}>
     <NavBar  scrollY={scrollY} scroll={scroll}/>
-    <Router>
+    
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-
       </Routes>
-    </Router>
+    
     <FooterComp />
       </Flowbite>
     </Suspense>

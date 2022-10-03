@@ -31,7 +31,6 @@ header{
 .nav-top{
   width:  90%;
   margin: auto;
-  border-bottom: none;
 }
 .icon{
   display: flex;
@@ -51,13 +50,21 @@ header{
   border-bottom-right-radius: 15px;
   display: none;
 }
+.input-search{
+  margin-right: 50px;
+}
+.div-search{
+  border-radius: 10px;
+  margin-right: 15px;
+}
 .items-search li{
   padding: 15px;
   cursor: pointer;
+  border: none;
 }
 .items-search li:hover{
   background-color: #977ABA;
-  color: wheat;
+  color: white;
 }
 .category{
   height: max-content;
@@ -73,7 +80,15 @@ footer li {
 }
 .links{
   transition: all 0.5s;
-  height: 45px;
+  display:flex ;
+  justify-content: center;
+  height: 40px;
+}
+.links ul{
+  display: flex;
+}
+.links ul li{
+  padding: 8px 12px;
 }
 .login{
   display: none;
@@ -83,11 +98,12 @@ footer li {
 }
 .login.hide {
   height: 0;
-  display: none;
+  border: none;
 }
 nav{
   height: 100px;
 }
+
 .login button{
   user-select: none;
 }
@@ -98,10 +114,34 @@ nav{
   height: 0;
   overflow: hidden;
 }
-
-.social .face{
-  margin: 0 0 0 20px ; 
+.links ul li:hover{
+  position: relative;
+  background-color: #977ABA;
 }
+.links .links-menu{
+  background-color: #977ABA;
+  position: absolute;
+  top: 100%; width: max-content; 
+  right: 0;
+  padding: 10px 0;
+  display: none;
+  transition: all 1s;
+}
+.links .links-menu ul{
+  display: flex;
+  flex-direction: column;
+}
+.links .links-menu ul li{
+  color: white;
+}
+.links .links-menu ul li:hover{
+  background-color: #796295;
+  cursor: pointer;
+}
+.links li:hover .links-menu {
+  display: block;
+}
+
 .skeleton{
   display: flex;
   gap: 0 20px;
@@ -110,6 +150,7 @@ nav{
   height: 350px;
   width: 200px;
 }
+ /*==== footer ======*/
 .end-footer{
   background-color: white;
   padding: 20px 0;
@@ -122,20 +163,27 @@ nav{
   color: black;
   flex-wrap: wrap;
   }
-
 .con-end-footer .app-download , .con-end-footer .pay{
   width: 45%;
   float: 45%;
   display: flex;
 }
+.con-end-footer .app-download button{
+  width: 25%;
+  height: 35px;
+}
 .con-end-footer .pay button , .app-download button{
-  width: 30%;
+  width: 23%;
   position: relative;
-  height: 30px;
+  height: 25px;
+  margin: 0 0px;
+}
+.con-end-footer .pay button {
+  height: 25px;
 }
 .con-end-footer .pay  img , .con-end-footer .app-download img{
   position: absolute;
-  width: 100%;height: 50px;
+  width: 100%;height: 100%;
   top: 0; left: 0;
   object-fit: contain;
 }
@@ -151,12 +199,100 @@ nav{
 }
 .end-footer .dev button{
   position: relative;
-  width: 100px; height: 100px;
+  width: 15%; height: 100px;
 }
-/*==============*/
+.end-footer .p p{
+  float: right;
+  margin: 0 8px;
+}
+.end-footer .p::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+.end-footer .devlop{
+  margin-top: 25px;
+}
+.end-footer .dev img{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;height: 100%;
+  object-fit: contain;
+}
+.social-nav{
+  padding: 0; margin: 0;
+}
+.social-con{
+  width: 90%;
+  margin: auto;
+  padding: 0;
+}
+.social .face{
+  margin: 0 0 0 20px ; 
+}
+.social a{
+  border: 1px solid white;
+  padding: 3px;
+  border-radius: 3pc;
+}
 
-
-
+@media screen and (max-width : 767px ){
+  .links{
+    height: max-content;
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    margin: 0;padding: 0;
+  }
+  .links.show-menu{
+    height: 85vh;
+   }
+   .div-links{
+    text-align: center;
+    margin: 0;padding: 0;
+    padding: 20px 0;
+   }
+   .div-links li:hover .links-menu {
+      height: 0 ;
+      overflow: hidden;
+      width: 100%;
+      padding: 0;
+   }
+   .div-links ul li  .links-menu.s{
+    height: 300px;
+   }
+   .links ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   }
+   .input-search{
+    display: block;
+   }
+   .con-register {
+    height: 650px;
+   }
+   .con-register .register{
+    width: 80%; 
+   }
+   .con-register .txt{
+    flex: 100%;
+   }
+   .con-register .form{
+    padding: 0 25px 0 0;
+   }
+   .con-register .form{
+    flex: 100%;
+   }
+   .con-end-footer .app-download , .con-end-footer .pay {
+    width: 100%;
+    margin: 30px 0;
+    }
+    .login.m button {
+      display: inline;
+    }
+} 
+/*====== end code ahmed yasser========*/
 
 
 
@@ -190,43 +326,3 @@ nav{
   }
 }
 
-@media screen and (max-width : 767px ){
-  .links{
-    height: max-content;
-    overflow: hidden;
-    height: 0;
-  }
-   .links ul{
-    display: flex;
-    flex-direction: column;
-   }
-   .links.show-menu{
-    height: 160px;
-   }
-   .input-search{
-    display: block;
-   }
-
-   .con-register {
-    height: 650px;
-   }
-   .con-register .register{
-    width: 80%; 
-   }
-   .con-register .txt{
-    flex: 100%;
-   }
-   .con-register .form{
-    padding: 0 25px 0 0;
-   }
-   .con-register .form{
-    flex: 100%;
-   }
-   .con-end-footer .app-download , .con-end-footer .pay {
-    width: 100%;
-    margin: 30px 0;
-    }
-    .login.m button {
-      display: inline;
-    }
-}
