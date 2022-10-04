@@ -1,21 +1,45 @@
 import { Carousel } from "flowbite-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card"
 import "../style/card.css"
 import CardSkeleton from '../Skeleton/CardSkeleton'
 export default function CategorySection(props) {
   const { title, products } = props;
-  const [width ,setWidth] =useState(1500)
-  window.addEventListener("resize" , ()=>{
+  const [width ,setWidth] =useState(2000)
+  useEffect(()=>{
     setWidth(window.innerWidth)
-  })
+    window.addEventListener("resize" , ()=>{
+      setWidth(window.innerWidth)
+    })
+  },[])
   return (
     <div className="category">
       <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
       <div className="my-10   xl:h-96 h-96   " >
-        {width > 767  ? 
-        <Carousel indicators={false} slideInterval={20000} >
-        <div className="flex flex-row gap-4 items-center justify-center " dir="rtl">
+        {width > 2200 ?
+        <Carousel indicators={false} slideInterval={2000}  >
+        <div className="flex flex-row gap-4 items-center justify-around " dir="rtl">
+         {products?products.slice(0,5).map((prod, index)=>{ 
+             return(
+               <Card data={prod} />
+             )
+           }) :
+              <CardSkeleton count={4}/>
+           }  
+       </div>
+        <div className="flex flex-row gap-4 items-center justify-around" dir="rtl">
+         {products ?products.slice(5,10).map((prod, index)=>{ 
+             return(
+               <Card data={prod} />
+             )
+           }) : 
+           <CardSkeleton count={4}/>
+           }  
+       </div>
+       </Carousel> 
+        : width > 767  ? 
+        <Carousel indicators={false} slideInterval={20000}  >
+        <div className="flex flex-row gap-4 items-center justify-around " dir="rtl">
          {products?products.slice(0,4).map((prod, index)=>{ 
              return(
                <Card data={prod} />
@@ -24,7 +48,7 @@ export default function CategorySection(props) {
               <CardSkeleton count={4}/>
            }  
        </div>
-        <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+        <div className="flex flex-row gap-4 items-center justify-around" dir="rtl">
          {products ?products.slice(4,8).map((prod, index)=>{ 
              return(
                <Card data={prod} />

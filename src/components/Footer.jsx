@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../style/footer.css"
 
 export default function FooterComp() {
   return (
@@ -113,7 +113,6 @@ export default function FooterComp() {
                       <p> الرقم الضريبي : 310991279500003</p>
                       <p> رقم السجل التجاري : 1010370699</p>
                   </div>
-                 
                   <p className="devlop">Develop by : Le Mure Group </p>
                </div>
          </div>
