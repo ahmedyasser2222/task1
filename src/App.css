@@ -28,9 +28,7 @@
   overflow-x: scroll ;
   -ms-overflow-style: none;
 }
-.con-cat::-webkit-scrollbar{
-  display: none;
-}
+
 .skeleton{
   display: flex;
   gap: 0 20px;
@@ -45,6 +43,16 @@
   top: 0; left: 0;
   object-fit: cover;
 }
+
+.con-cat::-webkit-scrollbar{
+  height: 6px;
+}
+.con-cat::-webkit-scrollbar-track{
+background-color: #ddd;
+}
+.con-cat::-webkit-scrollbar-thumb{
+  background-color: #977ABA;
+  }
 @media screen and (max-width : 767px ){
    .con-register {
     height: 650px;

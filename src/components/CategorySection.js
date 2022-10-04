@@ -59,7 +59,7 @@ export default function CategorySection(props) {
        </div>
        </Carousel> 
        :<Carousel indicators={false} slideInterval={20000} >
-       <div className="flex flex-row gap-4 items-center justify-center " dir="rtl">
+       <div className="flex flex-row gap-4 items-center justify-around " dir="rtl">
         {products?products.slice(0,2).map((prod, index)=>{ 
             return(
               <Card data={prod} />
@@ -68,7 +68,7 @@ export default function CategorySection(props) {
              <CardSkeleton count={2}/>
           }  
       </div>
-       <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+       <div className="flex flex-row gap-4 items-center justify-around" dir="rtl">
         {products ?products.slice(2,4).map((prod, index)=>{ 
             return(
               <Card data={prod} />
@@ -77,7 +77,7 @@ export default function CategorySection(props) {
           <CardSkeleton count={2}/>
           }  
       </div>
-      <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+      <div className="flex flex-row gap-4 items-center justify-around" dir="rtl">
         {products ?products.slice(4,6).map((prod, index)=>{ 
             return(
               <Card data={prod} />
@@ -86,7 +86,7 @@ export default function CategorySection(props) {
           <CardSkeleton count={2}/>
           }  
       </div>
-      <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+      <div className="flex flex-row gap-4 items-center justify-around" dir="rtl">
         {products ?products.slice(6,8).map((prod, index)=>{ 
             return(
               <Card data={prod} />
@@ -95,7 +95,7 @@ export default function CategorySection(props) {
           <CardSkeleton count={2}/>
           }  
       </div>
-      <div className="flex flex-row gap-4 items-center justify-center" dir="rtl">
+      <div className="flex flex-row gap-4 items-center justify-around" dir="rtl">
         {products ?products.slice(8,10).map((prod, index)=>{ 
             return(
               <Card data={prod} />
