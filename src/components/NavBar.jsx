@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import {  useState } from "react";
 import {AiOutlineShoppingCart , AiFillCaretDown , AiOutlineSearch  } from "react-icons/ai"
 import {FaBars} from "react-icons/fa"
@@ -7,11 +7,12 @@ import {CgProfile  } from "react-icons/cg"
 import { Link, useNavigate } from "react-router-dom";
 import { Products } from "../data/products";
 import "../style/header.css"
+import { useSelector } from "react-redux";
 
 export default function NavBar({scrollY , scroll}) {
   const itemSearch=useRef()
   const itemSearch0=useRef()
-
+  const {countProdust , price} =useSelector(state=>state.cartCount)
   const navigate=useNavigate()
   const [showMenu , setShowMenu]=useState(false)
   const [showSearch , setShowSearch] =useState(false)
@@ -19,7 +20,13 @@ export default function NavBar({scrollY , scroll}) {
   const [hidden , setHidden]=useState(true)
   const [searchText , setSearchText]=useState("")
   const [items , setItems]=useState([])
-  const [width , setWidth]=useState(0)  
+  const [width , setWidth]=useState(0)
+  useEffect(()=>{
+    window.addEventListener("resize",()=>{
+      setWidth(window.innerWidth)
+    })
+  },[])  
+
   const handelChange=(e)=>{
      setSearchText(e.target.value)
      let Items=[]
@@ -30,27 +37,22 @@ export default function NavBar({scrollY , scroll}) {
      }
      setItems(Items)
   }
-   window.addEventListener("resize" , ()=>{
-    setWidth(window.innerWidth)
-   })
    const focus=(e)=>{
     itemSearch.current.style.display="block"
     itemSearch0.current.style.display="block"
-    e.target.style.borderRadius ="10px 10px 0 0"
+    e.target.style.border=""
     setHidden(false)
    }
    const blur=(e)=>{
     itemSearch.current.style.display="none"
     itemSearch0.current.style.display="none"
-
-    e.target.style.borderRadius ="10px"
     setHidden(true)
    }
   return (
     <header className="fixed top-0 left-0 z-20 flex w-full flex-col" >
-      <nav className={` flex-row  sm:flex bg-prim border-b-2 border-white login ${scrollY > 100 ? "hide" :""}`}>
-         <div className="nav-top">
-          <button onClick={e=>navigate("/register")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
+      <nav className={` flex-row sm:flex bg-prim border-b  login ${scrollY > 100 ? "hide" :""}`}>
+         <div className="nav-top m-con">
+          <button onClick={e=>navigate("/login")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
           <CgProfile className=" text-white text-xl"/>
             <span>  
                 تسجيل الدخول 
@@ -63,12 +65,10 @@ export default function NavBar({scrollY , scroll}) {
           </button>
         </div>
       </nav> 
-    
-         {/* /////////// */}
-      <nav className={`py-2.5  nav-center-con ${showSearch ? "show-search" : ""}`} 
-       style={{overflow:`${hidden && width <767 ? "hidden" : ""}`}}
+      <nav className={`py-2.5  nav-center-con m-con ${showSearch ? "show-search" : ""}`} 
+       style={{overflow:`${hidden && width <770 ? "hidden" : ""}`}}
       >
-        <div className="w-full  nav-center">
+        <div className="w-full  nav-center ">
 
             <div className="logo">
             <button  className="flex items-center" onClick={e=>navigate("/")}>
@@ -79,34 +79,9 @@ export default function NavBar({scrollY , scroll}) {
                 />
               </button>
             </div>
-
-            <div className="flex">
-              {/* <button   // icon search
-                type="button"
-                dataCollapseToggle="navbar-search"
-                ariaControls="navbar-search"
-                ariaExpanded="false"
-                className="mr-1 rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700 md:hidden"
-              >
-                <svg   // search icon 
-                  className="h-5 w-5"
-                  ariaHidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={e=>setShowSearch(!showSearch)}
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="sr-only">Search</span>
-              </button> */}
-
-              <div className="relative  div-search" style={{width:"40rem"}} >
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 " >
+            <div className="flex ">
+             <div className="relative  div-search" >
+                <div className="icon-search"  >
                   <svg
                     className="h-5 w-5 text-gray-500"
                     aria-hidden="true"
@@ -125,12 +100,12 @@ export default function NavBar({scrollY , scroll}) {
                 <input
                   type="text"
                   id="search-navbar"
-                  className=" block w-full input-search"
-                  style={{borderRadius:"10px"}}
+                  className="w-full input-search"
                   placeholder="ابحث ..."
                   onFocus={e=>focus(e)}
                   onBlur={e=>blur(e)}
                   onChange={e=>handelChange(e)}
+                  style={{border:"none"}}
                 />
                 <div className="items-search" ref={itemSearch0}>
                     <ul>
@@ -145,53 +120,36 @@ export default function NavBar({scrollY , scroll}) {
                     </ul>
                 </div>
               </div>
-              
-              {/* <button
-                data-collapse-toggle="navbar-search"
-                type="button"
-                className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
-                aria-controls="navbar-search"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open menu</span>
-                <svg
-                  className="h-6 w-6"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={e=>setShowMenu(!showMenu)}
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>   */}
-
             </div>
 
+            
             <div className="icon" >
-              <a onClick={e=>setShowSearch(!showSearch)} className={`show  s`}>
-                  <AiOutlineSearch className=" text-white text-xl" style={{fontSize:"2rem"}} />         
+               <a onClick={e=>setShowSearch(!showSearch)} className={`show  s`}>
+                  <AiOutlineSearch className=" text-white i text-xl"  />         
+                </a>
+                <a className={`price-cart`}>
+                  {price ? "SAR "+price : ""} 
                 </a>
                <a onClick={e=>navigate("/cart")} >
-                <AiOutlineShoppingCart className=" text-white" style={{fontSize:"2rem"}}/>
+                <sup className="sup" style={{fontSize:"18px" ,color:"white" }}>{countProdust ? countProdust : ""}</sup>
+                <AiOutlineShoppingCart className="i text-white" style={{display:"inline"}}/>
                 </a>
-                <a onClick={e=>navigate("/register")} >
-                  <CgProfile className=" text-white text-xl" style={{fontSize:"2rem"}} />         
+                <a onClick={e=>navigate("/register ")} className="show s">
+                  <CgProfile className=" text-white i text-xl"  />    
                 </a>
-                <a onClick={e=>setShowMenu(!showMenu)} className={` show  s `}>
-                  <FaBars className=" text-white text-xl" style={{fontSize:"2rem"}} />         
+                <a onClick={e=>{
+                  setShowMenu(!showMenu)
+                  }} className={` show  s `}>
+                  <FaBars className=" text-white i text-xl"  />         
                 </a>
-
+                
             </div>
-            
+
         </div>
-              <div className="relative  div-search-2" >
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 " >
-                  <svg
+                <div className="relative  div-search-2 " >
+                <div className="pointer-events-none  inset-y-0 left-0 flex items-center pl-3 " >
+                 <div className="icon-search">
+                 <svg
                     className="h-5 w-5 text-gray-500"
                     aria-hidden="true"
                     fill="currentColor"
@@ -205,16 +163,20 @@ export default function NavBar({scrollY , scroll}) {
                     />
                   </svg>
                   <span className="sr-only">Search icon</span>
+                 </div>
                 </div>
                 <input
                   type="text"
                   id="search-navbar"
                   className=" block w-full input-search"
-                  style={{borderRadius:"10px"}}
+                  style={{paddingRight:"38px"}}
                   placeholder="ابحث ..."
                   onFocus={e=>focus(e)}
                   onBlur={e=>blur(e)}
                   onChange={e=>handelChange(e)}
+                  autocomplete="none"
+                 onClick={e=>e.preventDefault()}
+                  title=""
                 />
                 <div className="items-search" ref={itemSearch} >
                     <ul>
@@ -228,21 +190,20 @@ export default function NavBar({scrollY , scroll}) {
                     }           
                     </ul>
                 </div>
-              </div>
+                </div>
       </nav>
 
 
-         {/* /////////// */}
-      <nav
-        className={`links  ${showMenu ? "show-menu" : ""}    ${scroll ? "" : scrollY > 100 ? "hide" : ""}`}>
-          <div className="flex  justify-center div-links" style={{width:"100%"}}>
-           <div className="hide-menu" onClick={e=>setShowMenu(!showMenu)} >
-              <GiCancel className="hide-icon" />
-           </div>
-            <ul className="main">
-              <li className="text-white ">
+      <nav className={`links  ${showMenu ? "show-menu" : ""} ${ scrollY > 100 ? "hide" : ""}`}>
+          <div className={`m-con`}>
+                <div className="div-links  " style={{width:'100%'}} >
+                       <div className="hide-menu" onClick={e=>setShowMenu(!showMenu)} >
+                         <GiCancel className="hide-icon" />
+                        </div>
+
+                     <ul className="main m-con" style={{width:'100%'}}>
+              <li >
                 <a
-                  className="text-white"
                   href="/"
                   aria-current="page"
                 >
@@ -250,18 +211,18 @@ export default function NavBar({scrollY , scroll}) {
                 </a>
                 
               </li>
-              <li className="text-white">
-                <a href="/AllProds" className="text-white">
+              <li >
+                <a  >
                   جميع المنتجات
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white ">
+                <a href="#">
                   اسعار مميزة
                 </a>
               </li>
               <li  onClick={e=>e.currentTarget.classList.toggle("show")}>
-                <a className="text-white" >
+                <a  >
                    العناية بالبشرة
                 <AiFillCaretDown  className="down-icon" />
                 </a>
@@ -277,41 +238,118 @@ export default function NavBar({scrollY , scroll}) {
                     </ul>
                 </div>
               </li>
-              <li>
-                <a href="#" className="text-white">
-                  الادوية
+              <li  onClick={e=>e.currentTarget.classList.toggle("show")}>
+                <a >
+                   العناية بالشعر
+                <AiFillCaretDown  className="down-icon" />
                 </a>
-              </li>
-              <li>
-                <a href="#" className="text-white">
-                   منتجات حصرية
-                </a>
-              </li>
-              <li   onClick={e=>e.currentTarget.classList.toggle("show")}>
-                <a href="#" className="text-white">
-                   العدسات
-                </a>
-                <AiFillCaretDown   className="down-icon"/>
                 <div className="links-menu ">
                     <ul>
-                      <li>ليندا</li>
-                      <li>نيولنس</li>
-                      <li>السيريوم</li>
-                      <li> AFLE</li>
-                      <li>ديفا</li>
-                      <li> لنس مي</li>
+                      <li>الشامبو</li>
+                      <li> البلسم</li>
+                      <li>ماسكات الشعر</li>
+                      <li>  معالجات الشعر</li>
+                      <li> صبغات الشعر</li>
+                      <li> اجهزة واستشوار</li>
+                    </ul>
+                </div>
+              </li>
+              <li  onClick={e=>e.currentTarget.classList.toggle("show")} className="">
+                <a>
+                    منتجات العناية اليومية
+                <AiFillCaretDown  className="down-icon" />
+                </a>
+                <div className="links-menu ">
+                    <ul>
+                      <li>العناية بالاطفال</li>
+                      <li> العناية بالفم</li>
+                      <li> العناية بالجسم</li>
+                      <li>   العناية باليدين</li>
+                      <li>  العناية بالقدمين</li>
+                      <li> العناية بالمنطقة الحساسة </li>
+                      <li>العناية بالرموش</li>
+                      <li>العناية بالحواجب</li>
+                      <li>العطور</li>
                     </ul>
                 </div>
               </li>
               <li>
-                <a href="#" className="text-white">
-                   عروض لي مور
+                <a>
+                الأدوية
                 </a>
               </li>
-            </ul>
-        </div>
-      </nav>
+              <li className="d">
+                <a >
+                   الفيتامينات
+                </a>
+              </li>
+              <li className="d"  onClick={e=>e.currentTarget.classList.toggle("show")}>
+                <a  >
+                     المكياج والاكسسوارات
+                <AiFillCaretDown  className="down-icon" />
+                </a>
+                <div className="links-menu ">
+                    <ul>
+                      <li>الوجه</li>
+                      <li>العيون</li>
+                      <li>الحواجب</li>
+                      <li>الشفاه</li>
+                      <li>الباليت</li>
+                      <li>مثبت المكياج</li>
+                      <li>مزيل المكياج</li>
+                      <li>فرش المكياج</li>
+                      <li>الرموش</li>
+                      <li>الاظافر</li>
+                    </ul>
+                </div>
+              </li>
+              <li className="d">
+                <a>
+                منتجات حصريه
+                </a>
+              </li>
+              <li className="d" onClick={e=>e.currentTarget.classList.toggle("show")}>
+                <a >
+                      العدسات
+                <AiFillCaretDown  className="down-icon" />
+                </a>
+                <div className="links-menu ">
+                    <ul>
+                      <li>ليندا</li>
+                      <li>نيولنس</li>
+                      <li>AFLE</li>
+                      <li>ديفا</li>
+                      <li>لنس مي</li>
+                    </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                    جميع التصنيفات 
+                </a>
+              </li>
+              <div className="btn">
+              <button onClick={e=>navigate("/register")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
+          <CgProfile className=" text-white text-xl"/>
+            <span>  
+                تسجيل الدخول 
+            </span>
+          </button>
+          <button className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
+            <span>  
+                السعودية
+            </span>
+          </button>
+              </div>
+                 
+              
+                      </ul>
 
+                </div>
+          </div>
+      </nav>
+      <div className={`${showMenu ? "body" : ""}`} onClick={e=>setShowMenu(!showMenu)}>
+      </div>
     </header>
   );
 }

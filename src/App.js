@@ -9,8 +9,8 @@ import FooterComp from "./components/Footer";
 import { flowbiteTheme as theme } from "./theme";
 import { Flowbite, Spinner } from "flowbite-react";
 import Cart from "./pages/Cart";
-import Register from "./components/Register";
-import Login from "./components/Login.jsx"
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login.jsx"
 
 function App() {
   const dispatch = useDispatch();
@@ -48,7 +48,6 @@ function App() {
   >
     <Flowbite theme={{ theme }}>
     <NavBar  scrollY={scrollY} scroll={scroll}/>
-    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />

@@ -1,13 +1,47 @@
 import { Carousel } from "flowbite-react";
+import { useRef } from "react";
 import CategoryInicator from "../components/CategoryInicator";
 import CategorySection from "../components/CategorySection";
 import Separator from "../components/Separator";
 import { Products } from "../data/products";
 export default function Home() {
+  let slider=document.getElementById("ss")
+  let isDown=false ;
+  let startX=0
+  let scrollLeft =0
+  
+ /*  slider.addEventListener("mousedown",(e)=>{
+    isDown=true
+    slider.classList.add("active")
+   startX=e.pageX - slider.offsetLeft
+   scrollLeft=slider.scrollLeft
+  })
+
+ slider.addEventListener("mouseleave",()=>{
+   isDown=false
+   slider.classList.remove("active")
+
+ })
+
+ slider.addEventListener("mouseup",()=>{
+   isDown=false
+   slider.classList.remove("active")
+
+ })
+
+ slider.addEventListener("mousemove",(e)=>{
+   if(!isDown) return ;
+   e.preventDefault()
+     const x=e.pageX - slider.offsetLeft
+     const wak=(x-startX)*3
+   slider.scrollLeft= scrollLeft -  wak
+ })
+ */
+
   return (
-    <div className="xl:mt-56 mt-40">
-      <div className="mx-auto mt-20 w-full sm:w-11/12 xl:w-9/12 2xl:w-7/12">
-        <div className="flex flex-row flex-nowrap items-center  justify-between overflow-x-auto overflow-y-hidden con-cat">
+    <div className="xl:mt-56 md:mt-40 mt-30 m-con">
+      <div className="mx-auto mt-20 w-full ">
+        <div  className="flex flex-row flex-nowrap items-center  justify-between overflow-x-auto overflow-y-hidden con-cat">
           <CategoryInicator
             imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/e0b92311-6bc6-4ea1-8f3b-713a0fe15706-260x260.jpg"
             title="العناية بالبشرة"
@@ -29,8 +63,8 @@ export default function Home() {
             title="المكياج و الاكسسوارات"
           />
         </div>
-        <div className="mt-10 h-64 sm:h-80 xl:h-96 2xl:h-128" dir="ltr">
-          <Carousel slideInterval={5000}  >
+        <div className="mt-10 somth h-64 sm:h-80 xl:h-96 2xl:h-128" dir="ltr">
+          <Carousel slideInterval={5000} id="ss" >
             <button className="h-full w-full">
               <img
                 className="object-contain"
@@ -141,16 +175,16 @@ export default function Home() {
         </div>
       </div>
       <Separator />
-      <div className="mx-auto mt-20 w-full sm:w-11/12 xl:w-9/12 2xl:w-7/12">
+      <div className="mx-auto mt-20 w-full ">
         <CategorySection title="أسعار مميزة" products={Products.slice(0, 10)} />
       </div>
-      <div className="mx-auto mt-20 w-full sm:w-11/12 xl:w-9/12 2xl:w-7/12">
+      <div className="mx-auto mt-20 w-full ">
         <CategorySection
           title="عروض لي مور"
           products={Products.slice(0, 10)}
         />
       </div>
-      <div className="mx-auto mt-20 w-full sm:w-11/12 xl:w-9/12 2xl:w-7/12">
+      <div className="mx-auto mt-20 w-full ">
         <CategorySection
           title="الأفضل مبيعاً"
           products={Products.slice(0, 10)}

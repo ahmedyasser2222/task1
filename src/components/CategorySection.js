@@ -15,7 +15,7 @@ export default function CategorySection(props) {
   return (
     <div className="category">
       <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
-      <div className="my-10   xl:h-96 h-96   " >
+      <div className="my-10 xl:h-96 h-96 " >
         {width > 2200 ?
         <Carousel indicators={false} slideInterval={2000}  >
         <div className="flex flex-row gap-4 items-center justify-around " dir="rtl">

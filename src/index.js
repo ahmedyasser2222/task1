@@ -1,9 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { Store } from "./redux/store";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import 'react-loading-skeleton/dist/skeleton.css'
 import {BrowserRouter} from "react-router-dom"
@@ -11,13 +10,12 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
+    <Provider store={Store}>
+      <BrowserRouter>
+          <App />
+       </BrowserRouter>
     </Provider>
-  </BrowserRouter>
   
 );
 
 
-reportWebVitals();

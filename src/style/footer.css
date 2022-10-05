@@ -1,29 +1,42 @@
 .end-footer{
     background-color: white;
-    padding: 20px 0;
   }
   .con-end-footer{
     display: flex;
-    width: 1100px;
     margin: auto;
-    justify-content: space-between;
     color: black;
-    flex-wrap: wrap;
+    flex-direction: column;
+    }
+    .footer-end-top{
+       display: flex;
+       justify-content: space-between;
+       color: black;
+       width: 100%;
+       flex-direction: row;
+       border-bottom: 1px solid #ddd;
+       gap: 200px;
     }
   .con-end-footer .app-download , .con-end-footer .pay{
-    width: 45%;
-    flex: 45%;
+    width: 30%;
+    flex: 30%;
     display: flex;
+    flex-wrap: nowrap;
+    grid-template: 15px;
+  }
+  .con-end-footer .pay{
+    width: 30%;
+    flex: 30%;
+    display: flex;
+    justify-content: space-between;
   }
   .con-end-footer .app-download button{
+    position: relative;
     width: 25%;
     height: 35px;
   }
-  .con-end-footer .pay button , .app-download button{
-    width: 23%;
+  .con-end-footer .pay button{
+    width: 11%;
     position: relative;
-    height: 25px;
-    margin: 0 0px;
   }
   .con-end-footer .pay button {
     height: 25px;
@@ -35,18 +48,14 @@
     object-fit: contain;
   }
   .end-footer .dev{
-    display: block;
-    flex: 100%;
-    position: relative;
     display: flex;
-    justify-content: center;
-    padding: 40px 0  0 0;
-    text-align: center;
-    margin: 20px 0 0 0;
+    position: relative;
+    justify-content: space-between;
+    padding: 20px 0;
   }
   .end-footer .dev button{
     position: relative;
-    width: 10%; height: 100px;
+    width: 60px; height: 50px;
   }
   .end-footer .p p{
     float: right;
@@ -59,7 +68,7 @@
     display: table;
   }
   .end-footer .devlop{
-    margin-top: 25px;
+    margin-top: 5px;
   }
   .end-footer .dev img{
     position: absolute;
@@ -86,43 +95,39 @@
     color: white;
     
   }
-  .footer {
-    width: 1100px;
-    margin: 0 auto;
-  }
   footer li {
     color: white;
     font-weight: 100;
+    font-size: small;
   }
   .con-end-footer .app-download , .con-end-footer .pay {
     width: 100%;
     margin: 30px 0;
     }
+    .end{ 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
     
 
-@media screen  and (max-width:767px){
-  
-  .footer{
-    width: 90%;
-  }
-  .con-footer{
-    width: 90%;
-  }
-  .con-end-footer{
-    width: 90%;
-  }
-  .social-con{
-    width: 90%;
-  }
+@media screen  and (max-width:770px){
   .con-end-footer .pay ,.con-end-footer .app-download{
     flex: 100%;
   }
   .dev button , .dev img{
     width: 20%;
-    height: 75px;
   }
-  .end-footer .dev button{
-    width: 25%;
+  .con-end-footer{
+    flex-wrap: wrap;
+    gap: 0;
   }
-
+  .dev{
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+  }
+  .dev .end .btn{
+    flex: 50%;
+  }
+  
 }

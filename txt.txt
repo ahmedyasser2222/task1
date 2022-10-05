@@ -9,3 +9,98 @@
                   </div>
                 </div>
                 /* <Card  date={prod}/> */
+
+                {/* <button
+                data-collapse-toggle="navbar-search"
+                type="button"
+                className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+                aria-controls="navbar-search"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open menu</span>
+                <svg
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  onClick={e=>setShowMenu(!showMenu)}
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>   */}
+
+
+
+
+
+
+              {/* <button   // icon search
+                type="button"
+                dataCollapseToggle="navbar-search"
+                ariaControls="navbar-search"
+                ariaExpanded="false"
+                className="mr-1 rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700 md:hidden"
+              >
+                <svg   // search icon 
+                  className="h-5 w-5"
+                  ariaHidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  onClick={e=>setShowSearch(!showSearch)}
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span className="sr-only">Search</span>
+              </button> */}
+
+
+<div className="relative  div-search-2 " >
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 " >
+                  <svg
+                    className="h-5 w-5 text-gray-500"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="sr-only">Search icon</span>
+                </div>
+                <input
+                  type="text"
+                  id="search-navbar"
+                  className=" block w-full input-search"
+                  style={{borderRadius:"10px"}}
+                  placeholder="ابحث ..."
+                  onFocus={e=>focus(e)}
+                  onBlur={e=>blur(e)}
+                  onChange={e=>handelChange(e)}
+                />
+                <div className="items-search" ref={itemSearch} >
+                    <ul>
+                      {items ?
+                      items.map((product , index) =>{
+                        if(index < 5)
+                        {return (
+                          <li>{product.product_name}</li>
+                        )}
+                      }) :<></>
+                    }           
+                    </ul>
+                </div>
+              </div>
