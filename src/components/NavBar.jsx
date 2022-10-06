@@ -50,6 +50,7 @@ export default function NavBar({scrollY , scroll}) {
    }
   return (
     <header className="fixed top-0 left-0 z-20 flex w-full flex-col" >
+      
       <nav className={` flex-row sm:flex bg-prim border-b  login ${scrollY > 100 ? "hide" :""}`}>
          <div className="nav-top m-con">
           <button onClick={e=>navigate("/login")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
@@ -65,6 +66,7 @@ export default function NavBar({scrollY , scroll}) {
           </button>
         </div>
       </nav> 
+
       <nav className={`py-2.5  nav-center-con m-con ${showSearch ? "show-search" : ""}`} 
        style={{overflow:`${hidden && width <770 ? "hidden" : ""}`}}
       >
@@ -106,6 +108,7 @@ export default function NavBar({scrollY , scroll}) {
                   onBlur={e=>blur(e)}
                   onChange={e=>handelChange(e)}
                   style={{border:"none"}}
+                  autoComplete="off"
                 />
                 <div className="items-search" ref={itemSearch0}>
                     <ul>
@@ -174,9 +177,7 @@ export default function NavBar({scrollY , scroll}) {
                   onFocus={e=>focus(e)}
                   onBlur={e=>blur(e)}
                   onChange={e=>handelChange(e)}
-                  autocomplete="none"
-                 onClick={e=>e.preventDefault()}
-                  title=""
+                  autocomplete="off"
                 />
                 <div className="items-search" ref={itemSearch} >
                     <ul>
@@ -192,8 +193,6 @@ export default function NavBar({scrollY , scroll}) {
                 </div>
                 </div>
       </nav>
-
-
       <nav className={`links  ${showMenu ? "show-menu" : ""} ${ scrollY > 100 ? "hide" : ""}`}>
           <div className={`m-con`}>
                 <div className="div-links  " style={{width:'100%'}} >

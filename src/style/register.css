@@ -20,7 +20,6 @@
     height: max-content;
     margin-top: 300px;
 }
-
 .con-re .register{
     margin-top: 75px;
     height: max-content;
@@ -95,3 +94,13 @@
         margin-top: 100px;
     }
  }
+ @media screen and (max-width :460px) {
+   .con-register .register{
+     width: 400px;
+   }
+}
+@media screen and (max-width :400px) {
+   .con-register .register{
+     width: 365px;
+   }
+}

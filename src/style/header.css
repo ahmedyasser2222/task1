@@ -4,6 +4,7 @@ header{
 .nav-top{
     display: flex;
     justify-content: space-between;
+    padding: 10px;
 }
 .nav-center-con{
     width: 1150px;
@@ -26,7 +27,6 @@ header{
     display: flex;
     align-items: center;
   }
-  
   .nav-center .logo{
     position: relative;
   }
@@ -84,10 +84,12 @@ header{
  border: none;
 } 
 .login button{
- user-select: none;
  border-radius: 5px;
  font-size: 12px;
- padding: 4px 20px;
+ padding: 4px 12px !important;
+ border: 1px solid ;
+ display: flex;
+ color: white;
 }
 .login.hide button {
  display: none;
@@ -98,6 +100,8 @@ header{
  width: 100%; height: max-content;
  background-color: white;
  display: none;
+ border: 1px solid #977ABA;
+ border-top: none;
 }
 .items-search li{
  padding: 7px;
@@ -174,8 +178,8 @@ header{
   justify-content: space-around;
   width: 1140px;
   transition: all 0.6s;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #796295;
+  border-right: 1px solid #796295;
   border-left: 1px solid #ddd;
 }
 .links .links-menu ul li{
@@ -222,7 +226,6 @@ header{
     height: 0;
     overflow: hidden;
  }
-
  }
  @media screen and (max-width : 1160px ){
   .m-con{
@@ -256,6 +259,9 @@ header{
   height: 60px;
   width: 100%;
  }
+ .nav-center{
+  width: 80%;
+ }
   nav{
     width: 600px;
   }
@@ -267,7 +273,7 @@ header{
        } 
     .div-search{
         display: none;
-     }
+     }  
      .div-search-2{
         display: flex;
         justify-content: center;
@@ -276,6 +282,7 @@ header{
         width: 80%;
         right: 10%;
         border-radius: 0;
+        transition: all 0.5s;
      }
      .nav-center a{
       position: relative;
@@ -324,8 +331,17 @@ header{
       height: max-content;
      }
      .links.hide{
-      padding: 20px 0 0 0;
-      height: 100vh;
+      display: block;
+        height: 100vh;
+        position: absolute;
+        top: 0;right: 0;
+        width: 0;  
+        background-color:#977ABA ;
+        padding-top: 20px;
+        overflow: hidden;
+        overflow-y: scroll;
+        z-index: 5;
+
      }
      .links ul.main{
       display: flex;
@@ -346,6 +362,7 @@ header{
         position: relative;
         top: 0; padding: 0;
         height: 0; display: none;
+        transition: all 0.5s;
      }
      .links .links-menu ul{
         flex-direction: column;
@@ -413,17 +430,27 @@ header{
            background-color: transparent;
            justify-content: space-around;
            margin: 15px 0;
+           flex-wrap: wrap;
       }
       .links button{
           border: 1px solid white;
           color: white;
           padding: 2px 6px;
           margin: 5px;
-
+          flex: 30%;
+          text-align: center;
       }
   }
   @media screen and (max-width : 400px ){
     .m-con{
       width: 100%;
     }
+    .links button{
+      border: 1px solid white;
+      color: white;
+      padding: 2px 6px;
+      margin: 5px;
+      flex: 90%;
+      text-align: center;
+  }
   }

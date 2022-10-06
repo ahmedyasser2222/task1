@@ -24,11 +24,10 @@ body{
 }
 .m-con{
   width : 1140px;
-  margin: auto;
-  padding: 0 15px;
+  margin: 0 auto;
 }
 .category{
-  height: max-content;
+  height: max-content; 
   user-select: none;
 }
 .con-cat{
@@ -36,6 +35,13 @@ body{
   overflow-x: scroll ;
   -ms-overflow-style: none;
 }
+.slider button{
+border: none !important;
+}
+.slider{
+ margin: 30px  0;
+}
+
 .skeleton{
   display: flex;
   gap: 0 20px;
@@ -50,7 +56,19 @@ body{
   top: 0; left: 0;
   object-fit: cover;
 }
+.cd{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.home{
+  border: none;
+  padding: 0;
+  max-width: 100vw;
+  overflow: hidden;
+}
 .con-cat::-webkit-scrollbar{
   height: 6px;
 }
@@ -86,7 +104,11 @@ background-color: #ddd;
     .con-cat::-webkit-scrollbar{
       display: none;
     }
+  .card-skeleton{
+    width: 200px;
+  }
 } 
+
 
 @media screen and (max-width : 980px ){
  .m-con{
@@ -124,66 +146,4 @@ background-color: #ddd;
   100% {
     transform: translateY(0px);
   }
-}
-
-.slider {
-  width: 100%;
-
-}
-.wrapper {
-  overflow: hidden;
-  position: relative;
-  background: #222;
-  z-index: 1;
-}
-#items {
-  width: 10000px;
-  position: relative;
-  top: 0;
-  left: -300px;
-}
-#items.shifting {
-  transition: left .2s ease-out;
-}
-.slider .slide {
-  width: 100%;
-  height: 200px;
-  cursor: pointer;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 1s;
-  position: relative;
-  background: #FFCF47;
-
-}
-.control {
-  position: absolute;
-  top: 50%;
-  width: 40px;
-  height: 40px;
-  background: #fff;
-  border-radius: 20px;
-  margin-top: -20px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-  z-index: 2;
-}
-.prev,
-.next {
-  background-size: 22px;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.prev {
-  left: -20px;
-}
-.next {
-  
-  right: -20px;
-}
-.prev:active,
-.next:active {
-  transform: scale(0.8);
 }

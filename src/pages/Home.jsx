@@ -4,44 +4,26 @@ import CategoryInicator from "../components/CategoryInicator";
 import CategorySection from "../components/CategorySection";
 import Separator from "../components/Separator";
 import { Products } from "../data/products";
+import Slider from "react-slick";
+
 export default function Home() {
   let slider=document.getElementById("ss")
   let isDown=false ;
   let startX=0
   let scrollLeft =0
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1 ,
+    rtl:true
+  };
   
- /*  slider.addEventListener("mousedown",(e)=>{
-    isDown=true
-    slider.classList.add("active")
-   startX=e.pageX - slider.offsetLeft
-   scrollLeft=slider.scrollLeft
-  })
-
- slider.addEventListener("mouseleave",()=>{
-   isDown=false
-   slider.classList.remove("active")
-
- })
-
- slider.addEventListener("mouseup",()=>{
-   isDown=false
-   slider.classList.remove("active")
-
- })
-
- slider.addEventListener("mousemove",(e)=>{
-   if(!isDown) return ;
-   e.preventDefault()
-     const x=e.pageX - slider.offsetLeft
-     const wak=(x-startX)*3
-   slider.scrollLeft= scrollLeft -  wak
- })
- */
-
   return (
-    <div className="xl:mt-56 md:mt-40 mt-30 m-con">
-      <div className="mx-auto mt-20 w-full ">
-        <div  className="flex flex-row flex-nowrap items-center  justify-between overflow-x-auto overflow-y-hidden con-cat">
+    <div className="xl:mt-56 md:mt-40 mt-30 home">
+      <div className="mt-20  m-con">
+        <div  className="flex flex-row flex-nowrap items-center justify-between overflow-x-auto overflow-y-hidden con-cat">
           <CategoryInicator
             imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/e0b92311-6bc6-4ea1-8f3b-713a0fe15706-260x260.jpg"
             title="العناية بالبشرة"
@@ -63,9 +45,9 @@ export default function Home() {
             title="المكياج و الاكسسوارات"
           />
         </div>
-        <div className="mt-10 somth h-64 sm:h-80 xl:h-96 2xl:h-128" dir="ltr">
-          <Carousel slideInterval={5000} id="ss" >
-            <button className="h-full w-full">
+        <div className="slider" >
+          <Slider {...settings}  nextArrow={false} prevArrow={false}>
+          <button className="h-full " >
               <img
                 className="object-contain"
                 objectFit="contain"
@@ -75,7 +57,7 @@ export default function Home() {
                 width={"100%"}
               />
             </button>
-            <button className="h-full w-full">
+            <button className="h-full ">
               <img
                 className="object-contain"
                 objectFit="contain"
@@ -85,7 +67,7 @@ export default function Home() {
                 width={"100%"}
               />
             </button>
-            <button className="h-full w-full">
+            <button className="h-full ">
               <img
                 className="object-contain"
                 objectFit="contain"
@@ -95,7 +77,7 @@ export default function Home() {
                 width={"100%"}
               />
             </button>
-            <button className="h-full w-full">
+            <button className="h-full ">
               <img
                 className="object-contain"
                 objectFit="contain"
@@ -105,7 +87,7 @@ export default function Home() {
                 width={"100%"}
               />
             </button>
-          </Carousel>
+          </Slider>
         </div>
 
         <div className="mt-10 flex flex-row items-center justify-between">
@@ -139,19 +121,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 mb-20 h-64 sm:h-80 xl:h-96 2xl:h-128" dir="ltr">
-          <Carousel slideInterval={10000}>
-            <button className="h-full w-full">
-              <img
-                className="object-contain"
-                objectFit="contain"
-                layout="fill"
-                src="https://media.zid.store/cdn-cgi/image/w=1300,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/93384f65-6742-49b0-afc7-1133e92a01d8.png"
-                alt="..."
-                width={"100%"}
-              />
-            </button>
-            <button className="h-full w-full">
+        <div className="slider" >
+          <Slider {...settings} >
+            <button className=" ">
               <img
                 className="object-contain"
                 objectFit="contain"
@@ -161,7 +133,27 @@ export default function Home() {
                 width={"100%"}
               />
             </button>
-            <button className="h-full w-full">
+            <button className=" ">
+              <img
+                className="object-contain"
+                objectFit="contain"
+                layout="fill"
+                src="https://media.zid.store/cdn-cgi/image/w=1300,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/d9990ce3-335c-4d06-afa6-fd3dd42fe61e.jpg"
+                alt="..."
+                width={"100%"}
+              />
+            </button>
+            {/* <button className="">
+              <img
+                className="object-contain"
+                objectFit="contain"
+                layout="fill"
+                src="https://media.zid.store/cdn-cgi/image/w=1300,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/93384f65-6742-49b0-afc7-1133e92a01d8.png"
+                alt="..."
+                width={"100%"}
+              />
+            </button> */}
+            <button className="h-full ">
               <img
                 className="object-contain"
                 objectFit="contain"
@@ -171,20 +163,21 @@ export default function Home() {
                 width={"100%"}
               />
             </button>
-          </Carousel>
+          </Slider>
         </div>
       </div>
+      
       <Separator />
-      <div className="mx-auto mt-20 w-full ">
+      <div className="mt-20 m-con ">
         <CategorySection title="أسعار مميزة" products={Products.slice(0, 10)} />
       </div>
-      <div className="mx-auto mt-20 w-full ">
+      <div className=" mt-20 m-con ">
         <CategorySection
           title="عروض لي مور"
           products={Products.slice(0, 10)}
         />
       </div>
-      <div className="mx-auto mt-20 w-full ">
+      <div className=" mt-20 m-con ">
         <CategorySection
           title="الأفضل مبيعاً"
           products={Products.slice(0, 10)}
