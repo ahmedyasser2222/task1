@@ -1,0 +1,140 @@
+.con-address{
+    height: 500px;
+    margin-top: 250px;
+}
+.head-address{
+    margin: 50px 0 5px 0;
+}
+.con-address .address{
+    margin: 30px auto;
+    background-color: #F9F9F9;
+    width: 80%;
+    padding: 30px;
+}
+.con-address .inputs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.con-address .inputs .input{
+    flex: 45%;
+    position: relative;
+}
+.con-address .form{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    padding: 8px 12px;
+    margin: 5px 0;
+}
+.con-address .btn{
+    display: flex;
+    justify-content: end;
+    margin: 20px 0;
+}
+.con-address .btn button.save{
+    width: 100px;
+    background-color: #977ABA;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+.con-address .btn button.cancel{
+    width: 100px;
+    background-color: #818286;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+.form .down{
+    display: none;
+}
+.form .up{
+    display: inline;
+}
+.form.shwo-icon .up{
+    display: none;
+}
+.form.shwo-icon .down{
+    display: inline;
+}
+.inputs .menu{
+    height: 100px;
+    background-color: #8B8B8B;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height:max-content;
+    margin-top: -5px;
+    color: white;
+    padding: 5px 30px;
+    z-index: 1;
+    display: none;
+}
+
+.inputs .searchs{
+    position: relative;
+    height: 30px;
+    border: 1px solid;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.inputs input{
+    color: black;
+    width: 100%;height: 100%;
+    top: 0;right:0;
+    user-select: auto;
+    padding-right: 20px;
+    z-index: 0;
+    outline: none;
+    border: none;
+}
+.inputs input:focus{
+    border: none!important;
+    outline: none;
+    outline-style: none;
+}
+.input .form-txt{
+    padding: 0;
+    margin: 10px 0;
+}
+.inputs .searchs .search{
+    width: 30px;
+    height: 30px;
+    color: black;
+     font-size: larger;
+     padding-top: 3px;
+     background-color: white;
+}
+.input ul{
+    display: flex;
+    flex-direction: column;
+}
+.input ul li{
+    width: 100%;
+}
+.input ul li:hover{
+    background-color: white;
+    color: black;
+}
+.input.shwo-icon .menu{
+    display: block;
+}
+
+@media screen and (max-width : 770px) {
+    .address0{
+        width: 95%;
+        margin: auto;
+    }
+    .con-address{
+        margin-top: 80px;
+        height: max-content;
+    }
+    .con-address .inputs .input{
+        flex: 100%;
+    }
+}

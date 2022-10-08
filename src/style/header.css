@@ -123,6 +123,24 @@ header{
  .nav-center-con .icon .i{
   font-size: 2rem;
  }
+ .nav-center .sup{
+    font-size:15px ;
+    color:white ;
+    width: 20px;height: 18px;
+  
+        position: absolute;
+    top: -3px;right: -5px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 15px;
+  }
+.nav-center .cart{
+  position: relative;
+  width: 50px; height: 45px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
 /*=========================================================*/
 .links{
   transition: all 0.5s;
@@ -178,8 +196,8 @@ header{
   justify-content: space-around;
   width: 1140px;
   transition: all 0.6s;
-  border-bottom: 1px solid #796295;
-  border-right: 1px solid #796295;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
 }
 .links .links-menu ul li{
@@ -200,7 +218,7 @@ header{
 .links ul li:hover a{
   color: #796295;
 }
-.links .d{
+.links .h{
   display: none;
  }
  .links  .btn{
@@ -221,6 +239,14 @@ header{
   font-size: x-large;
   color: white;
 }
+.links .icon-left{
+  display: none;
+}
+.links .back-icon{
+  display: none;
+}
+
+
  @media screen and(min-width : 770px) {
   .links.hide{
     height: 0;
@@ -244,11 +270,30 @@ header{
   }
   .links .links-menu ul{
     width: 800px;
+    display: flex;
   }
-  
+  .links .links-menu ul li{
+    flex: 30%;
+  }
+  .links{
+    width: 100%;
+    height: 40px;
+  }
+  .links .div-links{
+    width: 100%;
+    height: 40px;
+    justify-content: space-around;
+  }
+  .links .div-links ul.main li:not(.d) {
+    font-size: small;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    height: 40px;
+  }
 }
 @media screen and (max-width : 770px ){
-  .m-con{
+ .m-con{
     width: 100%;
   }
  nav.login{
@@ -265,109 +310,240 @@ header{
   nav{
     width: 600px;
   }
-   .div-links{
-        text-align: center;
-        margin: 0;padding: 0;
-        height: 95vh;
-    
-       } 
-    .div-search{
-        display: none;
-     }  
-     .div-search-2{
-        display: flex;
-        justify-content: center;
+  .div-search{
+    display: none;
+ }  
+ .div-search-2{
+    display: flex;
+    justify-content: center;
+    display: block;
+    margin: 15px 0;
+    width: 80%;
+    right: 10%;
+    border-radius: 0;
+    transition: all 0.5s;
+ }
+ .nav-center a{
+  position: relative;
+ }
+ .nav-center-con .icon .i{
+  font-size: x-large;
+  position: relative;
+ }
+ sup.sup{
+  position: absolute;;
+  top: -2px; right: -10px; 
+ }
+ .nav-center{
+  height: 40px;
+ }
+ .nav-center-con.show-search{
+    height: 125px;
+ }
+ .nav-center .sup{
+  right: -10px;
+ }
+ .div-search-2{
+  margin-top: 25px;
+ }
+ .items-search{
+    position: absolute;
+    top: 100%;right: 0;
+ }
+ 
+  /*=======================*/
+  .links{
+    display: block;
+    height: 100vh;
+    position: absolute;
+    top: 0;right: 0;
+    width: 0%;  
+    background-color:#977ABA ;
+    padding-top: 35px;
+    overflow-y: auto;
+    z-index: 5;
+  }
+  .links.show-menu{
+    width: 60%;
+ }
+  .div-links{
+    margin: 0;padding: 0;
+    width: 300%;
+    height: max-content !important;
+  }
+  .links ul.main{
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+    transition: all 1s;
+   }
+   .links ul.main li{
+    width: 100%;
+    padding-right: 10px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+  .links  .links-menu{
+    position: absolute;
+    top: 0;right: 100%;
+    width: 100%; height:100vh;
+ }
+ .links  .links-menu ul{
+    display: none;
+    height: max-content;
+ }
+
+ .links .links-menu ul li{
+  width: 100%;
+  padding: 8px 12px;
+  color: white;
+}
+.links.show li.show .links-menu{
+  display: block;
+  height: 100vh;
+  width: 100%;
+}
+.links.show li.show ul{
+  display: flex;
+  flex-direction: column;
+  background-color: #977ABA;
+  height: max-content;
+  border: none;
+}
+.links.show  li.show .links-menu ul li{
+  width: 100%;
+  padding: 8px ;
+  color: white;
+}
+.links.show  li.show .links-menu ul li:hover{
+  background-color: #796295;
+  color: white;
+}
+
+
+.links .back-icon{
+  display: none;
+  position: absolute;
+  top: 8px; right: 15px ;
+  color: white !important;
+  border-radius: 5px;
+}
+.links .back-icon .hide-icon{
+  color: white;
+}
+
+ .links.show ul.main{
+  transform: translateX(100%);
+ }
+ .links.back ul.main{
+  transform: translateX(0%);
+ }
+
+  
+  
+  .links  ul.main > li{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .links  ul.main > li .icon-left{
+    padding: 0 10px;
+  }
+ .links .down-icon{
+    display: none;
+  }
+  .links .icon-left{
+    display: inline;
+    color: white;
+  }
+  .links li:hover .icon-left{
+    color: #796295;
+  }
+  .links li{
+    cursor: pointer;
+  }
+  
+ /*=============*/
+
+  header .hide-menu{
         display: block;
-        margin: 15px 0;
-        width: 80%;
-        right: 10%;
-        border-radius: 0;
-        transition: all 0.5s;
      }
-     .nav-center a{
-      position: relative;
-     }
-     .nav-center-con .icon .i{
-      font-size: x-large;
-      position: relative;
-     }
-     sup.sup{
-      position: absolute;;
-      top: -2px; right: -10px; 
-     }
-     .nav-center{
-      height: 40px;
-     }
-     .nav-center-con.show-search{
-        height: 120px;
-     }
-     .div-search-2{
-      margin-top: 25px;
-     }
-     .items-search{
-        position: absolute;
-        top: 100%;right: 0;
-     }
-     .links .d{
+     .icon a.show{
+        display: inline;
+      }
+  .body{
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;height: 100vh;
+      opacity: 0.5;
+      background-color: #555;
+      z-index: 0;
+   }
+   .links .h{
+    display: inline;
+   } 
+    .price-cart{
+    display: none;
+   }
+ /* .links{
+  display: block;
+  height: 100vh;
+  position: absolute;
+  top: 0;right: 0;
+  width: 60%;  
+  background-color:#977ABA ;
+  padding-top: 35px;
+  overflow-y: scroll;
+  z-index: 5;
+}
+.div-links{ 
+  margin: 0;padding: 0;
+  height: 95vh;
+  width: max-content;
+   } 
+     .links .h{
       display: inline;
      } 
-     .links{
-        display: block;
-        height: 100vh;
-        position: absolute;
-        top: 0;right: 0;
-        width: 0;  
-        background-color:#977ABA ;
-        padding-top: 20px;
-        overflow: hidden;
-        overflow-y: scroll;
-        z-index: 5;
-     }
       .price-cart{
       display: none;
      }
      .links .div-links{
-      width: 100%; 
+      width: 100rem; 
       height: max-content;
-     }
-     .links.hide{
-      display: block;
-        height: 100vh;
-        position: absolute;
-        top: 0;right: 0;
-        width: 0;  
-        background-color:#977ABA ;
-        padding-top: 20px;
-        overflow: hidden;
-        overflow-y: scroll;
-        z-index: 5;
+      display: flex;
 
+      justify-content: flex-start !important;
      }
      .links ul.main{
       display: flex;
       flex-direction: column;
-      width: 100%;
-     justify-content: unset;
+      width: 100em !important;
+      overflow: hidden;
+      transition: all 1s;
+
      }
-     .links ul li{
+     .links .div-links ul.main li{
       width: 100%;
       text-align: start;
       border-bottom: 1px solid rgba(255,255,255,0.3);
-     }
+    }
+    .links .div-links ul.main li:not(.d) {
+      padding: 8px 12px;
+    }
+    .links .links-menu{
+      border: 1px solid;
+      display: none;
+      transition: all 0.5s;
+      position: absolute;
+      top: 0;right: 100%;
+      width: 100%; height: 100%;
+   }
      .links.show-menu{
         width: 60%;
      }
-     .links .links-menu{
-        display: flex;
-        position: relative;
-        top: 0; padding: 0;
-        height: 0; display: none;
-        transition: all 0.5s;
-     }
      .links .links-menu ul{
-        flex-direction: column;
-        width: 100%;
-        border: none;
+        position: absolute;
+        top: 0; right: 100%;
+        width: 200px;
      }
      .links ul li .links-menu ul li{
         width: 100%;
@@ -376,33 +552,18 @@ header{
      .links ul li.show{
         display: block;
         height: max-content;
-        background-color: white;
      }
-     .body{
-      position: absolute;
-      top: 0;left: 0;
-      width: 100%;height: 100vh;
-      opacity: 0.5;
-      background-color: #555;
-      z-index: 0;
-     }
-     .links ul li.show a{
-      display: block;
-      height: max-content;
-      color: #977ABA;
-   }
      .links ul li.show li{
         display: block;
         height: max-content;
      }
      .links ul li.show .links-menu{
-        display: block;
-        height: max-content;
+        display: flex;
         opacity: 1;
+        z-index: 10;
      }
      .links ul li.show .links-menu ul{
-        display: block;
-        height: max-content
+        transform: translateX(200px);
      }
      header .hide-menu{
         display: block;
@@ -410,6 +571,15 @@ header{
      .icon a.show{
         display: inline;
       }
+      .body{
+        position: absolute;
+        top: 0;left: 0;
+        width: 100%;height: 100vh;
+        opacity: 0.5;
+        background-color: #555;
+        z-index: 0;
+       }
+        */
       .links::-webkit-scrollbar {
         width: 6px;
     }

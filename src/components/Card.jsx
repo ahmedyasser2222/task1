@@ -12,7 +12,7 @@ function Card({data}) {
       dispatch(increment(product.price))
     }
     return (
-        <div className='card'>
+        <div className='card' dir='rtl'>
               <div className="div-img">
                     <img src={data.image_url} alt={data.product_name} /> 
               </div>

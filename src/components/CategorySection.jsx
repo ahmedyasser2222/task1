@@ -14,6 +14,30 @@ export default function CategorySection(props) {
       setWidth(window.innerWidth)
     })
   },[])
+
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "red" }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "green" , height:'100px' , width:"100px"}}
+        onClick={onClick}
+      />
+    );
+  }
+  
   var settings = {
     dots: false,
     infinite: false,
@@ -21,7 +45,9 @@ export default function CategorySection(props) {
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 4,
-    rtl:true ,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    
     responsive: [
       {
         breakpoint: 1024,
@@ -37,15 +63,34 @@ export default function CategorySection(props) {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 4
+          slidesToScroll: 0,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 0,
+          initialSlide: 3
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 2,
+          initialSlide: 2,
+
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          initialSlide: 1,
+          centerMode:true
         }
       }
     ]
@@ -53,13 +98,13 @@ export default function CategorySection(props) {
   return (
     <div className="category">
       <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
-      <div className="my-10 xl:h-96 h-96 " >
+      <div className="my-10 xl:h-96 h-96 " style={{cursor:"grab"}}>
 
        {products ?
-   <Slider {...settings}  arrows={true} nextArrow={<p style={{color:'black'}}>next</p>} prevArrow={<p>next</p>} >
+   <Slider {...settings}  rtl={true} arrows={true} nextArrow={<p style={{color:'black'}}>next</p>} prevArrow={<p>next</p>} >
           {products.map(product =>{
             return(
-              <Card data={product} />
+              <Card data={product}  />
             )
           }) }
           </Slider>

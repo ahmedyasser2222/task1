@@ -1,0 +1,213 @@
+.con-profile{
+    margin-top: 215px;
+    height: max-content;
+    width: 100%;
+    
+}
+.con-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.con-profile .flex-left{
+    flex: 60%;
+    height: 100%;
+}
+.con-profile .flex-right{
+    flex: 30%;
+    height: 500px;
+}
+.con-profile .flex-right {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #977ABA;
+}
+.con-profile .c{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 100px;
+    border-radius: 15px;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.con-profile .c:hover{
+    background-color: #C1AFD6;
+}
+.con-profile .active{
+    background-color: #C1AFD6;
+}
+.con-profile .div-icon{
+    position: relative;
+    flex: 1;
+}
+.con-profile .div-icon .icon{
+    font-size: 28px;
+    margin: 0 5px;
+}
+.con-profile .detals{ 
+    flex: 8;
+}
+.con-profile .detals h2{
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.con-profile .detals p{
+    font-size: 14px;
+    font-weight: 100;
+}
+.con-profile .left-top{
+    padding: 20px 10px;
+    background-color: #D9D9D9;
+}
+.con-profile .left-top p{
+    font-size: 14px;
+    color: #977ABA;
+}
+.con-profile .inputs{
+    padding: 15px 25px ;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-between;
+}
+.con-profile .input{
+    width: 45%;
+    margin: 10px 0;
+}
+.con-profile .input input{
+    width: 100%;
+    font-size: 14px;
+    padding: 5px  7px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 7px;
+}
+.con-profile .input input:focus{
+    border: none;
+    outline: none;
+}
+.con-profile label{
+    font-size: 14px;
+}
+.con-profile .save{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+.con-profile .check input {
+    margin: 0 5px;
+}
+.con-profile .check input:checked {
+    outline: none;
+    border: none;
+}
+.con-profile .sub{
+    background-color: #977ABA;
+    padding: 4px 18px;
+    border-radius: 4px;
+    color: white;
+}
+.con-profile button{
+    font-size: 14px;
+}
+.con-profile .delet{
+    padding: 0 25px;
+}
+.con-profile .delet::after{
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.con-profile hr{
+    margin: 5px 0;
+}
+.con-profile button.de{
+    float: left;
+}
+.con-profile .logout{
+    padding: 0 25px;
+}
+.logout button{
+    background-color: #DC3545;
+    padding: 4px 7px;
+    border-radius: 5px;
+    color: white;
+}
+.con-profile .app{
+  display: flex;
+  justify-content: space-between;
+  margin: 25px;
+  background-color: #FEF7F2;
+  height: 80px;
+  padding: 25px ; 
+}
+.con-profile .app-btn button{
+    background: linear-gradient(90deg , #912D5B , #562A6C) ;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+.con-profile .add{
+    margin: 25px;
+    background-color: white;
+}
+.con-profile .add button{
+    width: max-content;
+    background-color: #977ABA;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.con-profile .orders{
+    margin: 35px  25px;
+}
+.con-profile .head-order{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border-radius: 5px;
+    padding: 15px 5px;
+}
+.con-profile .head-order p{
+    color: black;
+}
+
+@media screen and (max-width : 770px) {
+    .con-profile{
+        margin-top: 60px;
+    }
+    .con-profile .flex-right , .flex-left{
+              flex: 100%;
+    
+     }
+     .con-profile .flex-right{
+        padding: 0;
+        height: max-content;
+        margin: 0;
+     }
+     .con-profile .flex-right .cs{
+            width: 100%;
+           justify-content: center;
+           padding: 0;
+     }
+     .con-profile .flex-right .c{
+        height: max-content;
+        width: 80%;
+        margin-right: 10%;
+     }
+     .app-txt{
+        flex: 50%;
+     }
+
+
+
+    
+       
+}

@@ -5,6 +5,8 @@ import CategorySection from "../components/CategorySection";
 import Separator from "../components/Separator";
 import { Products } from "../data/products";
 import Slider from "react-slick";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cart from "./cart/Cart";
 
 export default function Home() {
   let slider=document.getElementById("ss")
@@ -19,6 +21,7 @@ export default function Home() {
     slidesToScroll: 1 ,
     rtl:true
   };
+
   
   return (
     <div className="xl:mt-56 md:mt-40 mt-30 home">
@@ -171,6 +174,8 @@ export default function Home() {
       <div className="mt-20 m-con ">
         <CategorySection title="أسعار مميزة" products={Products.slice(0, 10)} />
       </div>
+   
+
       <div className=" mt-20 m-con ">
         <CategorySection
           title="عروض لي مور"

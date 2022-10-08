@@ -8,9 +8,12 @@ import NavBar from "./components/NavBar";
 import FooterComp from "./components/Footer";
 import { flowbiteTheme as theme } from "./theme";
 import { Flowbite, Spinner } from "flowbite-react";
-import Cart from "./pages/Cart";
+import Cart from "./pages/cart/Cart";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login.jsx"
+import Profile from "./components/profile/Profile";
+import Ad from "./components/order/Ad";
+import Address from "./components/address/Address";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,7 +37,14 @@ function App() {
       if (!orderId && currentPath !== "/") {
         dispatch(setId(currentPath.split("/")[1]));
       }
-    //  console.log("orderId is:", orderId);
+        setScrollY(window.scrollY)
+        if(scrollY > window.scrollY ) {
+          setScroll(true)
+        }else{
+          setScroll(false)
+        }
+        console.log("ppppp")
+     
     },
     [ orderId, currentPath, dispatch ]
   );
@@ -53,10 +63,14 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/account-profile" element={<Profile />} />
+        <Route path="/order" element={<Ad />} />
+        <Route path="/address" element={<Address />} />
+
+
       </Routes>
-    
     <FooterComp />
-      </Flowbite>
+ </Flowbite>
     </Suspense>
   );
 }

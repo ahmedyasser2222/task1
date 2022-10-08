@@ -1,0 +1,218 @@
+.con-cart{
+    margin-top: 210px;
+}
+.top-cart{
+    background-color: #E9ECEF;
+    padding: 12px 5px;
+    color: #977ABA;
+}
+.top-cart p{
+    font-size: 14px;
+}
+.con-cart .cart-flex{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 20px;
+}
+.con-cart .c-right{
+    flex: 2;
+}
+.con-cart .c-left{
+    flex: 1;
+}
+.con-cart  .title{
+    padding: 10px 0;
+    font-size: x-large;
+    color: #977ABA;
+    font-weight: bolder;
+}
+.con-cart .head-cart{
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+.con-cart .head-cart p{
+    font-size: 12px;
+    padding: 0px 15px;
+}
+.con-cart .p{
+    width: 52%;
+}
+.con-cart .q{
+    width: 15%;
+    text-align: center;
+}
+.con-cart .pr{
+  width: 20%;
+}
+.con-cart .prods{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.con-cart .prod{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    height: 75px;
+    margin-bottom: 8px;
+}
+.prod .delet{
+    width: 2%;
+    margin-right: -20px;
+    cursor: pointer;
+}
+.prod .name{
+    width: 50%;
+    display: flex;
+    margin-right: -35px;
+}
+.prod .name .img{
+    position: relative;
+    width: 20%;
+}
+.prod .name .n , .prod .price , .prod .count{
+    display: flex;
+    align-items: center;
+}
+.prod .name .n p{
+    font-size: 16px;
+    cursor: pointer;
+}
+.prod .name .img img{
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;height: 100%;
+  object-fit: contain;
+}
+
+.prod .count{
+   width: 15%;
+   display: flex;
+   justify-content: center;
+}
+.prod .count .b{
+    cursor: pointer;
+    flex: 1;
+}
+.prod .count span:not(.b){
+    flex: 2;
+}
+.prod .price{
+    width: 20%;
+}
+.prod .price span{
+    text-decoration:line-through;
+    margin-right: 2px;
+    color: rgba(0,0,0,0.8);
+    font-weight: 100;
+    margin-right: 5px;
+}
+.detels{
+    background-color: #D9D9D9;
+    display: flex;
+    padding: 5px 15px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.detels .s1 , .recet .s1{
+    width: 70%;
+}
+.recet{
+    display: flex;
+    padding: 5px 15px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+}
+.recet .total-price{
+    color: #977ABA;
+    font-weight: bolder;
+}
+.recet .tabby{
+    position: relative;
+    height: 50px;width: 50px;
+    margin-right: 25px;
+}
+.recet .tabby img{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    object-fit: contain;
+}
+.recet .s1 span{
+    text-decoration: underline;
+}
+.recet .s1 span:hover{
+    color: #977ABA;
+    cursor: pointer;
+}
+.copon{
+    margin: 25px 0;
+}
+.copon .input{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.copon .input input{
+    width: 75%;
+    padding: 4px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.copon button{
+    background-color: #977ABA;
+    color: white;
+    width: 20%;
+    border-radius: 10px;
+}
+.copon .input input:focus{
+    outline: none;
+}
+.continu {
+    margin: 15px 0;
+}
+.continu button{
+    width: 100%;
+    background-color: #977ABA;
+    color: white;
+   padding: 8px 12px;
+   border-radius: 10px;
+   border: 1px solid #977ABA;
+}
+
+@media screen and (max-width :770px) {
+    .con-cart .cart-flex{
+        flex-direction: column;
+        width: 90%;
+        margin-right: 5%;
+    }
+    .con-cart .prod{
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+    }
+    .con-cart .prod div{
+        margin: 5px 0;
+        width: 100%;
+
+    }
+    .prod div.count{
+        width: 50%;
+       justify-content: center !important;
+        font-size: larger;
+        margin-right: 70px;
+    }
+    .prod .count span{
+        width: 20px  !important;
+    }
+    .prod div.price{
+        margin-right: 70px;
+     }
+
+}

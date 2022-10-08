@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import {  useState } from "react";
-import {AiOutlineShoppingCart , AiFillCaretDown , AiOutlineSearch  } from "react-icons/ai"
+import {AiOutlineShoppingCart , AiFillCaretDown , AiOutlineSearch  ,AiFillCaretLeft ,AiFillCaretRight} from "react-icons/ai"
 import {FaBars} from "react-icons/fa"
 import {GiCancel} from 'react-icons/gi'
+import {GrLinkNext} from "react-icons/gr"
 import {CgProfile  } from "react-icons/cg"
 import { Link, useNavigate } from "react-router-dom";
 import { Products } from "../data/products";
@@ -12,6 +13,7 @@ import { useSelector } from "react-redux";
 export default function NavBar({scrollY , scroll}) {
   const itemSearch=useRef()
   const itemSearch0=useRef()
+  const links=useRef()
   const {countProdust , price} =useSelector(state=>state.cartCount)
   const navigate=useNavigate()
   const [showMenu , setShowMenu]=useState(false)
@@ -20,13 +22,22 @@ export default function NavBar({scrollY , scroll}) {
   const [hidden , setHidden]=useState(true)
   const [searchText , setSearchText]=useState("")
   const [items , setItems]=useState([])
-  const [width , setWidth]=useState(0)
+  const [widthScrean , setWidthScrean]=useState(0)
+  const showLeftMenu=(e)=>{
+    links.current.classList.add("show")
+    links.current.classList.remove("back")
+    e.currentTarget.classList.add("show")
+    document.querySelector("#back").style.display="block"
+  }
   useEffect(()=>{
-    window.addEventListener("resize",()=>{
-      setWidth(window.innerWidth)
-    })
+    function set(){
+        setWidthScrean(window.innerWidth)
+    }
+    set()
   },[])  
-
+  window.addEventListener("resize",()=>{
+    setWidthScrean(window.innerWidth)
+  })
   const handelChange=(e)=>{
      setSearchText(e.target.value)
      let Items=[]
@@ -53,10 +64,11 @@ export default function NavBar({scrollY , scroll}) {
       
       <nav className={` flex-row sm:flex bg-prim border-b  login ${scrollY > 100 ? "hide" :""}`}>
          <div className="nav-top m-con">
-          <button onClick={e=>navigate("/login")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
+          <button onClick={e=>navigate("/account-profile")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
           <CgProfile className=" text-white text-xl"/>
             <span>  
-                تسجيل الدخول 
+              اهلا احمد ياسر
+               {/*  تسجيل الدخول  */}
             </span>
           </button>
           <button className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
@@ -67,8 +79,8 @@ export default function NavBar({scrollY , scroll}) {
         </div>
       </nav> 
 
-      <nav className={`py-2.5  nav-center-con m-con ${showSearch ? "show-search" : ""}`} 
-       style={{overflow:`${hidden && width <770 ? "hidden" : ""}`}}
+      <nav className={`py-2.5  nav-center-con m-con ${showSearch ? "show-search" : ""} `} 
+       style={{overflow:`${hidden && widthScrean <770 ? "hidden" : ""}`}}
       >
         <div className="w-full  nav-center ">
 
@@ -133,8 +145,8 @@ export default function NavBar({scrollY , scroll}) {
                 <a className={`price-cart`}>
                   {price ? "SAR "+price : ""} 
                 </a>
-               <a onClick={e=>navigate("/cart")} >
-                <sup className="sup" style={{fontSize:"18px" ,color:"white" }}>{countProdust ? countProdust : ""}</sup>
+               <a onClick={e=>navigate("/cart")} className="cart">
+                <p className="sup" style={{backgroundColor:`${countProdust ? "#AB0000" : ""}`}}>{countProdust ? countProdust : ""}</p>
                 <AiOutlineShoppingCart className="i text-white" style={{display:"inline"}}/>
                 </a>
                 <a onClick={e=>navigate("/register ")} className="show s">
@@ -177,7 +189,7 @@ export default function NavBar({scrollY , scroll}) {
                   onFocus={e=>focus(e)}
                   onBlur={e=>blur(e)}
                   onChange={e=>handelChange(e)}
-                  autocomplete="off"
+                  autoComplete="off"
                 />
                 <div className="items-search" ref={itemSearch} >
                     <ul>
@@ -193,14 +205,37 @@ export default function NavBar({scrollY , scroll}) {
                 </div>
                 </div>
       </nav>
-      <nav className={`links  ${showMenu ? "show-menu" : ""} ${ scrollY > 100 ? "hide" : ""}`}>
+
+      <nav ref={links} className={`links   ${showMenu ? "show-menu" : ""} ${widthScrean > 770 ? scrollY > 100 ? "hide" : "" : ""}`}>
           <div className={`m-con`}>
-                <div className="div-links  " style={{width:'100%'}} >
-                       <div className="hide-menu" onClick={e=>setShowMenu(!showMenu)} >
+                <div className="div-links" style={{width:'100%'}} >
+                       <div className="hide-menu " onClick={e=>setShowMenu(!showMenu)} >
                          <GiCancel className="hide-icon" />
                         </div>
+                        <div className="back-icon"  id="back" onClick={e=>{
+                          links.current.classList.add("back")
+                          e.currentTarget.style.display="none"
+                          setTimeout(()=>{
+                            let li=document.querySelector(".links ul")
+                            for (let index = 0; index < li.children.length; index++) {
+                           li.children[index].classList.remove("show")
+                       }
+                          },700)
+                        }} >
+                         <GrLinkNext className="hide-icon" style={{display:""}} />
+                        </div>
 
-                     <ul className="main m-con" style={{width:'100%'}}>
+                        <div className="back-icon" style={{display:"none"}} onClick={e=>{
+                          links.current.classList.add("back")
+                          let li=document.querySelector(".links ul")
+                         for (let index = 0; index < li.children.length; index++) {
+                          li.children[index].classList.remove("show")
+                         }
+                        }} >
+                         <GrLinkNext className="hide-icon"  />
+                        </div>
+
+                  <ul className="main m-con " style={{width:'100%'}}>
               <li >
                 <a
                   href="/"
@@ -211,7 +246,7 @@ export default function NavBar({scrollY , scroll}) {
                 
               </li>
               <li >
-                <a  >
+                <a  href="#">
                   جميع المنتجات
                 </a>
               </li>
@@ -219,16 +254,17 @@ export default function NavBar({scrollY , scroll}) {
                 <a href="#">
                   اسعار مميزة
                 </a>
-              </li>
-              <li  onClick={e=>e.currentTarget.classList.toggle("show")}>
-                <a  >
+              </li>      
+              <li  onClick={e=>showLeftMenu(e)}>
+                <a  href="#">
                    العناية بالبشرة
-                <AiFillCaretDown  className="down-icon" />
+                   <AiFillCaretDown  className="down-icon" />
                 </a>
-                <div className="links-menu ">
-                    <ul>
+                <div className="icon-left"> <AiFillCaretLeft  /></div>
+                <div className="links-menu " onClick={""}>
+                    <ul >
                       <li>الغسول التونر والمقشرات</li>
-                      <li>كريمات البشره</li>
+                      <li onClick={e=>navigate("login")}>كريمات البشره</li>
                       <li>السيريوم</li>
                       <li>واقيات الشمس</li>
                       <li>العناية بمحيط العين</li>
@@ -237,11 +273,12 @@ export default function NavBar({scrollY , scroll}) {
                     </ul>
                 </div>
               </li>
-              <li  onClick={e=>e.currentTarget.classList.toggle("show")}>
-                <a >
+              <li  onClick={e=>showLeftMenu(e)}>
+                <a href="#">
                    العناية بالشعر
                 <AiFillCaretDown  className="down-icon" />
                 </a>
+                <div className="icon-left"> <AiFillCaretLeft  /></div>
                 <div className="links-menu ">
                     <ul>
                       <li>الشامبو</li>
@@ -253,11 +290,12 @@ export default function NavBar({scrollY , scroll}) {
                     </ul>
                 </div>
               </li>
-              <li  onClick={e=>e.currentTarget.classList.toggle("show")} className="">
-                <a>
+              <li  onClick={e=>showLeftMenu(e)}>
+                <a href="#">
                     منتجات العناية اليومية
                 <AiFillCaretDown  className="down-icon" />
                 </a>
+                <div className="icon-left"> <AiFillCaretLeft  /></div>
                 <div className="links-menu ">
                     <ul>
                       <li>العناية بالاطفال</li>
@@ -273,20 +311,21 @@ export default function NavBar({scrollY , scroll}) {
                 </div>
               </li>
               <li>
-                <a>
+                <a href="#">
                 الأدوية
                 </a>
               </li>
-              <li className="d">
-                <a >
+              <li className="h">
+                <a href="#">
                    الفيتامينات
                 </a>
               </li>
-              <li className="d"  onClick={e=>e.currentTarget.classList.toggle("show")}>
-                <a  >
+              <li   onClick={e=>showLeftMenu(e)}>
+                <a  href="#">
                      المكياج والاكسسوارات
                 <AiFillCaretDown  className="down-icon" />
                 </a>
+                <div className="icon-left"> <AiFillCaretLeft  /></div>
                 <div className="links-menu ">
                     <ul>
                       <li>الوجه</li>
@@ -298,20 +337,24 @@ export default function NavBar({scrollY , scroll}) {
                       <li>مزيل المكياج</li>
                       <li>فرش المكياج</li>
                       <li>الرموش</li>
-                      <li>الاظافر</li>
+                      <li >
+                        الاظافر
+                       
+                      </li>
                     </ul>
                 </div>
               </li>
-              <li className="d">
-                <a>
+              <li className="h">
+                <a href="#">
                 منتجات حصريه
                 </a>
               </li>
-              <li className="d" onClick={e=>e.currentTarget.classList.toggle("show")}>
-                <a >
+              <li className="h" onClick={e=>showLeftMenu(e)}>
+                <a href="#">
                       العدسات
                 <AiFillCaretDown  className="down-icon" />
                 </a>
+                <div className="icon-left"> <AiFillCaretLeft  /></div>
                 <div className="links-menu ">
                     <ul>
                       <li>ليندا</li>
@@ -328,10 +371,10 @@ export default function NavBar({scrollY , scroll}) {
                 </a>
               </li>
               <div className="btn">
-              <button onClick={e=>navigate("/register")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
-          <CgProfile className=" text-white text-xl"/>
+              <button onClick={e=>navigate("/account-profile")} className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
+                  <CgProfile className=" text-white text-xl"/>
             <span>  
-                تسجيل الدخول 
+               اهلا احمد ياسر
             </span>
           </button>
           <button className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2">
@@ -342,7 +385,7 @@ export default function NavBar({scrollY , scroll}) {
               </div>
                  
               
-                      </ul>
+                   </ul>
 
                 </div>
           </div>

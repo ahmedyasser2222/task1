@@ -1,7 +1,7 @@
 .con-register {
     position: relative ; 
     margin-top: 220px;
-    width: 100%; height: 500px;
+    width: 100%; height: 530px;
 
 }
 .con-register .register{
@@ -15,6 +15,7 @@
     border-radius: 5px;
     overflow: hidden;
     padding: 15px;
+    margin-bottom: 30px;
 }
 .con-register.com-re{
     height: max-content;
@@ -87,8 +88,12 @@
  .con-register .btn-sub{
     color: white;
     font-weight: bold;
+    margin-bottom: 30px;
  }
-
+.con-register.con-re select{
+   height: 50px;
+   margin-top: 10px;
+}
  @media screen and (max-width :770px) {
     .con-register{
         margin-top: 100px;
@@ -103,4 +108,9 @@
    .con-register .register{
      width: 365px;
    }
+}
+@media screen and (max-width :370px) {
+   .con-register .register{
+      width: 290px;
+    }
 }
