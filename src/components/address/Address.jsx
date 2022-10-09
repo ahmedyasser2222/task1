@@ -14,10 +14,16 @@ function Address(props) {
                          <div className="inputs " >
                                 <div className="input" >
                                    <label htmlFor="country">الدولة</label>
-                                   <div className="form" id='country'onClick={e=>{
+                                   <div className="form" id='country'
+                                   onClick={e=>{
                                     e.currentTarget.classList.toggle("shwo-icon")
                                     e.currentTarget.parentElement.classList.toggle("shwo-icon")
-                                   }}>
+                                   }}
+                                   onBlur={e=>{
+                                    e.currentTarget.classList.remove("shwo-icon")
+                                    e.currentTarget.parentElement.classList.remove("shwo-icon")
+                                   }}
+                                   >
                                         <p>السعودية</p>
                                         <p > 
                                             <AiFillCaretUp className='up'/>
@@ -39,10 +45,17 @@ function Address(props) {
                                 </div>
                                 <div className="input">
                                    <label htmlFor="city">المدينة</label>
-                                   <div className="form" id='city'onClick={e=>{
+                                   <div className="form" id='city'
+                                   onClick={e=>{
                                     e.currentTarget.classList.toggle("shwo-icon")
                                     e.currentTarget.parentElement.classList.toggle("shwo-icon")
-                                   }}>
+                                   }}
+                                   onAbort={e=>{
+                                    e.currentTarget.classList.remove("shwo-icon")
+                                    e.currentTarget.parentElement.classList.remove("shwo-icon")
+                                    console.log("ok")
+                                   }}
+                                   >
                                       <p>السعودية</p>
                                       <p > 
                                             <AiFillCaretUp className='up'/>

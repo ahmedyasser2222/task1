@@ -1,0 +1,228 @@
+.con-pay{
+    margin-top: 210px;
+    height:max-content;
+}
+.con-pay .list{
+    position: relative;
+    height: 80px;
+}
+.con-pay .line{
+    position: absolute;
+    top: 50%;
+    background-color: #977ABA;
+    height: 2px;width: 98%;
+   
+}
+.con-pay ol{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 28%; width: 100%;
+}
+.con-pay ol li{
+    color: black ;
+}
+.con-pay ol .s{
+    margin-top: 10px;
+}
+.con-pay .num{
+    background-color: white;
+    width: 40px; height: 40px;
+    border-radius: 20pc;
+    text-align: center;
+    padding-top: 5px;
+}
+.con-pay .num-end{
+    margin-right: 50px;
+}
+.con-pay .num1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: #977ABA;
+}
+.con-pay .s2{
+  font-weight: bolder;
+}
+.con-pay .titile-sec{
+    margin: 50px 0 20px 0 ;
+   font-size: larger;
+   font-weight: bolder;
+}
+.con-pay .pay-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.con-pay .pay-flex .pay-right{
+    flex: 2;
+}
+.con-pay .pay-flex .pay-left{
+    flex: 2;
+}
+.con-pay .pay1{
+    margin: 10px 0 20px 0;
+}
+.head-card{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #977ABA;
+}
+.head-card .radio{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 10px;
+}
+.head-card .radio p{
+    margin: 0 5px;
+}
+.head-card .img-card{
+    position: relative;
+    height: 30px; width: 50px;
+}
+.head-card .img-card img{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+.con-pay .products{
+    margin: 20px 0;
+}
+.con-pay .product{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    align-items: center;
+   padding: 10px ;
+}
+.con-pay .product .name-prod{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.con-pay .product .img-prod{
+    position: relative;
+    height: 50px; height: 60px;
+}
+.con-pay .product .img-prod img{
+    top: 0; left: 0;
+    width: 100%;height: 100%;
+    object-fit: contain;
+}
+.con-pay .txt-arai textarea{
+    width: 100%;
+    min-height: 50px;
+    max-height: 150px;
+    font-size: 14px;
+    padding: 10px;
+}
+.con-pay .txt-arai textarea:focus{
+    outline: none;
+    border: 0px solid !important;
+}
+.con-pay .cards-left{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.con-pay .card-left{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid  #ddd;
+    height: 50px;
+    padding: 7px ;
+    font-size: 12px;
+    font-weight: bolder;
+}
+.tit{
+    margin: 20px 0;
+}
+.con-pay .address-order{
+    border: 1px solid #ddd;
+    padding: 10px 5px;
+    
+}
+.con-pay .address-order .driver{
+    display: flex;
+    flex-direction: row;
+}
+.con-pay .address-order .driver-img{
+    position: relative;
+    width: 30px;height: 25px;
+    margin: 0 10px;
+}
+.con-pay .info-card{
+    border: px solid #977ABA;
+    padding: 0px ;
+    height: 0;
+    overflow: hidden;
+    transition: height .5s;
+}
+.con-pay .pay.show-card .info-card{
+    border: 1px solid #977ABA;
+    padding: 10px ;
+    height: 230px;
+}
+.con-pay .con-form{
+    display: block;
+}
+.con-pay .con-form input{
+    display: block;
+    width: 100%;
+    margin: 7px 0;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.con-pay .con-form input{
+    outline: none;
+}
+.con-pay .end-form{
+    display: flex;
+    gap: 5px;
+}
+.con-pay .end-form div{
+    width: 50%;
+}
+.con-pay .end-form input{
+    display: block;
+    width: 100%;
+    margin: 7px 0;
+    padding: 4px;
+    
+    border: 1px solid #ddd;
+}
+.con-pay input[type=number]::-webkit-inner-spin-button, 
+[type=number]::-webkit-outer-spin-button  { 
+    appearance: none;
+  -webkit-appearance: none; 
+  -moz-appearance: textfield;
+} 
+.con-pay .send{
+    margin: 40px 0;
+}
+.con-pay .send button{
+    background-color: #977ABA;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    color: white;
+}
+
+@media screen and (max-width : 770px) {
+    .con-pay{
+        margin-top: 50px;
+    }
+    .pay{
+        width: 90%;
+        margin: auto;
+    }
+    .con-pay .pay-flex{
+        flex-direction: column;
+    }
+}

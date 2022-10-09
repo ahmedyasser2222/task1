@@ -79,7 +79,7 @@ function Ad(props) {
                         
                    </div>
                    <div className='btn'>
-                        <button>التالي</button>
+                        <button onClick={e=>history("/payment")}>التالي</button>
                    </div>
                    </div>
              </div>

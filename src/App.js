@@ -14,6 +14,7 @@ import Login from "./components/auth/Login.jsx"
 import Profile from "./components/profile/Profile";
 import Ad from "./components/order/Ad";
 import Address from "./components/address/Address";
+import Pay from "./components/pay/Pay";
 
 function App() {
   const dispatch = useDispatch();
@@ -66,6 +67,8 @@ function App() {
         <Route path="/account-profile" element={<Profile />} />
         <Route path="/order" element={<Ad />} />
         <Route path="/address" element={<Address />} />
+        <Route path="/payment" element={<Pay   />} />
+
 
 
       </Routes>

@@ -48,19 +48,19 @@
     border-radius: 10px;
     margin: 0 10px;
 }
-.form .down{
+.con-address .form .down{
     display: none;
 }
-.form .up{
+.con-address .form .up{
     display: inline;
 }
-.form.shwo-icon .up{
+.con-address .form.shwo-icon .up{
     display: none;
 }
-.form.shwo-icon .down{
+.con-address .form.shwo-icon .down{
     display: inline;
 }
-.inputs .menu{
+.con-address .inputs .menu{
     height: 100px;
     background-color: #8B8B8B;
     position: absolute;
@@ -74,7 +74,7 @@
     display: none;
 }
 
-.inputs .searchs{
+.con-address .inputs .searchs{
     position: relative;
     height: 30px;
     border: 1px solid;
@@ -83,7 +83,7 @@
     flex-direction: row;
     overflow: hidden;
 }
-.inputs input{
+.con-address .inputs input{
     color: black;
     width: 100%;height: 100%;
     top: 0;right:0;
@@ -93,16 +93,16 @@
     outline: none;
     border: none;
 }
-.inputs input:focus{
+.con-address .inputs input:focus{
     border: none!important;
     outline: none;
     outline-style: none;
 }
-.input .form-txt{
+.con-address .input .form-txt{
     padding: 0;
     margin: 10px 0;
 }
-.inputs .searchs .search{
+.con-address .inputs .searchs .search{
     width: 30px;
     height: 30px;
     color: black;
@@ -110,18 +110,18 @@
      padding-top: 3px;
      background-color: white;
 }
-.input ul{
+.con-address .input ul{
     display: flex;
     flex-direction: column;
 }
-.input ul li{
+.con-address .input ul li{
     width: 100%;
 }
-.input ul li:hover{
+.con-address .input ul li:hover{
     background-color: white;
     color: black;
 }
-.input.shwo-icon .menu{
+.con-address .input.shwo-icon .menu{
     display: block;
 }
 

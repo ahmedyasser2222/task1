@@ -4,9 +4,11 @@ import {BsBookHalf} from "react-icons/bs"
 import {VscLock} from "react-icons/vsc"
 import {HiDownload} from "react-icons/hi"
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 function Profile(props) {
     const cards=useRef()
     const conCard=useRef()
+    const history=useNavigate()
 
      const activeCrad=(e,index)=>{
 
@@ -37,7 +39,7 @@ function Profile(props) {
                                                  <p>معلومات التواصل الخاصه بك</p>
                                            </div>
                                     </div>
-                                    <div className="c " onClick={e=>activeCrad(e,1)}>
+                                    <div className="c " onClick={e=>{activeCrad(e,1)}}>
                                            <div className="div-icon">
                                                 <BsBookHalf  className='icon'/>
                                            </div>
@@ -112,7 +114,7 @@ function Profile(props) {
                                       <p> دليل العناوين</p>
                                    </div>
                                    <div className="add sub" >
-                                      <button >اضافه عنوان جديد + </button>
+                                      <button onClick={e=>history("/address")}>اضافه عنوان جديد + </button>
                                    </div>
                                </div>
                                <div className="con-orders" style={{display:"none"}}>

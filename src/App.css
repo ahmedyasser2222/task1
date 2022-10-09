@@ -17,9 +17,7 @@ body{
   height: 40vmin;
   pointer-events: none;
 }
-header{
-  display: block !important;
-}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
