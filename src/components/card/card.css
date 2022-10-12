@@ -3,6 +3,7 @@
     width: 200px;
     height: max-content;
     user-select: none;
+    height: 380px;
 }
 .card .div-img{
     position: relative;
@@ -68,4 +69,9 @@ color: blueviolet;
 .card .btn button:active{
     background-color: white;
     color: #977ABA;
+}
+
+.img-trans{
+    transition: all 1s;
+    transform: translate(-100% , -100px );
 }

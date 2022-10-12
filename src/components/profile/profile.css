@@ -2,7 +2,6 @@
     margin-top: 215px;
     height: max-content;
     width: 100%;
-    
 }
 .con-flex{
     display: flex;
@@ -49,9 +48,11 @@
     font-size: 28px;
     margin: 0 5px;
 }
+
 .con-profile .detals{ 
     flex: 8;
 }
+
 .con-profile .detals h2{
     font-size: 16px;
     margin-bottom: 5px;
@@ -87,10 +88,13 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-top: 7px;
+    
 }
 .con-profile .input input:focus{
-    border: none;
-    outline: none;
+    border: 1px solid transparent; 
+    outline: none !important;
+    border-inline: calc(8/5);
+    
 }
 .con-profile label{
     font-size: 14px;
@@ -109,22 +113,82 @@
 }
 .con-profile .sub{
     background-color: #977ABA;
-    padding: 4px 18px;
     border-radius: 4px;
     color: white;
 }
 .con-profile button{
     font-size: 14px;
+    padding: 4px 18px;
+
 }
 .con-profile .delet{
     padding: 0 25px;
+    margin: 25px 0;
 }
 .con-profile .delet::after{
     display: table;
     clear: both;
     content: "";
 }
-
+.con-profile .hof{
+    position: fixed;
+     left: 0;
+    bottom: 0;
+    width: 100vw; height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 21;
+    display: none;
+}
+.con-profile .hof.show{
+    display: block;
+}
+.con-profile .con-delet{
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50% , -50%);
+    width: 300px; height: 150px;
+    border: 1px solid;
+    z-index: 22;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    display: none;
+}
+.con-profile .con-delet.show{
+    display: block;
+}
+.con-profile .con-delet .div1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px ;
+    font-weight: bold;
+}
+.con-profile .con-delet .div1 button:hover{
+  background-color: transparent;
+}
+.con-profile .con-delet .div3{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+.con-profile .con-delet .div3 button{
+    background-color: #ddd4;
+    margin: 0 4px;
+    border-radius: 5px;
+}
+.con-profile .con-delet button:hover{
+    background-color: #ddd;
+}
+.con-profile .con-delet .cancel{
+    color: #ddd;
+    font-size: 20px;
+    cursor: pointer;
+}
+.con-profile .con-delet .cancel:hover{
+    color: #000;
+}
 .con-profile hr{
     margin: 5px 0;
 }
@@ -134,11 +198,12 @@
 .con-profile .logout{
     padding: 0 25px;
 }
-.logout button{
+.con-profile .logout button{
     background-color: #DC3545;
     padding: 4px 7px;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }
 .con-profile .app{
   display: flex;
@@ -148,12 +213,17 @@
   height: 80px;
   padding: 25px ; 
 }
-.con-profile .app-btn button{
+.app-txt{
+    flex: 50%;
+ }
+.con-profile .app-btn a{
     background: linear-gradient(90deg , #912D5B , #562A6C) ;
     color: white;
     padding: 8px 12px;
     border-radius: 10px;
+    cursor: pointer;
 }
+
 .con-profile .add{
     margin: 25px;
     background-color: white;
@@ -178,6 +248,58 @@
 .con-profile .head-order p{
     color: black;
 }
+.con-profile .notifiaction{
+    margin: 25px 25px 0 25px;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D4EDDA;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #155724;
+    display: none;
+}
+.con-profile .notifiaction.show{
+    display: flex;
+}
+.con-profile .notifiaction p.cancel{
+    font-size: 19px;
+    cursor: pointer;
+    color: #000;
+}
+.con-profile .notifiaction p.cancel:hover{
+    color: #155724;
+}
+.con-profile .cards-address{
+    margin: 25px;
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25px;
+}
+.con-profile .cards-address .card-addres{
+    width: 40%; height: 100px;
+    border: 1px solid #977ABA;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px; 
+    font-size: 13px;
+}
+.con-profile .cards-address .card-addres p{
+    margin: 5px 0;
+}
+.con-profile .card-addres .trash{
+  font-size: larger;
+  color: #977ABA;
+  height: max-content;
+  cursor: pointer;
+}
+.con-profile .card-addres .trash:hover{
+    color: black;
+}
 
 @media screen and (max-width : 770px) {
     .con-profile{
@@ -185,7 +307,6 @@
     }
     .con-profile .flex-right , .flex-left{
               flex: 100%;
-    
      }
      .con-profile .flex-right{
         padding: 0;
@@ -205,9 +326,24 @@
      .app-txt{
         flex: 50%;
      }
+     .con-profile .cards-address .card-addres{
+        width: 80%;
+     }
 
 
 
     
        
+}
+
+@media screen and (max-width : 420px){
+    .con-profile .app{
+        flex-direction: column;
+        height: 130px;
+        padding: 10px;
+        align-items: center;
+    }
+    .app-btn{
+        width:max-content;
+    }
 }

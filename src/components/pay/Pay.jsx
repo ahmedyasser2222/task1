@@ -7,8 +7,6 @@ function Pay(props) {
      const [num ,setNum]=useState(0)
      const pay1=useRef()
      const pay2=useRef()
- 
-      
      
     return (
         <div className='con-pay'>

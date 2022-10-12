@@ -1,13 +1,11 @@
 import { Carousel } from "flowbite-react";
 import { useRef } from "react";
-import CategoryInicator from "../components/CategoryInicator";
-import CategorySection from "../components/CategorySection";
-import Separator from "../components/Separator";
-import { Products } from "../data/products";
+import CategoryInicator from "../../components/categoryInicator/CategoryInicator";
+import CategorySection from "../../components/CategorySection";
+import Separator from "../../components/Separator";
+import { Products } from "../../data/products";
 import Slider from "react-slick";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Cart from "./cart/Cart";
-
+import "./home.css"
 export default function Home() {
   let slider=document.getElementById("ss")
   let isDown=false ;
@@ -26,6 +24,7 @@ export default function Home() {
   return (
     <div className="xl:mt-56 md:mt-40 mt-30 home">
       <div className="mt-20  m-con">
+        
         <div  className="flex flex-row flex-nowrap items-center justify-between overflow-x-auto overflow-y-hidden con-cat">
           <CategoryInicator
             imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/e0b92311-6bc6-4ea1-8f3b-713a0fe15706-260x260.jpg"
@@ -48,6 +47,7 @@ export default function Home() {
             title="المكياج و الاكسسوارات"
           />
         </div>
+
         <div className="slider" >
           <Slider {...settings}  nextArrow={false} prevArrow={false}>
           <button className="h-full " >
@@ -169,13 +169,11 @@ export default function Home() {
           </Slider>
         </div>
       </div>
-      
       <Separator />
       <div className="mt-20 m-con ">
         <CategorySection title="أسعار مميزة" products={Products.slice(0, 10)} />
       </div>
    
-
       <div className=" mt-20 m-con ">
         <CategorySection
           title="عروض لي مور"

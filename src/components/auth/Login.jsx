@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { NavLink ,useNavigate } from "react-router-dom";
-import "../../style/register.css"
+import "./register.css"
 import {GiCancel} from 'react-icons/gi'
 
 const Register = () => {

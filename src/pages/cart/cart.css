@@ -187,6 +187,10 @@
 }
 
 @media screen and (max-width :770px) {
+    .con-cart{
+        margin-top: 80px;
+        width: 100%;
+    }
     .con-cart .cart-flex{
         flex-direction: column;
         width: 90%;
@@ -213,6 +217,35 @@
     }
     .prod div.price{
         margin-right: 70px;
+     }
+
+}
+@media screen and (max-width :420px) {
+    .con-cart {
+        flex-direction: column;
+        width: 100%;
+    }
+    .con-cart .prod{
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+    }
+    .con-cart .prod div{
+        margin: 5px 0;
+        width: 100%;
+    }
+    .prod div.count{
+        width: 40%;
+       justify-content: center !important;
+        font-size: larger;
+        margin-right: 70px;
+    }
+    .prod .count span{
+        width: 20px  !important;
+    }
+    .prod div.price{
+        margin-right: 70px;
+        width: 50%;
      }
 
 }

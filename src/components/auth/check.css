@@ -1,0 +1,72 @@
+.check-con{
+    height: 250px;
+    margin-top: 320px;
+    position: relative;
+}
+.check-con .p1{
+    font-size: 22px;
+    font-weight: bold;
+}
+.check-con .p2{
+    font-size: 14px;
+    margin: 5px 0;
+}
+.check-con .check{
+    position: absolute;
+    top: 20%; left: 50%;
+    transform: translate(-50% , -50%);
+     height: 300px ;
+    width: 300px;
+    margin-top: 50px;
+}
+.check-con .numbers{
+    display: flex;
+    justify-content: center;
+     margin:  25px 0;
+    gap: 30px;
+    width: 100%;
+}
+.check-con .numbers input{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    width: 20%;
+    padding: 5px;
+    font-size: 17px;
+}
+.check input[type=number]::-webkit-inner-spin-button, 
+.check [type=number]::-webkit-outer-spin-button  { 
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: textfield;
+}
+.check-con .btn-inter{
+    width: 100%;
+    margin: 15px 0;
+}
+.check-con .btn-inter button{
+    width: 100%;
+   background-color: #dddd;
+   padding: 12px ;
+   border-radius: 10px;
+}
+
+@media screen and (max-width : 770px) {
+    .m-con{
+        width: 100%;
+    }
+    
+    .check-con{
+        margin-top: 100px;
+        height: 400px;
+        width: 100%;
+    }
+    .check-con .check{
+        width: 80%;
+        margin-top: 100px;
+    }
+    .numbers input{
+        width: 20px;
+    }
+ 
+}

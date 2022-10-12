@@ -1,0 +1,202 @@
+.con-all{
+    margin-top: 210px;
+    height: max-content;
+}
+.con-all .top{
+    background-color: #E9ECEF;
+}
+.con-all .top .links-top{
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    font-size: 14px;
+}
+.con-all .top .links-top span{
+    color: #977ABA;
+}
+.con-all .top p{
+    color: #707981;
+}
+.con-all .filter{
+    margin: 25px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.con-all .filter-1{
+    display: flex;
+    gap: 20px;
+    width: 50%;
+}
+.con-all .filter-1 div{
+    width: max-content;
+    margin: 0 20px;
+}
+.con-all .filter-1  button{
+    margin-top: 10px ;
+    border: 1px solid #ddd;
+    width: max-content;
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-align: start;
+}
+.con-all .filter .p2{
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.con-all .filter-prod{
+    position: relative;
+}
+.con-all .filter-prod select{
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    outline: none;
+}
+.con-all .filter .count{
+    align-items: flex-end;
+    color: #977ABA;
+}
+.con-all .products{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.con-all .product {
+    width: 22%;
+}
+.con-all .pagnation{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    
+}
+.con-all button{
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+.con-all button:hover{
+    background-color: #977ABA;
+    color: white;
+}
+.con-all .pagnation button:first-child{
+    border-top-right-radius : 5px;
+    border-bottom-right-radius : 5px;
+}
+.con-all .pagnation button:last-child{
+    border-top-left-radius : 5px;
+    border-bottom-left-radius : 5px;
+}
+.con-all .body{
+    position: fixed;
+    top: 0;left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 21;
+    display: none;
+}
+.con-all .body.show{
+    display: block;
+}
+.con-all .selet-price{
+    position: fixed;
+    top: 50%; left: 50%;
+    
+    background-color: white;
+    z-index: 22;
+    transform: translate(-50% , -50%);
+    padding: 10px;
+    display: none;
+}
+.con-all .selet-price.show{
+    display: block;
+}
+.con-all .selet-price > div{
+  width: 95%;
+}
+.con-all .top-selects{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.con-all .inputs{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row ;
+    gap: 15px
+}
+.con-all .inputs .input{
+    width: 40%;
+}
+.con-all .inputs .input input{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.con-all .chek{
+    margin: 15px ;
+}
+.con-all .chek p{
+    display: inline;
+    margin: 0 5px;
+}
+.con-all .btns{
+    display: flex;
+    justify-content:flex-end;
+}
+.con-all .btns button{
+    margin-left: 20px;
+}
+.con-all .delet{
+    font-size: 25px;
+    cursor: pointer;
+}
+@media screen and (max-width :770px) {
+    .con-all{
+        margin-top: 60px;
+    }
+    .con-all .product {
+        width: 40%;
+    } 
+    .con-all .filter .count{
+        display: none;
+    }
+    .con-all .selet-price{
+       margin-right: 20px;
+       left: 45%;
+    }
+    .con-all .filter-1{
+        width: 100%;
+    }
+    .con-all .selet-price .inputs{
+         flex-direction: column;
+    }
+    .con-all .delet{
+        margin-left: 20px;
+
+    }
+
+
+
+
+}
+@media screen and (max-width :420px) {
+
+    .con-all .product {
+        width: 60%;
+    }
+    .con-all .filter-1{
+        width: max-content;
+    }
+}

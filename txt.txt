@@ -104,3 +104,22 @@
                     </ul>
                 </div>
               </div>
+
+
+
+
+
+
+      <Suspense
+          fallback={
+            <div className="flex items-center justify-center">
+              <Spinner size="lg" /> Loading..
+            </div>
+          }
+        >
+
+                  {/* <Flowbite theme={{ theme }}> */}
+                  // app 
+                 {/* </Flowbite> */}
+
+      </Suspense>

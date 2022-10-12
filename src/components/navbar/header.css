@@ -14,6 +14,9 @@ header{
     height: 130px;
     transition: all .6s;
 }
+.links .icon-left{
+  display: none;
+}
 .nav-center{
     height: min-content;
     height: 100%;
@@ -141,6 +144,10 @@ header{
   align-items: center;
   justify-content: center;  
 }
+
+.nav-center .bars{
+  display: none;
+}
 /*=========================================================*/
 .links{
   transition: all 0.5s;
@@ -158,10 +165,28 @@ header{
   justify-content: space-between;
   width:100%;    
 }
+.links ul.main > li:hover{
+  background-color: white;
+}
 .links .down-icon{
   display:inline;
   color: white;
+  margin: 0 5px;
 }
+.links .up-icon{
+  display:inline;
+  color: white;
+  display: none;
+  margin: 0 5px;
+  color: #796295;
+}
+.links ul li:hover .down-icon{
+  display: none;
+}
+.links ul li:hover .up-icon{
+  display: inline;
+}
+/*==============*/
 .links ul li{
   padding: 8px 12px;
   height: 50px;
@@ -182,16 +207,16 @@ header{
   transition: all 0.6s;
   height: 0;
   overflow: hidden;
-  transition: all 0.5s;
+  transition: all 0.6s;
 }
 .links ul li:hover .links-menu{
-  height: 100px;
+  height: 120px;
 }
 .links .links-menu ul{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: white;
+  background-color: #f9f9f9;
   padding: 10px 0;
   justify-content: space-around;
   width: 1140px;
@@ -208,9 +233,6 @@ header{
 .links .links-menu ul li:hover{
   color: #796295;
   cursor: pointer;
-}
-.links ul li:hover {
-  background-color:white ;
 }
 .links a{
   color: white;
@@ -232,9 +254,6 @@ header{
   font-size: x-large;
   color: white;
 }
-.links ul li:hover  .down-icon{
-  color: #796295;
-}
 .price-cart{
   font-size: x-large;
   color: white;
@@ -243,6 +262,12 @@ header{
   display: none;
 }
 .links .back-icon{
+  display: none;
+}
+.links body{
+  display: none;
+}
+.links .back-icon .hide-icon{
   display: none;
 }
 
@@ -284,13 +309,14 @@ header{
     height: 40px;
     justify-content: space-around;
   }
-  .links .div-links ul.main li:not(.d) {
+  .links .div-links ul.main li:not(.h) {
     font-size: small;
     display: flex;
     padding: 0;
     align-items: center;
     height: 40px;
   }
+  
 }
 @media screen and (max-width : 770px ){
  .m-con{
@@ -307,7 +333,7 @@ header{
  .nav-center{
   width: 80%;
  }
-  nav{
+ nav{
     width: 600px;
   }
   .div-search{
@@ -350,7 +376,33 @@ header{
     position: absolute;
     top: 100%;right: 0;
  }
- 
+ .logo{
+  height: 50px !important;
+  display: flex;
+  margin: 0;padding: 0;
+   width: 100px !important;
+ }
+ .logo .btn-logo{
+  position: relative;
+  width: 100px; height: 80px;
+ }
+ .logo .btn-logo img{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+ }
+ .nav-center .bars{
+  margin-left: 20px;
+  display: inline;
+}
+.nav-center img{
+  height: 80px; width: 80%;
+}
+.nav-center .bars-icon{
+  font-size:33px !important ;
+  font-weight: bolder;
+}
   /*=======================*/
   .links{
     display: block;
@@ -368,34 +420,49 @@ header{
  }
   .div-links{
     margin: 0;padding: 0;
-    width: 300%;
+    width: 100%;
     height: max-content !important;
   }
-  .links ul.main{
+.links ul.main{
     display: flex;
     flex-direction: column;
     width: 100% ;
     transition: all 1s;
-   }
-   .links ul.main li{
+ }
+.links ul.main li{
     width: 100%;
-    padding-right: 10px !important;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding: 25px 10px !important;
+    cursor: pointer;
+ }
+  .links ul.main li:hover{
+    background-color: transparent;
   }
-  .links  .links-menu{
+  .links ul.main li:hover .up-icon{
+    display: none;
+  }
+  .links ul.main li a{
+    font-weight: bold;
+    color: white ;
+  }
+  .links ul.main li:hover a , .links ul.main li:hover .icon{
+    color: white;
+  }
+  .links  .links-menu{     
     position: absolute;
-    top: 0;right: 100%;
+    top: 0;right:0%; 
     width: 100%; height:100vh;
  }
+ 
  .links  .links-menu ul{
     display: none;
     height: max-content;
  }
-
  .links .links-menu ul li{
   width: 100%;
-  padding: 8px 12px;
+  padding: 15px 10px !important;
+
   color: white;
+ font-weight: bold;
 }
 .links.show li.show .links-menu{
   display: block;
@@ -411,35 +478,35 @@ header{
 }
 .links.show  li.show .links-menu ul li{
   width: 100%;
-  padding: 8px ;
   color: white;
 }
 .links.show  li.show .links-menu ul li:hover{
   background-color: #796295;
   color: white;
 }
-
-
 .links .back-icon{
   display: none;
   position: absolute;
   top: 8px; right: 15px ;
   color: white !important;
   border-radius: 5px;
+  padding: 0;
 }
 .links .back-icon .hide-icon{
   color: white;
+  font-size: 19px;
+  margin: 0;padding: 0;
 }
-
  .links.show ul.main{
   transform: translateX(100%);
  }
+ .links.show .links-menu{
+  right: 100%;
+ }
+
  .links.back ul.main{
   transform: translateX(0%);
  }
-
-  
-  
   .links  ul.main > li{
     display: flex;
     justify-content: space-between;
@@ -455,11 +522,12 @@ header{
     display: inline;
     color: white;
   }
-  .links li:hover .icon-left{
-    color: #796295;
-  }
   .links li{
     cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .links .back-icon .hide-icon{
+    display: block;
   }
   
  /*=============*/
@@ -478,108 +546,13 @@ header{
       background-color: #555;
       z-index: 0;
    }
+   
    .links .h{
     display: inline;
    } 
     .price-cart{
     display: none;
    }
- /* .links{
-  display: block;
-  height: 100vh;
-  position: absolute;
-  top: 0;right: 0;
-  width: 60%;  
-  background-color:#977ABA ;
-  padding-top: 35px;
-  overflow-y: scroll;
-  z-index: 5;
-}
-.div-links{ 
-  margin: 0;padding: 0;
-  height: 95vh;
-  width: max-content;
-   } 
-     .links .h{
-      display: inline;
-     } 
-      .price-cart{
-      display: none;
-     }
-     .links .div-links{
-      width: 100rem; 
-      height: max-content;
-      display: flex;
-
-      justify-content: flex-start !important;
-     }
-     .links ul.main{
-      display: flex;
-      flex-direction: column;
-      width: 100em !important;
-      overflow: hidden;
-      transition: all 1s;
-
-     }
-     .links .div-links ul.main li{
-      width: 100%;
-      text-align: start;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
-    .links .div-links ul.main li:not(.d) {
-      padding: 8px 12px;
-    }
-    .links .links-menu{
-      border: 1px solid;
-      display: none;
-      transition: all 0.5s;
-      position: absolute;
-      top: 0;right: 100%;
-      width: 100%; height: 100%;
-   }
-     .links.show-menu{
-        width: 60%;
-     }
-     .links .links-menu ul{
-        position: absolute;
-        top: 0; right: 100%;
-        width: 200px;
-     }
-     .links ul li .links-menu ul li{
-        width: 100%;
-        height: 30px;
-     }
-     .links ul li.show{
-        display: block;
-        height: max-content;
-     }
-     .links ul li.show li{
-        display: block;
-        height: max-content;
-     }
-     .links ul li.show .links-menu{
-        display: flex;
-        opacity: 1;
-        z-index: 10;
-     }
-     .links ul li.show .links-menu ul{
-        transform: translateX(200px);
-     }
-     header .hide-menu{
-        display: block;
-     }
-     .icon a.show{
-        display: inline;
-      }
-      .body{
-        position: absolute;
-        top: 0;left: 0;
-        width: 100%;height: 100vh;
-        opacity: 0.5;
-        background-color: #555;
-        z-index: 0;
-       }
-        */
       .links::-webkit-scrollbar {
         width: 6px;
     }
@@ -610,8 +583,12 @@ header{
           flex: 30%;
           text-align: center;
       }
+    header  .country{
+        width: 80%;
+      }
   }
-  @media screen and (max-width : 400px ){
+
+@media screen and (max-width : 475px ){
     .m-con{
       width: 100%;
     }
@@ -624,3 +601,74 @@ header{
       text-align: center;
   }
   }
+
+ .body{
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;height: 100vh;
+    opacity: 0.5;
+    background-color: #555;
+    z-index: 0;
+ }
+ .body-country{
+  position: fixed;
+  top: 0;left: 0;
+  width: 100%;height: 100vh;
+  opacity: 0.5;
+  background-color: #555;
+  z-index: 25;
+  display: none;
+}
+ header .body-country.show{
+  display: block;
+ }
+.country{
+    position: absolute;
+    top: 50vh;left: 50vw;
+    transform: translate(-50% , -50%);
+    background-color: white;
+    z-index: 26;
+    padding: 15px;
+    border: 1px solid #ddd;
+    width: 30%;
+    display: none;
+}
+.country.show{
+  display: block;
+}
+.top-country{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.country .menu{
+  width: 100%;
+}
+.country .menu select{
+  width: 100%;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+}
+.country .btns{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px ;
+}
+.country .btns button{
+  background-color: #ddd4;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin: 5px ;
+}
+.country .btns button.save{
+  background-color: #977ABA;
+  color: white;
+}
+.country .btns button:hover{
+  background-color: #ddd;
+}
+.country .btns button.save:hover{
+  background-color: #796295;
+}

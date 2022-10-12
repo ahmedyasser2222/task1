@@ -1,7 +1,6 @@
 import { Carousel } from "flowbite-react";
 import React, { useEffect, useState } from "react";
-import Card from "./Card"
-import "../style/card.css"
+import Card from "./card/Card"
 import CardSkeleton from '../Skeleton/CardSkeleton'
 import Slider from "react-slick";
 
@@ -98,13 +97,13 @@ export default function CategorySection(props) {
   return (
     <div className="category">
       <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
-      <div className="my-10 xl:h-96 h-96 " style={{cursor:"grab"}}>
+      <div className="my-10 xl:h-96 h-96 h-slide " style={{cursor:"grab"}}>
 
        {products ?
-   <Slider {...settings}  rtl={true} arrows={true} nextArrow={<p style={{color:'black'}}>next</p>} prevArrow={<p>next</p>} >
+        <Slider {...settings} className={"slide-hh"}  rtl={true} arrows={true} nextArrow={<p style={{color:'black'}}>next</p>} prevArrow={<p>next</p>} >
           {products.map(product =>{
             return(
-              <Card data={product}  />
+              <Card product={product}  />
             )
           }) }
           </Slider>
