@@ -75,6 +75,7 @@
  }
  .con-register input{
     width: 100%;
+    direction: ltr !important;
  }
  .con-register .sub input{
     background-color: #977ABA;
@@ -93,6 +94,10 @@
 .con-register.con-re select{
    height: 50px;
    margin-top: 10px;
+}
+.con-register input{
+   direction: ltr !important;
+   text-align: end;
 }
  @media screen and (max-width :770px) {
     .con-register{

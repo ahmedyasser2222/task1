@@ -29,8 +29,8 @@ const Register = () => {
                         <h2>تسجيل حساب جديد</h2>
                         <p>لتسجيل الدخول أضف رقم جوالك ادناه،<br/> وسيتم ارسال رسالة نصية للتحقق من الرقم المضاف ..</p>
                    </div>
-                   <form className="u">
-                   <input type="text" placeholder="الاسم بالكامل" required min={3}/>
+                   <form className="u" >
+                   <input type="text" placeholder="الاسم بالكامل" required min={3} />
                    <input type="email" placeholder="البريد الالكتروني" required/>
 
                    <div className="input">

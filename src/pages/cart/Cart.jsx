@@ -22,8 +22,7 @@ export default function Cart(props) {
         cloneProducts.splice( index , 1)
         setProductsCart(cloneProducts)
    }
-    
-   
+     
   return (
     <div className='con-cart'>
       { productsCart ? 

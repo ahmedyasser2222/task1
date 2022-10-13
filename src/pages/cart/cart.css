@@ -245,7 +245,7 @@
         width: 100%;
     }
     .con-cart .prod{
-        flex-direction: column;
+        flex-direction: row;
         height: max-content;
         width: 100%;
     }
@@ -259,6 +259,12 @@
         font-size: larger;
         margin-right: 70px;
     }
+    .prod  .delet{
+          width: 10% !important;
+     }
+     .prod  .name{
+           width: 80% !important;
+     }
     .prod .count span{
         width: 20px  !important;
     }
