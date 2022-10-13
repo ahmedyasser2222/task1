@@ -99,7 +99,7 @@ export default function CategorySection(props) {
       <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
       <div className="my-10 xl:h-96 h-96 h-slide " style={{cursor:"grab"}}>
 
-       {products ?
+       {/* products */ 0?
         <Slider {...settings} className={"slide-hh"}  rtl={true} arrows={true} nextArrow={<p style={{color:'black'}}>next</p>} prevArrow={<p>next</p>} >
           {products.map(product =>{
             return(

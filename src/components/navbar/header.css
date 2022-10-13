@@ -12,7 +12,7 @@ header{
     background-color: #977aba;
     flex-wrap: wrap;
     height: 130px;
-    transition: all .6s;
+    transition: all 0.4s;
 }
 .links .icon-left{
   display: none;
@@ -124,17 +124,16 @@ header{
   width: 30px;
  }
  .nav-center-con .icon .i{
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: bolder;
  }
  .nav-center .sup{
     font-size:15px ;
     color:white ;
-    width: 20px;height: 18px;
-  
-        position: absolute;
+    width: 20px;height: 20px;
+    position: absolute;
     top: -3px;right: -5px;
     text-align: center;
-    vertical-align: middle;
     border-radius: 15px;
   }
 .nav-center .cart{
@@ -209,9 +208,7 @@ header{
   overflow: hidden;
   transition: all 0.6s;
 }
-.links ul li:hover .links-menu{
-  height: 120px;
-}
+
 .links .links-menu ul{
   display: flex;
   flex-direction: row;
@@ -255,8 +252,10 @@ header{
   color: white;
 }
 .price-cart{
-  font-size: x-large;
+  font-size: large;
   color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 .links .icon-left{
   display: none;
@@ -270,13 +269,16 @@ header{
 .links .back-icon .hide-icon{
   display: none;
 }
-
+.links ul li:hover .links-menu{
+  height: 120px;                /*============= ============*/
+}
 
  @media screen and(min-width : 770px) {
   .links.hide{
     height: 0;
     overflow: hidden;
  }
+ 
  }
  @media screen and (max-width : 1160px ){
   .m-con{
@@ -327,7 +329,7 @@ header{
  }
  .nav-center-con {
   padding: 30px 15px ;
-  height: 60px;
+  height: 65px;
   width: 100%;
  }
  .nav-center{
@@ -344,11 +346,24 @@ header{
     justify-content: center;
     display: block;
     margin: 15px 0;
-    width: 80%;
-    right: 10%;
-    border-radius: 0;
+    width: 100%;
+    border-radius: 0px;
     transition: all 0.5s;
  }
+ .div-search-2 input{
+  border-radius: 2px;
+  border: none;
+  font-size: small;
+  padding: 0;
+  height: 0;
+  transition: height 0.2s;
+ }
+ .show-search .div-search-2 input{     /*================*/
+  padding-right: 38px;
+  height: 40px;
+ }
+
+
  .nav-center a{
   position: relative;
  }
@@ -369,9 +384,7 @@ header{
  .nav-center .sup{
   right: -10px;
  }
- .div-search-2{
-  margin-top: 25px;
- }
+
  .items-search{
     position: absolute;
     top: 100%;right: 0;
@@ -409,17 +422,14 @@ header{
     height: 100vh;
     position: absolute;
     top: 0;right: 0;
-    width: 0%;  
+    width: 0%;                 /* width = 0   */
     background-color:#977ABA ;
     padding-top: 35px;
     overflow-y: auto;
     z-index: 5;
   }
-  .links.show-menu{
-    width: 60%;
- }
-  .div-links{
-    margin: 0;padding: 0;
+ .links .div-links{
+    /* margin: 0;padding: 0; */
     width: 100%;
     height: max-content !important;
   }
@@ -428,61 +438,56 @@ header{
     flex-direction: column;
     width: 100% ;
     transition: all 1s;
+    
  }
-.links ul.main li{
+ .links   ul.main > li{
+  display: flex;
+  justify-content: space-between;
+}
+.links ul.main  li{
     width: 100%;
     padding: 25px 10px !important;
     cursor: pointer;
  }
-  .links ul.main li:hover{
-    background-color: transparent;
-  }
-  .links ul.main li:hover .up-icon{
-    display: none;
-  }
-  .links ul.main li a{
-    font-weight: bold;
-    color: white ;
-  }
-  .links ul.main li:hover a , .links ul.main li:hover .icon{
-    color: white;
-  }
-  .links  .links-menu{     
-    position: absolute;
-    top: 0;right:0%; 
-    width: 100%; height:100vh;
- }
- 
- .links  .links-menu ul{
-    display: none;
-    height: max-content;
- }
- .links .links-menu ul li{
-  width: 100%;
-  padding: 15px 10px !important;
 
-  color: white;
- font-weight: bold;
+ .links ul.main > li:hover{
+  background-color: transparent;
 }
-.links.show li.show .links-menu{
+.links ul.main li:hover .up-icon{
+  display: none;
+}
+.links ul.main li a{
+  font-weight: bold;
+  color: white ;
+}
+.links ul.main li:hover a , .links ul.main li:hover .icon{
+  color: white;
+}
+.links  .links-menu{     
+  position: absolute;
+  top: 0;right:100%;         /*====*/
+  width: 100%; height:100vh;
+  display: none;
+}
+/* .links  .links-menu.q{
   display: block;
-  height: 100vh;
-  width: 100%;
-}
-.links.show li.show ul{
-  display: flex;
-  flex-direction: column;
-  background-color: #977ABA;
+  border: 1px solid;
+} */
+.links  .links-menu ul{
+  display: flex;                /*=======*/
   height: max-content;
-  border: none;
-}
-.links.show  li.show .links-menu ul li{
+  background-color: transparent;
+  flex-direction: column;
+  border: none;  
   width: 100%;
-  color: white;
 }
-.links.show  li.show .links-menu ul li:hover{
-  background-color: #796295;
-  color: white;
+
+  /*===================*/
+.links .links-menu ul li{
+width: 100%;
+padding: 15px 10px !important;
+color: white;
+font-weight: bold;
 }
 .links .back-icon{
   display: none;
@@ -497,22 +502,40 @@ header{
   font-size: 19px;
   margin: 0;padding: 0;
 }
- .links.show ul.main{
+
+  /* ===== when make show to menu =====*/  
+.links.show-menu{
+    width: 60%;
+    } 
+
+.links.show  li.show .links-menu{
+  display: block;
+  height: 100vh;
+  width: 100%;
+}
+.links.show  li ul{
+  display: flex;
+  flex-direction: column;
+  background-color: #977ABA;
+  height: max-content;
+  border: none;
+}
+.links.show   li.show .links-menu ul li{
+  width: 100%;
+  color: white;
+}
+.links.show  ul.main{
   transform: translateX(100%);
  }
  .links.show .links-menu{
   right: 100%;
  }
-
+ /*=========================*/
  .links.back ul.main{
   transform: translateX(0%);
  }
-  .links  ul.main > li{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-  }
-  .links  ul.main > li .icon-left{
+  
+  .links.show   ul.main > li .icon-left{
     padding: 0 10px;
   }
  .links .down-icon{
@@ -522,10 +545,7 @@ header{
     display: inline;
     color: white;
   }
-  .links li{
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
+ 
   .links .back-icon .hide-icon{
     display: block;
   }
@@ -571,16 +591,16 @@ header{
            width: 100%;
            display: flex;
            background-color: transparent;
-           justify-content: space-around;
+           justify-content: flex-start;
            margin: 15px 0;
            flex-wrap: wrap;
       }
-      .links button{
+      .links .btn button{
           border: 1px solid white;
           color: white;
           padding: 2px 6px;
           margin: 5px;
-          flex: 30%;
+          width: max-content;
           text-align: center;
       }
     header  .country{
@@ -599,6 +619,7 @@ header{
       margin: 5px;
       flex: 90%;
       text-align: center;
+      width: max-content;
   }
   }
 

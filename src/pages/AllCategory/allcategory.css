@@ -1,5 +1,5 @@
 .con-all{
-    margin-top: 210px;
+    margin-top: 215px;
     height: max-content;
     width: 100%;
     
@@ -7,31 +7,34 @@
 .con-all .top-category{
     width: 100%;
     background-color: #E9ECEF;
-    padding: 8px 12px;
-    font-size: 15px;
-    padding: 11px 0;
+    display: flex;
+    align-items: center;
+}
+.con-all .top-category p{
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #977ABA;
 }
 .con-all .categories{
-    margin: 25px 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-
 }
 .con-all .categories >div{
-    width: 30%;
+    width: 32%;
 }
 .con-all .category{
     min-height: max-content;
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 100%;
-    margin: 15px;
+    margin: 10px 15px;
 }
 .con-all .category .img-cat{
     background-color: #ddd;
     height: 160px;
+    width: 100%;
 }
 .con-all .txt-cat{
     padding: 7px;
@@ -47,16 +50,26 @@
 
 @media screen and (max-width :1020px) {
     .con-all{
-        margin-top: 50px;
+        margin-top: 65px;
     }
     .m-con{
         width: 100%;
     }
+    .con-all .top-category p{
+        padding: 10px 20px;
+    }
     .con-all .categories{
         justify-content: center;
-        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
     }
     .con-all .categories >div{
-        width: 80%;
+        width: 95%;
     }
+    .con-all .categories .categories1 >div{
+     width: 100%;
+     padding: 0;margin: 10px 0;
+    }
+
 }
