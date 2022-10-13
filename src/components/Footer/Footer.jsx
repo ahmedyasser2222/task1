@@ -216,8 +216,8 @@ export default function FooterComp() {
               </div>
 
               <div className="dev">
-                <div className="">
-                <p className="devlop">Develop by : Le Mure Group </p>
+                <div className="developby">
+                <p className="devlop">Developed by  <span> logo </span> <span className="name">Perfect Touch</span></p>
                 </div>
                 
                 <div className="end">

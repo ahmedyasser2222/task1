@@ -1,30 +1,38 @@
+import React from '../AllProducts/allProducts.css';
 import Card  from '../../components/card/Card';
-import './allpages.css';
 import {Products} from "../../data/products"
-import {Pagination} from "flowbite-react"
-function AllPages(props) {
-   
-   
+
+
+import CardSkeleton from '../../Skeleton/CardSkeleton';
+import { useNavigate } from 'react-router-dom';
+
+function Category(props) {
+   const history=useNavigate()
+
     const selectPrice=()=>{
-      document.querySelector(".selet-price").classList.toggle("show")
-      document.querySelector(".body").classList.toggle("show")
-    }
-  
-
-
+        document.querySelector(".selet-price").classList.toggle("show")
+        document.querySelector(".body").classList.toggle("show")
+      }
     return (
         <div className='con-all'>
              <div className="top">
                     <div className="m-con">
                           <div className="links-top">
-                                <span>الصفحه الرئيسية</span>
-                                <p>/ جميع المنتجات </p>
+                                <span onClick={e=>history('/')}>الصفحه الرئيسية</span>
+                                <p>/  العناية بالبشرة </p>
+                          </div>
+                    </div>
+             </div>
+             <div className="category-name">
+                    <div className="m-con">
+                          <div className="cate-name">
+                                <span>العناية بالبشرة</span>
                           </div>
                     </div>
              </div>
              <div className="m-con">
              <div className="body " onClick={e=>selectPrice()}></div>
-                    <div className="filter">
+                    <div className="filter cate">
                         <div className='filter-1'>
                             <div className="set-price">
                                     <p>تصفية النتائج</p>
@@ -71,7 +79,8 @@ function AllPages(props) {
                         </div>
                     </div>
                     <div className="products">
-                            <div className="product">
+                        {1 ? 
+                        <><div className="product">
                                <Card  product={Products[0]}/>
                             </div>
                             <div className="product">
@@ -89,6 +98,24 @@ function AllPages(props) {
                             <div className="product">
                                <Card  product={Products[0]}/>
                             </div>
+                        </> :
+                        <>
+                        <div className="product">
+                              <CardSkeleton />
+                         </div> 
+                         <div className="product">
+                              <CardSkeleton />
+                         </div> 
+                         <div className="product">
+                              <CardSkeleton />
+                         </div> 
+                         <div className="product">
+                              <CardSkeleton />
+                         </div> 
+                        </>
+                        }
+                            
+                                   
                             
                     </div>
                     <div className="pagnation">
@@ -104,4 +131,4 @@ function AllPages(props) {
     );
 }
 
-export default AllPages;
+export default Category;

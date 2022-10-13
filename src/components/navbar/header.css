@@ -166,6 +166,7 @@ header{
 }
 .links ul.main > li:hover{
   background-color: white;
+  cursor: pointer;
 }
 .links .down-icon{
   display:inline;
@@ -270,7 +271,7 @@ header{
   display: none;
 }
 .links ul li:hover .links-menu{
-  height: 120px;                /*============= ============*/
+  height: 145px;                /*============= ============*/
 }
 
  @media screen and(min-width : 770px) {

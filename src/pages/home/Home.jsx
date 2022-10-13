@@ -28,40 +28,41 @@ export default function Home() {
         
         <div  className="flex flex-row flex-nowrap items-center justify-between overflow-x-auto overflow-y-hidden con-cat">
           <CategoryInicator
-              imgSRC=""
-/*             imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/e0b92311-6bc6-4ea1-8f3b-713a0fe15706-260x260.jpg"
- */            /* title="العناية بالبشرة" */
-                title=""
+              
+            imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/e0b92311-6bc6-4ea1-8f3b-713a0fe15706-260x260.jpg"
+            title="العناية بالبشرة"
+                /* title=""
+                imgSRC="" */
           />
           <CategoryInicator
-          imgSRC=""
-          title=""
-            /* imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/050701ef-7713-458d-9617-7c348d99843e-260x260.jpg"
-            title="العناية بالشعر" */
+          /* imgSRC=""
+          title="" */
+            imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/050701ef-7713-458d-9617-7c348d99843e-260x260.jpg"
+            title="العناية بالشعر"
           />
           <CategoryInicator
-          imgSRC=""
-          title=""
-            /* imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/16e64762-53b0-4abb-98e3-4ec7efdf59f1-260x260.jpg"
-            title="العناية اليومية" */
+          /* imgSRC=""
+          title="" */
+            imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/16e64762-53b0-4abb-98e3-4ec7efdf59f1-260x260.jpg"
+            title="العناية اليومية"
           />
           <CategoryInicator
-          imgSRC=""
-          title=""
-            /* imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/0e2a605c-c6da-4500-b375-ebdaea179074-260x260.jpg"
-            title="العناية بالجسم" */
+         /*  imgSRC=""
+          title="" */
+            imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/0e2a605c-c6da-4500-b375-ebdaea179074-260x260.jpg"
+            title="العناية بالجسم"
           />
           <CategoryInicator
-          imgSRC=""
-          title=""
-            /* imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/8838476b-b7a5-4cec-8f4e-61e43541304d-260x260.jpg"
-            title="المكياج و الاكسسوارات" */
+          /* imgSRC=""
+          title="" */
+            imgSRC="https://media.zid.store/cdn-cgi/image/w=235,q=85,f=auto/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/8838476b-b7a5-4cec-8f4e-61e43541304d-260x260.jpg"
+            title="المكياج و الاكسسوارات"
           />
         </div>
 
         <div className="slider" >
           {
-            0 ?
+            1 ?
             <Slider {...settings}  nextArrow={false} prevArrow={false}>
           <button className="h-full " >
               <img
@@ -134,7 +135,7 @@ export default function Home() {
             className="h-44 sm:h-48 md:h-64 lg:h-96  xl:h-128"
             style={{ width: "46%" }}
           >
-            { 0 ? 
+            { 1 ? 
                <button className="relative h-full w-full div-photo">
                <img
                  className="object-contain"
@@ -150,7 +151,7 @@ export default function Home() {
         </div>
 
         <div className="slider" >
-          { 0 ? 
+          { 1 ? 
           <Slider {...settings} >
             <button className=" ">
               <img

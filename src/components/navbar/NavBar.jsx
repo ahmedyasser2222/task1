@@ -304,10 +304,10 @@ export default function NavBar({ scrollY, scroll }) {
                 <a onClick={(e) => navigate("/products")}>جميع المنتجات</a>
               </li>
               <li>
-                <a href="#">اسعار مميزة</a>
+                <a onClick={(e) => navigate("/categories/5")}>اسعار مميزة</a>
               </li>
               <li onClick={(e) => showLeftMenu(e)}>
-                <a href="#">
+                <a onClick={(e) => navigate("/categories/5")}>
                   العناية بالبشرة
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -318,13 +318,13 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu q" onClick={""}>
                   <ul>
-                    <li>الغسول التونر والمقشرات</li>
-                    <li onClick={(e) => navigate("login")}>كريمات البشره</li>
-                    <li>السيريوم</li>
-                    <li>واقيات الشمس</li>
-                    <li>العناية بمحيط العين</li>
-                    <li>العنايه بالشفاء</li>
-                    <li>ماسكات البشرة</li>
+                    <li onClick={(e) => navigate("/categories/5")}>الغسول التونر والمقشرات</li>
+                    <li onClick={(e) => navigate("/categories/5")}>السيريوم</li>
+                    <li onClick={(e) => navigate("/categories/5")}>واقيات الشمس</li>
+                    <li onClick={(e) => navigate("/categories/5")}>العناية بمحيط العين</li>
+                    <li onClick={(e) => navigate("/categories/5")}>العنايه بالشفاء</li>
+                    <li onClick={(e) => navigate("/categories/5")}>ماسكات البشرة</li>
+                    <li oonClick={(e) => navigate("/categories")}>كريمات البشره</li>
                   </ul>
                 </div>
               </li>
@@ -340,12 +340,12 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu ">
                   <ul>
-                    <li>الشامبو</li>
-                    <li> البلسم</li>
-                    <li>ماسكات الشعر</li>
-                    <li> معالجات الشعر</li>
-                    <li> صبغات الشعر</li>
-                    <li> اجهزة واستشوار</li>
+                    <li onClick={(e) => navigate("/categories/5")}>الشامبو</li>
+                    <li onClick={(e) => navigate("/categories/5")}> البلسم</li>
+                    <li onClick={(e) => navigate("/categories/5")}>ماسكات الشعر</li>
+                    <li onClick={(e) => navigate("/categories/5")}> معالجات الشعر</li>
+                    <li onClick={(e) => navigate("/categories/5")}> صبغات الشعر</li>
+                    <li onClick={(e) => navigate("/categories/5")}> اجهزة واستشوار</li>
                   </ul>
                 </div>
               </li>
@@ -361,23 +361,23 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu ">
                   <ul>
-                    <li>العناية بالاطفال</li>
-                    <li> العناية بالفم</li>
-                    <li> العناية بالجسم</li>
-                    <li> العناية باليدين</li>
-                    <li> العناية بالقدمين</li>
-                    <li> العناية بالمنطقة الحساسة </li>
-                    <li>العناية بالرموش</li>
-                    <li>العناية بالحواجب</li>
+                    <li onClick={(e) => navigate("/categories/5")}>العناية بالاطفال</li>
+                    <li onClick={(e) => navigate("/categories/5")}> العناية بالفم</li>
+                    <li onClick={(e) => navigate("/categories/5")}> العناية بالجسم</li>
+                    <li onClick={(e) => navigate("/categories/5")}> العناية باليدين</li>
+                    <li onClick={(e) => navigate("/categories/5")}> العناية بالقدمين</li>
+                    <li onClick={(e) => navigate("/categories/5")}> العناية بالمنطقة الحساسة </li>
+                    <li onClick={(e) => navigate("/categories/5")}>العناية بالرموش</li>
+                    <li onClick={(e) => navigate("/categories/5")}>العناية بالحواجب</li>
                     <li>العطور</li>
                   </ul>
                 </div>
               </li>
               <li className="h">
-                <a href="#">الأدوية</a>
+                <a  onClick={(e) => navigate("/categories/5")}>الأدوية</a>
               </li>
               <li className="h">
-                <a href="#">الفيتامينات</a>
+                <a  onClick={(e) => navigate("/categories/5")}>الفيتامينات</a>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
                 <a href="#">

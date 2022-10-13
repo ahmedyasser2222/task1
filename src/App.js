@@ -17,8 +17,9 @@ import Address from "./components/address/Address";
 import Pay from "./components/pay/Pay";
 import Product from "./components/product/Product";
 import CheckNumber from "./components/auth/CheckNumber";
-import AllPages from "./pages/AllPages/AllPages";
 import AllCatrgory from "./pages/AllCategory/AllCatrgory";
+import AllProducts from "./pages/AllProducts/AllProducts";
+import Category from "./pages/category/Category";
 
 function App() {
   const dispatch = useDispatch();
@@ -67,8 +68,10 @@ function App() {
         <Route path="/payment" element={<Pay   />} />
         <Route path="/product/:id" element={<Product   />} />
         <Route path="/check" element={<CheckNumber   />} />
-        <Route path="/products" element={<AllPages   />} />
+        <Route path="/products" element={<AllProducts   />} />
         <Route path="/categories" element={<AllCatrgory   />} />
+        <Route path="/categories/:id" element={<Category   />} />
+
 
 
 

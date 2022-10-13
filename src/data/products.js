@@ -1,7 +1,7 @@
 export const Products = [
   {
     id: 1,
-    product_name: "Washington Homeopathic Products",
+    product_name: "Washington Homeopathic Products Washington Homeopathic ",
     description: "Displ transverse fx shaft of r fibula, 7thF",
     price: 369,
     old_price: 389,
