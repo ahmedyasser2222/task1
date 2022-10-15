@@ -20,7 +20,7 @@ export default function CategorySection(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "red" }}
+        style={{ ...style, display: "block",  backgroundColor:"#977ABA" , color:"white" ,borderRadius:"6pc" }}
         onClick={onClick}
       />
     );
@@ -31,7 +31,7 @@ export default function CategorySection(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "green" , height:'100px' , width:"100px"}}
+        style={{ display: "block", backgroundColor:"#977ABA" , color:"#222" ,borderRadius:"6pc"  }}
         onClick={onClick}
       />
     );
@@ -42,8 +42,8 @@ export default function CategorySection(props) {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 4,
+    slidesToScroll: 2,
+    initialSlide: 3,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     
@@ -53,25 +53,23 @@ export default function CategorySection(props) {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-          initialSlide:4,
           infinite: true,
           dots: false
+        }
+      },
+      
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
         }
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 0,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 950,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 0,
-          initialSlide: 3
+          slidesToScroll: 1,
         }
       },
       {
@@ -79,17 +77,16 @@ export default function CategorySection(props) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
 
         }
       },
       {
         breakpoint: 400,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 1,
-          centerMode:true
+          initialSlide: 2,
+          /* centerMode:true, */
         }
       }
     ]
@@ -100,7 +97,7 @@ export default function CategorySection(props) {
       <div className="my-10 xl:h-96 h-96 h-slide " style={{cursor:"grab"}}>
 
        {/* products */ 1?
-        <Slider {...settings} className={"slide-hh"}  rtl={true} arrows={true} nextArrow={<p style={{color:'black'}}>next</p>} prevArrow={<p>next</p>} >
+        <Slider {...settings} className={"slide-hh"} >
           {products.map(product =>{
             return(
               <Card product={product}  />

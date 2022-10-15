@@ -9,7 +9,7 @@ import { Spinner } from 'flowbite-react';
 
 export default function Cart(props) {
   document.title="سلة المشتريات | صيدلية لي مور | LEMURE PHARMACIE"
-  const history=useNavigate()
+   const history=useNavigate()
    const [productsCart , setProductsCart]=useState([])
 
    useEffect(()=>{
@@ -110,6 +110,10 @@ export default function Cart(props) {
                                   <p className="tabby">
                                      <img src="https://media.zid.store/static/tabby2.svg"/>
                                   </p>
+                                  {/* <div className="body-cart"></div>
+                                  <div className="tabby-pay">
+                                       tabbay 
+                                  </div> */}
                            </div>
                            <div className="copon">
                                <p>كوبون الخصم</p>

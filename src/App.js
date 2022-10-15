@@ -20,6 +20,8 @@ import CheckNumber from "./components/auth/CheckNumber";
 import AllCatrgory from "./pages/AllCategory/AllCatrgory";
 import AllProducts from "./pages/AllProducts/AllProducts";
 import Category from "./pages/category/Category";
+import About from "./components/about/About";
+import SubCategory from "./pages/category/SubCategory";
 
 function App() {
   const dispatch = useDispatch();
@@ -63,6 +65,8 @@ function App() {
         <Route path="/products" element={<AllProducts   />} />
         <Route path="/categories" element={<AllCatrgory   />} />
         <Route path="/categories/:id" element={<Category   />} />
+        <Route path="/refund-exchange-policy" element={<About   />} />
+        <Route path="/subcategories/:id" element={<SubCategory   />} />
 
 
       </Routes>

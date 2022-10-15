@@ -33,6 +33,13 @@ header{
   .nav-center .logo{
     position: relative;
   }
+  .nav-center .flex{
+    width: 60%;
+  }
+  .nav-center .flex input{
+    width: 100%;
+    font-size: 13px;
+  }
   .nav-center .icon{
     display: flex;
     justify-content: end;
@@ -43,7 +50,7 @@ header{
   }
 .div-search{
     display: block;
-    width: 39rem;
+    width: 42rem;
     display: flex;
     background-color: white;
     border-radius: 4px;
@@ -57,7 +64,7 @@ header{
     display: none;
     flex: 100%;
  }  
-.icon{
+ .icon{
     display: flex;
   }
   .icon a{
@@ -81,6 +88,7 @@ header{
   overflow: hidden;
   transition: all 0.5s;
   height: 47px;
+  border-bottom: 0.5px solid white;
 }
 .login.hide {
  height: 0;
@@ -89,10 +97,11 @@ header{
 .login button{
  border-radius: 5px;
  font-size: 12px;
- padding: 4px 12px !important;
+ padding: 5px 12px !important;
  border: 1px solid ;
  display: flex;
  color: white;
+ 
 }
 .login.hide button {
  display: none;
@@ -103,7 +112,7 @@ header{
  width: 100%; height: max-content;
  background-color: white;
  display: none;
- border: 1px solid #977ABA;
+ border: 1px solid #d4d4d4;
  border-top: none;
 }
 .items-search li{
@@ -124,7 +133,7 @@ header{
   width: 30px;
  }
  .nav-center-con .icon .i{
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   font-weight: bolder;
  }
  .nav-center .sup{
@@ -135,6 +144,7 @@ header{
     top: -3px;right: -5px;
     text-align: center;
     border-radius: 15px;
+    z-index: 5;
   }
 .nav-center .cart{
   position: relative;
@@ -252,11 +262,12 @@ header{
   font-size: x-large;
   color: white;
 }
-.price-cart{
+.price-cart{     /*===================*/
   font-size: large;
   color: white;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-weight: 400;
+ /*  letter-spacing: 2px; */
+  font-size: 19.4px;
 }
 .links .icon-left{
   display: none;
@@ -444,6 +455,8 @@ header{
  .links   ul.main > li{
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition: none;               /*=========*/
 }
 .links ul.main  li{
     width: 100%;
@@ -508,7 +521,9 @@ font-weight: bold;
 .links.show-menu{
     width: 60%;
     } 
-
+    .links.show-menu ul.main > li{
+      opacity: 1;                        /*=========*/
+    }
 .links.show  li.show .links-menu{
   display: block;
   height: 100vh;

@@ -9,7 +9,7 @@ import { useState } from 'react';
 import Slider from 'react-slick';
 import { useEffect } from 'react';
 
-function Category(props) {
+function SubCategory(props) {
    const history=useNavigate()
    const [query] =useSearchParams()
    const [rangePrice , setRangePrice]=useState({
@@ -123,7 +123,7 @@ function Category(props) {
 
              <div className="m-con">
              <div className="body " onClick={e=>selectPrice()}></div>
-                    {/* <div className={`sub-category `}>
+                    <div className={`sub-category `}>
                         <div className='tit'><p>التصنيفات</p></div>
                         <div className="slider">
                         <Slider {...settings}  rtl="true" dots="false">
@@ -171,7 +171,7 @@ function Category(props) {
                   
                       </Slider>
                         </div>
-                    </div> */}
+                    </div>
                     <div className="filter cate">
                         <div className='filter-1'>
                             <div className="set-price">
@@ -271,4 +271,4 @@ function Category(props) {
     );
 }
 
-export default Category;
+export default SubCategory;

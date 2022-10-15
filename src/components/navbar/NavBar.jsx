@@ -8,7 +8,8 @@ import {
   AiFillCaretLeft,
   AiFillCaretRight,
 } from "react-icons/ai";
-import { FaBars } from "react-icons/fa";
+
+import { FaBars , FaUserCircle } from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
 import { GrLinkNext } from "react-icons/gr";
 import { CgProfile } from "react-icons/cg";
@@ -17,6 +18,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Products } from "../../data/products";
 import "./header.css";
 import { useSelector } from "react-redux";
+import {MdOutlineShoppingCart} from "react-icons/md"
+
 
 export default function NavBar({ scrollY, scroll }) {
   const itemSearch = useRef();
@@ -81,29 +84,43 @@ export default function NavBar({ scrollY, scroll }) {
     document.querySelector(".body-country").classList.toggle("show");
     document.querySelector(".country").classList.toggle("show");
   };
+  const goToLink=(path)=>{
+      document.getElementById("back").style.display = "none"
+      navigate(path)
+      if(widthScrean <770){
+         setShowMenu(!showMenu)
+      }
+  }
+  const goToSubCategories=(path)=>{
+    navigate(path)
+    if(widthScrean <770){
+       setShowMenu(!showMenu)
+    }
+}
   return (
     <header className="fixed top-0 left-0 z-20 flex w-full flex-col">
       <nav
-        className={` flex-row sm:flex bg-prim border-b  login ${
+        className={` flex-row sm:flex bg-prim   login ${
           scrollY > 100 ? "hide" : ""
         }`}
       >
         <div className="nav-top m-con">
           <button
-            onClick={(e) => navigate("/account-profile")}
-            className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2"
+            onClick={(e) => goToLink("/account-profile")}
+            className="px-4 py-4 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-3"
           >
-            <CgProfile className=" text-white text-xl" />
+            <FaUserCircle className=" text-white text-xl" />
             <span>
               اهلا احمد ياسر
               {/*  تسجيل الدخول  */}
             </span>
           </button>
+          
           <button
             onClick={(e) => showCountry()}
             className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2"
           >
-            <span>السعودية</span>
+            <span className="df">السعودية</span>
           </button>
         </div>
       </nav>
@@ -193,10 +210,14 @@ export default function NavBar({ scrollY, scroll }) {
               >
                 {countProdust ? countProdust : ""}
               </p>
-              <AiOutlineShoppingCart
+              <MdOutlineShoppingCart
                 className="i text-white"
                 style={{ display: "inline" }}
               />
+              {/* <AiOutlineShoppingCart
+                className="i text-white"
+                style={{ display: "inline" }}
+              /> */}
             </a>
             <a onClick={(e) => navigate("/register ")} className="show s">
               <CgProfile className=" text-white i text-xl" />
@@ -264,6 +285,7 @@ export default function NavBar({ scrollY, scroll }) {
             <div
               className="back-icon"
               id="back"
+              style={{display:`${showMenu ? 'none' : ''}`}}
               onClick={(e) => {
                 links.current.classList.add("back");
                 e.currentTarget.style.display = "none";
@@ -296,18 +318,18 @@ export default function NavBar({ scrollY, scroll }) {
 
             <ul className="main m-con " style={{ width: "100%" }}>
               <li>
-                <a onClick={(e) => navigate("/")} aria-current="page">
+                <a onClick={(e) => goToLink('/')} aria-current="page">
                   الصفحة الرئيسية
                 </a>
               </li>
               <li>
-                <a onClick={(e) => navigate("/products")}>جميع المنتجات</a>
+                <a onClick={(e) => goToLink("/products")}>جميع المنتجات</a>
               </li>
               <li>
-                <a onClick={(e) => navigate("/categories/5")}>اسعار مميزة</a>
+                <a onClick={(e) => goToLink("/categories/5")}>اسعار مميزة</a>
               </li>
               <li onClick={(e) => showLeftMenu(e)}>
-                <a onClick={(e) => navigate("/categories/5")}>
+                <a onClick={(e) => navigate("/subcategories/5")}>
                   العناية بالبشرة
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -318,18 +340,18 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu q" onClick={""}>
                   <ul>
-                    <li onClick={(e) => navigate("/categories/5")}>الغسول التونر والمقشرات</li>
-                    <li onClick={(e) => navigate("/categories/5")}>السيريوم</li>
-                    <li onClick={(e) => navigate("/categories/5")}>واقيات الشمس</li>
-                    <li onClick={(e) => navigate("/categories/5")}>العناية بمحيط العين</li>
-                    <li onClick={(e) => navigate("/categories/5")}>العنايه بالشفاء</li>
-                    <li onClick={(e) => navigate("/categories/5")}>ماسكات البشرة</li>
-                    <li oonClick={(e) => navigate("/categories")}>كريمات البشره</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>الغسول التونر والمقشرات</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>السيريوم</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>واقيات الشمس</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>العناية بمحيط العين</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>العنايه بالشفاء</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>ماسكات البشرة</li>
+                    <li oonClick={(e) => goToLink("/categories/5")}>كريمات البشره</li>
                   </ul>
                 </div>
               </li>
               <li onClick={(e) => showLeftMenu(e)}>
-                <a href="#">
+                <a  onClick={(e) => navigate("/subcategories/5")}>
                   العناية بالشعر
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -340,17 +362,17 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu ">
                   <ul>
-                    <li onClick={(e) => navigate("/categories/5")}>الشامبو</li>
-                    <li onClick={(e) => navigate("/categories/5")}> البلسم</li>
-                    <li onClick={(e) => navigate("/categories/5")}>ماسكات الشعر</li>
-                    <li onClick={(e) => navigate("/categories/5")}> معالجات الشعر</li>
-                    <li onClick={(e) => navigate("/categories/5")}> صبغات الشعر</li>
-                    <li onClick={(e) => navigate("/categories/5")}> اجهزة واستشوار</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>الشامبو</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> البلسم</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>ماسكات الشعر</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> معالجات الشعر</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> صبغات الشعر</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> اجهزة واستشوار</li>
                   </ul>
                 </div>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a href="#">
+                <a onClick={(e) => navigate("/subcategories/5")}>
                   منتجات العناية اليومية
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -361,26 +383,26 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu ">
                   <ul>
-                    <li onClick={(e) => navigate("/categories/5")}>العناية بالاطفال</li>
-                    <li onClick={(e) => navigate("/categories/5")}> العناية بالفم</li>
-                    <li onClick={(e) => navigate("/categories/5")}> العناية بالجسم</li>
-                    <li onClick={(e) => navigate("/categories/5")}> العناية باليدين</li>
-                    <li onClick={(e) => navigate("/categories/5")}> العناية بالقدمين</li>
-                    <li onClick={(e) => navigate("/categories/5")}> العناية بالمنطقة الحساسة </li>
-                    <li onClick={(e) => navigate("/categories/5")}>العناية بالرموش</li>
-                    <li onClick={(e) => navigate("/categories/5")}>العناية بالحواجب</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>العناية بالاطفال</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> العناية بالفم</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> العناية بالجسم</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> العناية باليدين</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> العناية بالقدمين</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}> العناية بالمنطقة الحساسة </li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>العناية بالرموش</li>
+                    <li onClick={(e) =>  goToLink("/categories/5")}>العناية بالحواجب</li>
                     <li>العطور</li>
                   </ul>
                 </div>
               </li>
               <li className="h">
-                <a  onClick={(e) => navigate("/categories/5")}>الأدوية</a>
+                <a  onClick={(e) => goToLink("/categories/5")}>الأدوية</a>
               </li>
               <li className="h">
-                <a  onClick={(e) => navigate("/categories/5")}>الفيتامينات</a>
+                <a  onClick={(e) => goToLink("/categories/5")}>الفيتامينات</a>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a href="#">
+                <a href="#" onClick={(e) => navigate("/subcategories/5")}>
                   المكياج والاكسسوارات
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -391,24 +413,24 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu ">
                   <ul>
-                    <li>الوجه</li>
-                    <li>العيون</li>
-                    <li>الحواجب</li>
-                    <li>الشفاه</li>
-                    <li>الباليت</li>
-                    <li>مثبت المكياج</li>
-                    <li>مزيل المكياج</li>
-                    <li>فرش المكياج</li>
-                    <li>الرموش</li>
-                    <li>الاظافر</li>
+                    <li onClick={e=>goToLink('/categories/5')}>الوجه</li>
+                    <li onClick={e=>goToLink('/categories/5')}>العيون</li>
+                    <li onClick={e=>goToLink('/categories/5')}>الحواجب</li>
+                    <li onClick={e=>goToLink('/categories/5')}>الشفاه</li>
+                    <li onClick={e=>goToLink('/categories/5')}>الباليت</li>
+                    <li onClick={e=>goToLink('/categories/5')}>مثبت المكياج</li>
+                    <li onClick={e=>goToLink('/categories/5')}>مزيل المكياج</li>
+                    <li onClick={e=>goToLink('/categories/5')}>فرش المكياج</li>
+                    <li onClick={e=>goToLink('/categories/5')}>الرموش</li>
+                    <li onClick={e=>goToLink('/categories/5')}>الاظافر</li>
                   </ul>
                 </div>
               </li>
-              <li className="h">
+              <li className="h" onClick={e=>goToLink('/categories/5')}>
                 <a href="#">منتجات حصريه</a>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a href="#">
+                <a  onClick={(e) => navigate("/subcategories/5")}>
                   العدسات
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -419,11 +441,11 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
                 <div className="links-menu ">
                   <ul>
-                    <li>ليندا</li>
-                    <li>نيولنس</li>
-                    <li>AFLE</li>
-                    <li>ديفا</li>
-                    <li>لنس مي</li>
+                    <li onClick={e=>goToLink('/categories/5')}>ليندا</li>
+                    <li onClick={e=>goToLink('/categories/5')}>نيولنس</li>
+                    <li onClick={e=>goToLink('/categories/5')}>AFLE</li>
+                    <li onClick={e=>goToLink('/categories/5')}>ديفا</li>
+                    <li onClick={e=>goToLink('/categories/5')}>لنس مي</li>
                   </ul>
                 </div>
               </li>
@@ -432,7 +454,7 @@ export default function NavBar({ scrollY, scroll }) {
               </li>
               <div className="btn">
                 <button
-                  onClick={(e) => navigate("/account-profile")}
+                  onClick={(e) =>goToLink("/account-profile")}
                   className="px-4 py-1 border text-sm text-white border-white rounded-lg flex flex-row  items-center gap-2"
                 >
                   <CgProfile className=" text-white text-xl" />

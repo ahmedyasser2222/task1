@@ -111,12 +111,12 @@ export default function Home() {
          
         </div>
             
-        <div className="mt-10 flex flex-row items-center justify-between">
+        <div className="mt-10 flex flex-row  justify-between box">
           <div
-            className="h-44 sm:h-48 md:h-64 lg:h-96  xl:h-128"
-            style={{ width: "46%" }}
+            className="h-96 sm:h-48 md:h-64 lg:h-96  xl:h-128"
+            style={{ width: "50%" }}
           >
-           { 0 ? 
+           { 1 ? 
               <button className="relative h-full w-full div-photo">
               <img
                 className="object-contain"
@@ -133,7 +133,7 @@ export default function Home() {
           </div>
           <div
             className="h-44 sm:h-48 md:h-64 lg:h-96  xl:h-128"
-            style={{ width: "46%" }}
+            style={{ width: "50%" }}
           >
             { 1 ? 
                <button className="relative h-full w-full div-photo">

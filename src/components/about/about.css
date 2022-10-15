@@ -1,0 +1,56 @@
+.con-policy{
+    height: max-content;
+    margin-top: 230px;
+}
+.con-policy .policy{
+    margin: 30px 0;
+    width: 100%;
+    position: relative;
+}
+.con-policy h1{
+    color: #977ABA;
+    font-size: 33px;
+    font-weight: bolder;
+    margin: 15px ;
+}
+.con-policy p.bold{
+    font-weight: bold;
+    font-size: 13px;
+    color: rgba(0,0,0,0.8);
+    margin: 4px 0;
+}
+.con-policy p.txt{
+    font-size: small;
+    font-weight: 100;
+    margin: 4px 0;
+    word-spacing: 1px;
+}
+.con-policy p.yellow{
+    background-color: yellow;
+    width: max-content;
+    font-size: small;
+    margin: 5px 0;
+}
+.con-policy ul{
+    list-style: disc;
+}
+
+@media screen and (max-width :770px) {
+    .con-policy{
+        margin-top: 80px;
+    }
+    .policy{
+        width: 90%;
+        margin-right: 5%;
+        padding: 15px;
+    }
+    .con-policy p.yellow{
+        width: 100%;
+    }
+}
+@media screen and (max-width :450px) {
+    .con-policy{
+        margin-top: 50px;
+    }
+
+}

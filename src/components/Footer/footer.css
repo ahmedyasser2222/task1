@@ -112,7 +112,9 @@
     .devlop span.name{
       text-decoration: underline;
     }
-    
+    footer .policy{
+      cursor: pointer;
+    }
 
 @media screen  and (max-width:770px){
   .con-end-footer .pay ,.con-end-footer .app-download{

@@ -1,7 +1,11 @@
 import React from "react";
 import "./footer.css";
-
+import {GoLocation} from "react-icons/go"
+import {ImLocation} from "react-icons/im"
+import {MdLocationOn} from "react-icons/md"
+import { useNavigate } from "react-router-dom";
 export default function FooterComp() {
+  const history=useNavigate()
   return (
     <footer
       className="bg-prim text-white mt-10"
@@ -18,7 +22,7 @@ export default function FooterComp() {
             </h2>
             <ul className=" dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className=" hover:underline">
+                <a href="#" className="">
                   لي مور هي صيدلية مهتمة بتوفير جميع احتياجاتك الصحية
                   والتجميلية.
                 </a>
@@ -34,17 +38,17 @@ export default function FooterComp() {
             </h2>
             <ul className=" dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a onClick={e=>history('refund-exchange-policy')} className="policy">
                   خيارات الدفع و التوصيل
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a onClick={e=>history('refund-exchange-policy')} className="policy">
                   سياسة الاستبدال والاسترجاع
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a onClick={e=>history('refund-exchange-policy')} className="policy">
                   سياسة الخصوصية
                 </a>
               </li>
@@ -59,14 +63,15 @@ export default function FooterComp() {
             </h2>
             <ul className=" dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="">
                   طريق أنس بن مالك
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="#" className="">
                   {" "}
-                  السعودية, الرياض, حي الياسمين،, طريق أنس بن مالك
+                  <MdLocationOn  style={{display:"inline"}} />
+                 <p style={{display:"inline"}}> السعودية, الرياض, حي الياسمين،, طريق أنس بن مالك</p>
                 </a>
               </li>
               <li>
@@ -82,7 +87,7 @@ export default function FooterComp() {
                 <div className="flex pt-5 space-x-6 sm:justify-center md:mt-0 social">
                   <a
                     href="#"
-                    className="face text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                    className="face text-gray-400 "
                   >
                     <svg
                       className="w-5 h-5"
@@ -100,7 +105,7 @@ export default function FooterComp() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                    className="text-gray-400 "
                   >
                     <svg
                       className="w-5 h-5"
@@ -118,7 +123,7 @@ export default function FooterComp() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                    className="text-gray-400 "
                   >
                     <svg
                       className="w-5 h-5"
@@ -132,7 +137,7 @@ export default function FooterComp() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                    className="text-gray-400 "
                   >
                     <svg
                       className="w-5 h-5"
@@ -150,7 +155,7 @@ export default function FooterComp() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                    className="text-gray-400 "
                   >
                     <svg
                       className="w-5 h-5"
@@ -217,7 +222,7 @@ export default function FooterComp() {
 
               <div className="dev">
                 <div className="developby">
-                <p className="devlop">Developed by  <span> logo </span> <span className="name">Perfect Touch</span></p>
+                <p className="devlop">Developed by <span className="name">Perfect Touch</span></p>
                 </div>
                 
                 <div className="end">
