@@ -1,7 +1,7 @@
 import React, { useEffect, useState ,Suspense} from "react";
 import "./App.css";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setId } from "./features/cart/orderSlice";
 import NavBar from "./components/navbar/NavBar.jsx";
@@ -23,39 +23,31 @@ import Category from "./pages/category/Category";
 
 function App() {
   const dispatch = useDispatch();
+  const location=useLocation()
   const orderId = useSelector((state) => state.order.id);
-  const [scroll , setScroll]=useState(false)
   const [scrollY , setScrollY]=useState(0)
   const [ currentPath ] = useState(window.location.pathname);
   
   window.addEventListener("scroll" , (e)=>{
     setScrollY(window.scrollY)
-    if(scrollY > window.scrollY ) {
-      setScroll(true)
-    }else{
-      setScroll(false)
-    }
-    
    })
 
   useEffect(
     () => {
+      document.title="صيدلية لي مور | LEMURE PHARMACIE"
       if (!orderId && currentPath !== "/") {
         dispatch(setId(currentPath.split("/")[1]));
-      }
+      }    console.log("ok")
+      
+
         setScrollY(window.scrollY)
-        if(scrollY > window.scrollY ) {
-          setScroll(true)
-        }else{
-          setScroll(false)
-        }
-        
     },
-    [ orderId, currentPath, dispatch ]
+    [location.pathname]
   );
+
   return (
     <>
-    <NavBar  scrollY={scrollY} scroll={scroll}/>
+    <NavBar  scrollY={scrollY} /* scroll={scroll} *//>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
@@ -73,9 +65,6 @@ function App() {
         <Route path="/categories/:id" element={<Category   />} />
 
 
-
-
-       
       </Routes>
     <FooterComp />
     </>

@@ -4,15 +4,43 @@ import {Products} from "../../data/products"
 
 
 import CardSkeleton from '../../Skeleton/CardSkeleton';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 
 function AllProducts(props) {
-   
-   
+    const history=useNavigate()
+    const [query] =useSearchParams()
     const selectPrice=()=>{
       document.querySelector(".selet-price").classList.toggle("show")
       document.querySelector(".body").classList.toggle("show")
     }
-  
+    const [rangePrice , setRangePrice]=useState({
+        from_price:0 ,
+        to_price : 0
+     })
+    const [filter , setFilter]=useState({
+    sort_by:query.get("sort_by"),
+    order:query.get("order"),
+    from_price:query.get("from_price"),
+    to_price:query.get("to_price")
+    })
+     const handelChaneg=(e)=>{
+    setFilter({...filter ,[e.target.name]:e.target.value})
+   }
+   const handelChanegSelectPrice=(e)=>{
+    setRangePrice({...rangePrice ,[e.target.name]:e.target.value})
+    }
+   const deletePrice=()=>{
+  document.querySelectorAll(".selet-price input")[0].value=""
+  document.querySelectorAll(".selet-price input")[1].value=""
+
+  }
+   const saveRangePrice=()=>{
+    setFilter({...filter , ...rangePrice})
+    console.log(filter)
+
+    selectPrice()
+   }    
 
 
     return (
@@ -20,7 +48,7 @@ function AllProducts(props) {
              <div className="top">
                     <div className="m-con">
                           <div className="links-top">
-                                <span>الصفحه الرئيسية</span>
+                                <span onClick={e=>history('/')}>الصفحه الرئيسية</span>
                                 <p>/ جميع المنتجات </p>
                           </div>
                     </div>
@@ -42,11 +70,11 @@ function AllProducts(props) {
                                           <div className="inputs">
                                                 <div className="input">
                                                        <p>من</p>
-                                                       <input type="number" name="" id="" />
+                                                       <input type="number" name="from_price" value={rangePrice.from_price} onChange={handelChanegSelectPrice} />
                                                 </div>
                                                 <div className="input">
                                                        <p>الي </p>
-                                                       <input type="number" name="" id="" />
+                                                       <input type="number" name="to_price" value={rangePrice.to_price} onChange={handelChanegSelectPrice} />
                                                 </div>
                                           </div>
                                           <div className="chek">
@@ -54,18 +82,18 @@ function AllProducts(props) {
                                                <p>عرض التخفيضات فقط</p>
                                           </div>
                                           <div className="btns">
-                                               <button>مسح</button>
-                                               <button>حفظ</button>
+                                               <button onClick={e=>deletePrice()}>مسح</button>
+                                               <button onClick={e=>saveRangePrice()}>حفظ</button>
                                           </div>
                                     </div>
                             </div>
                             <div className="filter-prod">
                                     <p> ترتيب حسب</p>
-                                    <select name="" id="">
-                                          <option value="">الاحدث</option>
-                                          <option value="">الاكثر شعبية </option>
-                                          <option value="">الاقل سعر</option>
-                                          <option value="">الاعلي سعر</option>
+                                    <select name="sort_by"  onChange={handelChaneg}>
+                                          <option value="created_at">الاحدث</option>
+                                          <option value="popularity_order">الاكثر شعبية </option>
+                                          <option value="price">الاقل سعر</option>
+                                          <option value="price">الاعلي سعر</option>
                                     </select>
                             </div>
                         </div>

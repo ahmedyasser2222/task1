@@ -205,24 +205,33 @@
     color: white;
     cursor: pointer;
 }
-.con-profile .app{
-  display: flex;
-  justify-content: space-between;
-  margin: 25px;
-  background-color: #FEF7F2;
-  height: 80px;
-  padding: 25px ; 
-}
-.app-txt{
-    flex: 50%;
- }
-.con-profile .app-btn a{
-    background: linear-gradient(90deg , #912D5B , #562A6C) ;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 10px;
-    cursor: pointer;
-}
+.con-profile .mazed{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    flex-direction: column;
+    background: linear-gradient(90deg ,  #FDF1F4 , #FFFBF0 ) ;
+    height: max-content;
+    padding: 15px 25px ; 
+  }
+  .con-profile .app{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: max-content;
+    margin-top: 15px;
+    padding-bottom: 10px;
+  }
+  .app-txt{
+      flex: 50%;
+   }
+  .con-profile .app-btn a{
+      background: linear-gradient(90deg , #912D5B , #562A6C) ;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+  }
 
 .con-profile .add{
     margin: 25px;
@@ -248,6 +257,17 @@
 .con-profile .head-order p{
     color: black;
 }
+.con-profile .order{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border-radius: 5px;
+    padding: 15px 5px;
+    border: 1px solid #ddd;
+    margin-top: 7px ;
+    font-size: small;
+    width: 100%;
+}
 .con-profile .notifiaction{
     margin: 25px 25px 0 25px;
     border: 1px solid;
@@ -272,12 +292,16 @@
 .con-profile .notifiaction p.cancel:hover{
     color: #155724;
 }
+.con-profile .address-user{
+    height: max-content;
+}
 .con-profile .cards-address{
     margin: 25px;
     display:flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: max-content;
     gap: 25px;
+    width: 90%;
 }
 .con-profile .cards-address .card-addres{
     width: 40%; height: 100px;
@@ -300,12 +324,37 @@
 .con-profile .card-addres .trash:hover{
     color: black;
 }
-
+.loading{
+    display: none;
+    transition: all .2s;
+    animation: loading 1s infinite ;
+    margin-right: 4px;
+  }
+.btn-loading .loading{
+    display: inline;
+  }
+@keyframes loading{
+    0%{
+      transform: rotate(0deg);
+    }
+    25%{
+      transform: rotate(90deg);
+    }
+    50%{
+      transform: rotate(180deg);
+    }
+    75%{
+      transform: rotate(270deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
 @media screen and (max-width : 770px) {
     .con-profile{
         margin-top: 60px;
     }
-    .con-profile .flex-right , .flex-left{
+    .con-profile .flex-right ,.con-profile .flex-left{
               flex: 100%;
      }
      .con-profile .flex-right{
@@ -327,23 +376,37 @@
         flex: 50%;
      }
      .con-profile .cards-address .card-addres{
-        width: 80%;
+        width: 45%;
+     }   
+}
+@media screen and (max-width : 560px){
+    .con-profile .cards-address .card-addres{
+        width: 100%;
      }
-
-
-
-    
-       
 }
 
 @media screen and (max-width : 420px){
     .con-profile .app{
         flex-direction: column;
         height: 130px;
-        padding: 10px;
+        padding: 0px;
         align-items: center;
     }
-    .app-btn{
-        width:max-content;
+    .con-profile .app > div{
+        width: 100%;
     }
+    .con-profile .app .app-txt{
+        text-align: right;
+    }
+    .app-btn{
+        margin: 20px 0;
+        text-align: center;
+    }
+    .con-profile .inputs{
+        flex-direction: column;
+    }
+    .con-profile .inputs .input{
+        width: 100%;
+    }
+   
 }

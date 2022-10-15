@@ -124,7 +124,7 @@ export default function NavBar({ scrollY, scroll }) {
             >
               <MdOutlineMenuOpen className=" text-white  bars-icon" />
             </a>
-            <button className="btn-logo " onClick={(e) => navigate("/")}>
+            <button className="btn-logo " onClick={(e) => navigate('/')}>
               <img
                 src="https://media.zid.store/cdn-cgi/image/h=175,q=85/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/8a9125e0-a000-4c37-a9ed-344d3f47954a.png"
                 className=""

@@ -8,8 +8,8 @@ import Skeleton from "react-loading-skeleton"
 import { Spinner } from 'flowbite-react';
 
 export default function Cart(props) {
+  document.title="سلة المشتريات | صيدلية لي مور | LEMURE PHARMACIE"
   const history=useNavigate()
-  
    const [productsCart , setProductsCart]=useState([])
 
    useEffect(()=>{
