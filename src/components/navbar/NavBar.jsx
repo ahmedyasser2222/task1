@@ -329,7 +329,7 @@ export default function NavBar({ scrollY, scroll }) {
                 <a onClick={(e) => goToLink("/categories/5")}>اسعار مميزة</a>
               </li>
               <li onClick={(e) => showLeftMenu(e)}>
-                <a onClick={(e) => navigate("/subcategories/5")}>
+                <a href="" onClick={(e) => navigate("/subcategories/5")}>
                   العناية بالبشرة
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -351,7 +351,7 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
               </li>
               <li onClick={(e) => showLeftMenu(e)}>
-                <a  onClick={(e) => navigate("/subcategories/5")}>
+                <a href=""  onClick={(e) => navigate("/subcategories/5")}>
                   العناية بالشعر
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -372,7 +372,7 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a onClick={(e) => navigate("/subcategories/5")}>
+                <a href="" onClick={(e) => navigate("/subcategories/5")}>
                   منتجات العناية اليومية
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -430,7 +430,7 @@ export default function NavBar({ scrollY, scroll }) {
                 <a href="#">منتجات حصريه</a>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a  onClick={(e) => navigate("/subcategories/5")}>
+                <a href=""  onClick={(e) => navigate("/subcategories/5")}>
                   العدسات
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
