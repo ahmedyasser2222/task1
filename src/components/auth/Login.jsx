@@ -10,10 +10,16 @@ const Register = () => {
         email:"",
         password:""
      })
+     
      const handelInput=(e)=>{
          let name =e.target.name 
          let value =e.target.value
          setUser({...user , [name]:value})
+     }
+     const [num , setNum]=useState('')
+     const [codeNum , setCodeNum]=useState('996')
+     const submit=()=>{
+      /* alert(codeNum+num) */
      }
     return (  
         <>
@@ -30,19 +36,21 @@ const Register = () => {
                         <p>لتسجيل الدخول أضف رقم جوالك ادناه،<br/> وسيتم ارسال رسالة نصية للتحقق من الرقم المضاف ..</p>
                    </div>
                    <div className="input">
-                      <input type="text" placeholder="5xxxxxx" />
-                      <select name="" id="">
-                        <option value="966">+966</option>
-                        <option value="966">+971</option>
-                        <option value="966">+965</option>
-                        <option value="966">+968</option>
-                        <option value="966">+973</option>
-                        <option value="966">+974</option>
-                        <option value="966">+20</option>
+                      <input type="text" placeholder="5xxxxxx" onChange={e=>setNum(e.currentTarget.value)}/>
+                      <select /* value={codeNum} */  onChange={e=>/* setCodeNum(e.currentTarget.value) */{
+                        
+                      }}>
+                        <option value="966" >+966</option>
+                        <option value="966" >+971</option>
+                        <option value="966" >+965</option>
+                        <option value="966" >+968</option>
+                        <option value="966" >+973</option>
+                        <option value="966" >+974</option>
+                        <option value="966" >+20</option>
                       </select>
                    </div>
                    <div className="sub" >
-                      <button>دخول</button>
+                      <button onClick={e=>submit()}>دخول</button>
                       <button class="buttonload" style={{display:'none'}}>
                         <i class=""></i>Loading
                       </button>

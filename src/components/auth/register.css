@@ -100,6 +100,9 @@
    direction: ltr !important;
    text-align: end;
 }
+.con-register .input input{
+   text-align: left;
+}
  @media screen and (max-width :770px) {
     .con-register{
         margin-top: 100px;

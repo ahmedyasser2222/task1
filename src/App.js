@@ -61,13 +61,11 @@ function App() {
         <Route path="/address" element={<Address />} />
         <Route path="/payment" element={<Pay   />} />
         <Route path="/product/:id" element={<Product   />} />
-        <Route path="/check" element={<CheckNumber   />} />
         <Route path="/products" element={<AllProducts   />} />
         <Route path="/categories" element={<AllCatrgory   />} />
         <Route path="/categories/:id" element={<Category   />} />
         <Route path="/refund-exchange-policy" element={<About   />} />
         <Route path="/subcategories/:id" element={<SubCategory   />} />
-
 
       </Routes>
     <FooterComp />

@@ -4,9 +4,8 @@ import {GiCancel} from "react-icons/gi"
 import { useNavigate } from 'react-router-dom';
 import {Products} from "../../data/products"
 import { useState , useEffect } from 'react';
-import Skeleton from "react-loading-skeleton"
 import { Spinner } from 'flowbite-react';
-
+import {AiOutlineArrowLeft} from "react-icons/ai"
 export default function Cart(props) {
   document.title="سلة المشتريات | صيدلية لي مور | LEMURE PHARMACIE"
    const history=useNavigate()
@@ -107,13 +106,129 @@ export default function Cart(props) {
                            <div className='recet'>
                                   <p className="s1">أو قسمها على 4 دفعات شهرية بقيمة 299.00 
                                   SAR <span>لمعرفة المزيد</span></p>
-                                  <p className="tabby">
+                                  <p className="tabby" style={{cursor:"pointer"}} onClick={e=>{
+                                   e.currentTarget.parentElement.children[2].classList.toggle("show")
+                                   e.currentTarget.parentElement.children[3].classList.toggle("show")
+                                  }}>
                                      <img src="https://media.zid.store/static/tabby2.svg"/>
                                   </p>
-                                  {/* <div className="body-cart"></div>
-                                  <div className="tabby-pay">
-                                       tabbay 
-                                  </div> */}
+                                  <div className="body-cart " onClick={e=>{
+                                   e.currentTarget.parentElement.children[2].classList.toggle("show")
+                                   e.currentTarget.parentElement.children[3].classList.toggle("show")
+                                  }}></div>
+                                  <div className="tabby-pay " >
+                                           <div className="top">
+                                                <div className="img-tabby"> <img src="https://media.zid.store/static/tabby2.svg" alt="tabby" /> </div>
+                                                 <div className="close" 
+                                                 onClick={e=>{
+                                                        e.currentTarget.parentElement.parentElement.parentElement.children[2].classList.toggle("show")
+                                                        e.currentTarget.parentElement.parentElement.classList.toggle("show")
+                                                    }}
+                                                 ></div>
+                                           </div>
+                                           <h2>قسّمها على 4 دفعات بدون فوائد بقيمة <span>{23.00}</span> SAR. </h2>
+                                           <p>اشترِ ما تحب، وقسّم المبلغ. بدون رسوم.</p>
+                                           <div className="circal">
+                                                 <div className="cir1 cir">
+                                                        <div className="s1"></div>
+                                                        <div className="s2"></div>
+                                                        <div className="s3"></div>
+                                                        <div className="s4"></div>
+                                                 </div>
+                                                 <div className="line">
+                                                        <div></div>
+                                                 </div>
+                                                 <div className="cir2 cir">
+                                                        <div className="s1"></div>
+                                                        <div className="s2"></div>
+                                                        <div className="s3"></div>
+                                                        <div className="s4"></div>
+                                                 </div>
+                                                 <div className="line">
+                                                        <div></div>
+                                                 </div>
+                                                 <div className="cir3 cir">
+                                                        <div className="s1"></div>
+                                                        <div className="s2"></div>
+                                                        <div className="s3"></div>
+                                                        <div className="s4"></div>
+                                                 </div>
+                                                 <div className="line">
+                                                        <div></div>
+                                                 </div>
+                                                 <div className="cir4 cir">
+                                                        <div className="s1"></div>
+                                                        <div className="s2"></div>
+                                                        <div className="s3"></div>
+                                                        <div className="s4"></div>
+                                                 </div>
+                                           </div>
+                                           <div className="price-cir">
+                                                  <div>
+                                                        <strong>23.30 SAR</strong>
+                                                        <p>اليوم</p>
+                                                  </div>
+                                                  <div>
+                                                         <strong>23.30 SAR</strong>
+                                                         <p>بعد شهر</p>
+                                                  </div>
+                                                  <div>
+                                                         <strong>23.30 SAR</strong>
+                                                         <p>بعد شهرين</p>
+                                                  </div>
+                                                  <div>
+                                                         <strong>23.30 SAR</strong>
+                                                         <p>بعد ٣ أشهر</p>
+                                                  </div>
+                                           </div>
+                                           <div className="delets-tabby">
+                                                   <h3>طريقة الاستخدام</h3>
+                                                   <ul>
+                                                        <li> 
+                                                               <div className='list-num'>1</div>
+                                                               <div className="txt">اختر </div>
+                                                               <div className='img'> <img src="https://media.zid.store/static/tabby2.svg" alt="tabby" /> </div>
+                                                               <div className='txt'>قبل إتمام عملية الشراء.</div>
+                                                        </li>
+                                                        <li> 
+                                                               <div className='list-num'>2</div>
+                                                               <div className='txt'>أدخل بياناتك و بيانات البطاقة البنكية أو البطاقة الائتمانية.</div>
+                                                        </li>
+                                                        <li>
+                                                               <div className="list-num">3</div>
+                                                               <div className="txt">قسّم مشترياتك على 4 دفعات شهرية.</div>
+                                                        </li>
+                                                        <li>
+                                                               <div className="list-num">4</div>
+                                                               <div className="txt">سنقوم بإرسال رسالة SMS على هاتفك لتذكيرك بموعد الدفعة القادمة.</div>
+                                                        </li>
+                                                   </ul>
+                                           </div>
+                                           <div >
+                                                  <p onClick={e=>history('/')} style={{color:"blue" , cursor:"pointer"}}> تابع التسوق <AiOutlineArrowLeft style={{display:"inline" , color:"blue"}} /> </p>
+                                           </div>
+                                           <hr style={{height:"1px" , backgroundColor:"#e6e5e9" , margin:"15px 0"}} />
+                                           <div className="pay-way">
+                                                 <div>
+                                                        <p>طرق الدفع المدعومة</p>
+                                                 </div>
+                                                 <div className='img-pay'>
+                                                         <div className="img">
+                                                               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png" alt="master card" />
+                                                         </div>
+                                                         <div className="img">
+                                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Former_Visa_%28company%29_logo.svg/1280px-Former_Visa_%28company%29_logo.svg.png" alt="visa" />
+                                                         </div>
+                                                         <div className="img">
+                                                                <img src="https://files1.directapp.net/wp-content/uploads/2022/04/mada-39383jj883-1649631184.jpg" alt="made" />
+                                                         </div>
+                                                         <div className="img">
+                                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/2560px-Apple_Pay_logo.svg.png" alt="apple pay" />
+                                                         </div>
+                                                 </div>
+                                           </div>
+
+                                  </div>
                            </div>
                            <div className="copon">
                                <p>كوبون الخصم</p>
