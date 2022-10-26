@@ -1,0 +1,125 @@
+.links{
+  transition: all 0.5s;
+  height: 40px;
+  width: 100%;
+  background-color: #796295;
+}
+.div-links{
+  height: 40px;
+  overflow: hidden;
+  width: 100%;
+ }
+ .links ul.main{
+  display: flex;
+  justify-content: space-between;
+  width:100%;    
+}                 
+/*==============================*/
+.links ul.main > li:hover{
+  background-color: white;
+  cursor: pointer;
+}
+
+.links .down-icon{
+  display:inline;
+  color: white;
+  margin: 0 5px;
+}
+.links .up-icon{
+  display:inline;
+  color: white;
+  display: none;
+  margin: 0 5px;
+  color: #796295;
+}
+.links ul li:hover .down-icon{
+  display: none;
+}
+.links ul li:hover .up-icon{
+  display: inline;
+}
+/*==============*/
+.links ul li{
+  padding: 8px 12px;
+  height: 50px;
+  transition: all 0.6s;
+  font-size: 14px;
+}
+.links .links-menu{
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.6s;
+  overflow: hidden;
+  height: 0%;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+header .links ul > li:hover div.links-menu {            /*============= ============*/
+       height: 145px ;        
+}
+.links .links-menu ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  padding: 10px 0;
+  justify-content: space-around;
+  width: 1140px;
+  transition: all 0.6s;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+ /*====================================*/
+
+.links .links-menu ul li{       
+   color: black;
+   width: 30%;
+   font-size: 15px;
+}
+.links .links-menu ul li:hover{
+  color: #796295;
+  cursor: pointer;
+}
+.links a{
+  color: white;
+}
+.links ul li:hover a{
+  color: #796295;
+}
+.links .h{
+  display: none;
+ }
+ .links  .btn{
+  display: none;
+ }
+ /*==============*/
+ .links.hide{
+  height: 0;
+  overflow: hidden;
+}
+.links .hide-icon{
+  font-size: x-large;
+  color: white;
+}
+
+.links .icon-left{
+  display: none;
+}
+.links .back-icon{
+  display: none;
+}
+.links body{
+  display: none;
+}
+.links .back-icon .hide-icon{
+  display: none;
+}

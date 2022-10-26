@@ -7,11 +7,12 @@ import { Products } from "../../data/products";
 import Slider from "react-slick";
 import "./home.css"
 import Skeleton from "react-loading-skeleton";
+import { useEffect } from "react";
+import axios from "axios"
+import {API} from '../../API'
 export default function Home() {
-  let slider=document.getElementById("ss")
-  let isDown=false ;
-  let startX=0
-  let scrollLeft =0
+  
+
   const settings = {
     dots: true,
     infinite: true,
@@ -20,6 +21,17 @@ export default function Home() {
     slidesToScroll: 1 ,
     rtl:true
   };
+ /*  useEffect(()=>{
+    async function getData(){
+       try {
+        const res= await axios.get(`${API}/api/OnlineStore/GetNavigationalCategories`)
+        console.log(res.data)
+       } catch (error) {
+        console.log(error.response.data)
+       }
+    }
+    getData()
+  },[]) */
 
   
   return (

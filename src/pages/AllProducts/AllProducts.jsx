@@ -1,15 +1,16 @@
 import Card  from '../../components/card/Card';
 import './allProducts.css';
 import {Products} from "../../data/products"
-
-
 import CardSkeleton from '../../Skeleton/CardSkeleton';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
+import { API} from '../../API';
+import axios from 'axios'
 
 function AllProducts(props) {
     const history=useNavigate()
     const [query] =useSearchParams()
+    const [ dataProducts, setDataProducts]=useState()
     const selectPrice=()=>{
       document.querySelector(".selet-price").classList.toggle("show")
       document.querySelector(".body").classList.toggle("show")
@@ -21,6 +22,7 @@ function AllProducts(props) {
     const [filter , setFilter]=useState({
     sort_by:query.get("sort_by"),
     order:query.get("order"),
+    PageNumber:query.get('PageNumber'),
     from_price:query.get("from_price"),
     to_price:query.get("to_price")
     })
@@ -41,8 +43,27 @@ function AllProducts(props) {
 
     selectPrice()
    }    
+  
+    useEffect(()=>{
+        async function getData(){
+            try {
+                const res = await axios.get(`${API}/api/OnlineStore/GetAvailableItems?PageNumber=${filter.PageNumber ?filter.PageNumber : 1 }&PageSize=5`)  
+                //console.log(res.data)
+                const prods=[]
+                Products.map((pro , ind)=>{
+                if(ind < 10){
+                    prods.push(pro)
+                }
+               })
+               setDataProducts(prods)
+            } catch (error) {
+                //console.log(error.respose.data)
+                setDataProducts(Products)
+            }
+        }
 
-
+        getData()
+    } , [])
     return (
         <div className='con-all'>
              <div className="top">
@@ -102,38 +123,41 @@ function AllProducts(props) {
                         </div>
                     </div>
                     <div className="products">
-                        {1 ? 
-                        <><div className="product">
-                               <Card  product={Products[0]}/>
-                            </div>
-                            <div className="product">
-                               <Card  product={Products[0]}/>
-                            </div>
-                            <div className="product">
-                               <Card  product={Products[0]}/>
-                            </div>
-                            <div className="product">
-                               <Card  product={Products[0]}/>
-                            </div>
-                            <div className="product">
-                               <Card  product={Products[0]}/>
-                            </div>
-                            <div className="product">
-                               <Card  product={Products[0]}/>
-                            </div>
-                        </> :
+                        {dataProducts ? 
+                        dataProducts.map(product => {
+                            return(
+                                    <>
+                                        <div className="product">
+                                            <Card  product={product}/>
+                                        </div>
+                                    </>
+                            )
+                        })
+                         :
                         <>
-                        <div className="product">
-                              <CardSkeleton />
+                        <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
                          </div> 
-                         <div className="product">
-                              <CardSkeleton />
+                         <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
                          </div> 
-                         <div className="product">
-                              <CardSkeleton />
+                         <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
                          </div> 
-                         <div className="product">
-                              <CardSkeleton />
+                         <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
+                         </div> 
+                         <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
+                         </div> 
+                         <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
+                         </div> 
+                         <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
+                         </div> 
+                         <div className="product" style={{margin:"0"}}>
+                              <CardSkeleton style={{width : "100%"}}/>
                          </div> 
                         </>
                         }

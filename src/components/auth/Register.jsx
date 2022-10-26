@@ -1,20 +1,30 @@
 import { useState } from "react"
-import { NavLink ,useNavigate } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import "./register.css"
 import {GiCancel} from 'react-icons/gi'
+import { useEffect } from "react";
 
 const Register = () => {
-  const history = useNavigate();   
+  const history = useNavigate(); 
+  const {state}=useLocation()  
+ 
      const [user, setUser]=useState({
         username:"",
         email:"",
         password:""
      })
+     const [num , setNum]=useState('')
+     const [code , setCode]=useState('')
+
      const handelInput=(e)=>{
          let name =e.target.name 
          let value =e.target.value
          setUser({...user , [name]:value})
      }
+     useEffect(()=>{
+      setNum(state.mobile)
+      setCode(state.code)
+     },[])
     return (  
         <>
             <div className="con-register con-re">
@@ -34,15 +44,15 @@ const Register = () => {
                    <input type="email" placeholder="البريد الالكتروني" required/>
 
                    <div className="input">
-                      <input type="text" value={"012112930"} disabled style={{backgroundColor:"#F8D7DA"}} />
-                      <select name="" id="">
+                      <input type="text" value={num} disabled style={{backgroundColor:"#F8D7DA"}} />
+                      <select name="" id="" value={code}>
                         <option value="966">+966</option>
-                        <option value="966">+971</option>
-                        <option value="966">+965</option>
-                        <option value="966">+968</option>
-                        <option value="966">+973</option>
-                        <option value="966">+974</option>
-                        <option value="966">+20</option>
+                        <option value="971">+971</option>
+                        <option value="965">+965</option>
+                        <option value="968">+968</option>
+                        <option value="973">+973</option>
+                        <option value="974">+974</option>
+                        <option value="20">+20</option>
                       </select>
                    </div>
                    <input type="checkbox" id="c" className="chek-box" style={{fontSize:"0px" ,height:"0",width:"0",padding:"8px"}}/>

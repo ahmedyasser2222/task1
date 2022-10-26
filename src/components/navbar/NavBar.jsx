@@ -8,7 +8,6 @@ import {
   AiFillCaretLeft,
   AiFillCaretRight,
 } from "react-icons/ai";
-
 import { FaBars , FaUserCircle } from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
 import { GrLinkNext } from "react-icons/gr";
@@ -21,7 +20,7 @@ import { useSelector } from "react-redux";
 import {MdOutlineShoppingCart} from "react-icons/md"
 
 
-export default function NavBar({ scrollY, scroll }) {
+export default function NavBar({ scrollY}) {
   const itemSearch = useRef();
   const itemSearch0 = useRef();
   const links = useRef();
@@ -34,6 +33,7 @@ export default function NavBar({ scrollY, scroll }) {
   const [searchText, setSearchText] = useState("");
   const [items, setItems] = useState([]);
   const [widthScrean, setWidthScrean] = useState(0);
+
   const showLeftMenu = (e) => {
     links.current.classList.add("show");
     links.current.classList.remove("back");
@@ -46,6 +46,7 @@ export default function NavBar({ scrollY, scroll }) {
     }
     set();
   }, []);
+  
   window.addEventListener("resize", () => {
     setWidthScrean(window.innerWidth);
     if (window.innerWidth > 770) {
@@ -90,6 +91,11 @@ export default function NavBar({ scrollY, scroll }) {
       if(widthScrean <770){
          setShowMenu(!showMenu)
       }
+  }
+  const goToSubCategory=(path)=>{
+    if(widthScrean > 770){
+      navigate(path)
+    }
   }
   const goToSubCategories=(path)=>{
     navigate(path)
@@ -279,11 +285,7 @@ export default function NavBar({ scrollY, scroll }) {
       >
         <div className={`m-con`}>
           <div className="div-links" style={{ width: "100%" }}>
-            {/* <div className="hide-menu"  onClick={e=>setShowMenu(!showMenu)} >
-                         <GiCancel className="hide-icon" />
-                        </div> */}
-            <div
-              className="back-icon"
+            <div className="back-icon"
               id="back"
               style={{display:`${showMenu ? 'none' : ''}`}}
               onClick={(e) => {
@@ -328,8 +330,8 @@ export default function NavBar({ scrollY, scroll }) {
               <li>
                 <a onClick={(e) => goToLink("/categories/5")}>اسعار مميزة</a>
               </li>
-              <li onClick={(e) => showLeftMenu(e)}>
-                <a href="" onClick={(e) => navigate("/subcategories/5")}>
+              <li onClick={(e) => showLeftMenu(e)}> 
+                <a href="#" onClick={(e) => goToSubCategory("/subcategories/5")}>
                   العناية بالبشرة
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -350,8 +352,8 @@ export default function NavBar({ scrollY, scroll }) {
                   </ul>
                 </div>
               </li>
-              <li onClick={(e) => showLeftMenu(e)}>
-                <a href=""  onClick={(e) => navigate("/subcategories/5")}>
+              <li onClick={(e) => showLeftMenu(e)} >
+                <a href="#"  onClick={(e) => goToSubCategory("/subcategories/5")}>
                   العناية بالشعر
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -372,7 +374,7 @@ export default function NavBar({ scrollY, scroll }) {
                 </div>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a href="" onClick={(e) => navigate("/subcategories/5")}>
+                <a href="#" onClick={(e) => goToSubCategory("/subcategories/5")}>
                   منتجات العناية اليومية
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -401,8 +403,8 @@ export default function NavBar({ scrollY, scroll }) {
               <li className="h">
                 <a  onClick={(e) => goToLink("/categories/5")}>الفيتامينات</a>
               </li>
-              <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a href="#" onClick={(e) => navigate("/subcategories/5")}>
+              <li className="h" onClick={(e) => showLeftMenu(e)} >
+                <a href="#" onClick={(e) => goToSubCategory("/subcategories/5")}>
                   المكياج والاكسسوارات
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />
@@ -430,7 +432,7 @@ export default function NavBar({ scrollY, scroll }) {
                 <a href="#">منتجات حصريه</a>
               </li>
               <li className="h" onClick={(e) => showLeftMenu(e)}>
-                <a href=""  onClick={(e) => navigate("/subcategories/5")}>
+                <a href="#"  onClick={(e) => goToSubCategory("/subcategories/5")}>
                   العدسات
                   <AiFillCaretDown className="down-icon" />
                   <AiFillCaretUp className="up-icon" />

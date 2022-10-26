@@ -1,0 +1,14 @@
+.card-skeleton{
+    width: 200px;
+    margin: 0 20px;
+}
+
+
+@media screen and (max-width : 420px) {
+    .card-skeleton{
+        width: 150px;
+        margin: 0 20px;
+    }
+}
+
+

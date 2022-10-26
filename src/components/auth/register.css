@@ -72,6 +72,9 @@
     padding: 10px;
     border-radius: 5px;
     margin: 10px 0;
+    display: none;
+    justify-content:space-between;
+    align-items:center
  }
  .con-register input{
     width: 100%;
@@ -102,6 +105,16 @@
 }
 .con-register .input input{
    text-align: left;
+}
+.con-register input[type=number]::-webkit-inner-spin-button, 
+[type=number]::-webkit-outer-spin-button  { 
+    appearance: none;
+  -webkit-appearance: none; 
+  -moz-appearance: textfield;
+} 
+.con-register .buttonload{
+   background-color: #f8d7da;
+   display: none;
 }
  @media screen and (max-width :770px) {
     .con-register{

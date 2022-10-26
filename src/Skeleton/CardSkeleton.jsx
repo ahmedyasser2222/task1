@@ -1,10 +1,10 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-
+import './cardSkeleton.css'
 function CardSkeleton() {
   
   return (
-   <div style={{margin:"0 20px" , width:'20%'}}>
+   <div  className='card-skeleton'>
       <Skeleton height={200}/>
       <Skeleton />
       <Skeleton />

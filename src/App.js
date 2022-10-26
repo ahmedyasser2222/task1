@@ -22,7 +22,7 @@ import AllProducts from "./pages/AllProducts/AllProducts";
 import Category from "./pages/category/Category";
 import About from "./components/about/About";
 import SubCategory from "./pages/category/SubCategory";
-
+import axios from "axios"
 function App() {
   const dispatch = useDispatch();
   const location=useLocation()
@@ -39,9 +39,7 @@ function App() {
       document.title="صيدلية لي مور | LEMURE PHARMACIE"
       if (!orderId && currentPath !== "/") {
         dispatch(setId(currentPath.split("/")[1]));
-      }    console.log("ok")
-      
-
+      } 
         setScrollY(window.scrollY)
     },
     [location.pathname]
@@ -49,7 +47,7 @@ function App() {
 
   return (
     <>
-    <NavBar  scrollY={scrollY} /* scroll={scroll} *//>
+    <NavBar  scrollY={scrollY} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
