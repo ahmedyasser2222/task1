@@ -1,14 +1,35 @@
 .card-category{
      /*  flex flex-col items-center justify-betwee px-2 space-y-2 */
      margin: 0 5px;
+    
+    
 }
 
+.card-category button{
+     width: 100%;
+}
+
+.card-category img{
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+}
 .card-category h3{
     font-weight: 400;
     text-orientation: sideways;
     color: #977aba;
     word-spacing: 1px;
     font-size:19px;
+}
+@media screen and (min-width : 770px) {
+     .card-category{
+          padding: 0px;
+          margin-right: -12px;
+     }
+     .card-category .img-category{
+           width: 240px;
+           height: 210px;
+      }
 }
 
 @media screen and (max-width : 770px) {

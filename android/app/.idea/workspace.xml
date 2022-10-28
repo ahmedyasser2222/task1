@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e3bd3d3-675a-4dca-aa99-0bd65a3fc278" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lemure-app" beforeDir="false" afterPath="$PROJECT_DIR$/../../lemure-app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/components/CategorySection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/CategorySection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/components/categoryInicator/CategoryInicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/categoryInicator/CategoryInicator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/components/categoryInicator/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/categoryInicator/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/components/navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/navbar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/components/navbar/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/navbar/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/AllProducts/allProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/AllProducts/allProducts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/category/SubCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/category/SubCategory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/home/home.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectId" id="2GlQ2DBLICdh1a4ulxGG5xozV3h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e3bd3d3-675a-4dca-aa99-0bd65a3fc278" name="Default Changelist" comment="" />
+      <created>1666960483008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666960483008</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/build.gradle</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,8 +1,6 @@
-import React from '../AllProducts/allProducts.css';
+import '../AllProducts/allProducts.css';
 import Card  from '../../components/card/Card';
 import {Products} from "../../data/products"
-
-
 import CardSkeleton from '../../Skeleton/CardSkeleton';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
@@ -16,13 +14,11 @@ function SubCategory(props) {
       from_price:0 ,
       to_price : 0
    })
-    const [subCate , setSubCate]=useState(false)
-    
-     const selectPrice=()=>{
+      const [subCate , setSubCate]=useState(false)
+      const selectPrice=()=>{
         document.querySelector(".selet-price").classList.toggle("show")
         document.querySelector(".body").classList.toggle("show")
-     }
-
+       }
       const [filter , setFilter]=useState({
             sort_by:query.get("sort_by"),
             order:query.get("order"),
@@ -55,9 +51,8 @@ function SubCategory(props) {
                 onClick={onClick}
               />
             );
-          }
-          
-          function SamplePrevArrow(props) {
+      }
+      function SamplePrevArrow(props) {
             const { className, style, onClick } = props;
             return (
               <div
@@ -66,7 +61,7 @@ function SubCategory(props) {
                 onClick={onClick}
               />
             );
-          }
+      }
       var settings = {
             dots: true,
             infinite: false,
@@ -102,7 +97,7 @@ function SubCategory(props) {
                 }
               }
             ]
-          };  
+      };  
     return (
         <div className='con-all'>
              <div className="top">
@@ -168,8 +163,7 @@ function SubCategory(props) {
                               </div>
                               <div className='card-title'>الشامبو</div>
                         </div>
-                  
-                      </Slider>
+                        </Slider>
                         </div>
                     </div>
                     <div className="filter cate">

@@ -33,12 +33,14 @@ export default function NavBar({ scrollY}) {
   const [searchText, setSearchText] = useState("");
   const [items, setItems] = useState([]);
   const [widthScrean, setWidthScrean] = useState(0);
-
+  
   const showLeftMenu = (e) => {
-    links.current.classList.add("show");
-    links.current.classList.remove("back");
-    e.currentTarget.classList.add("show");
-    document.querySelector("#back").style.display = "block";
+    if(widthScrean < 771){
+      links.current.classList.add("show");
+     links.current.classList.remove("back");
+     e.currentTarget.classList.add("show");
+     document.querySelector("#back").style.display = "block";
+    }
   };
   useEffect(() => {
     function set() {
@@ -147,7 +149,7 @@ export default function NavBar({ scrollY}) {
             >
               <MdOutlineMenuOpen className=" text-white  bars-icon" />
             </a>
-            <button className="btn-logo " onClick={(e) => navigate('/')}>
+            <button className={`btn-logo ${widthScrean > 770 ? ' mx-4' : ''}`} onClick={(e) => navigate('/')}>
               <img
                 src="https://media.zid.store/cdn-cgi/image/h=175,q=85/https://media.zid.store/4c4bc3af-e1aa-43ea-aab7-eeeb6bc4f5dc/8a9125e0-a000-4c37-a9ed-344d3f47954a.png"
                 className=""
@@ -156,7 +158,7 @@ export default function NavBar({ scrollY}) {
             </button>
           </div>
 
-          <div className="flex">
+          <div className="flex" style={{width:'56%'  , marginRight:'0px'}}>
             <div className="relative  div-search" >
               <div className="icon-search">
                 <svg
@@ -165,6 +167,7 @@ export default function NavBar({ scrollY}) {
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
+                  style={{color:"#363636"}}
                 >
                   <path
                     fillRule="evenodd"
@@ -279,7 +282,7 @@ export default function NavBar({ scrollY}) {
 
       <nav
         ref={links}
-        className={`links   ${showMenu ? "show-menu" : ""} ${
+        className={`links ${widthScrean > 770 ? "mega-menu":""}   ${showMenu ? "show-menu" : ""} ${
           widthScrean > 770 ? (scrollY > 100 ? "hide" : "") : ""
         }`}
       >

@@ -130,7 +130,7 @@ header{
   position: absolute;
   top: 50%; 
   transform: translate(-50% , -50%);
-  width: 30px;
+  width: 20px;
  }
  .nav-center-con .icon .i{
   font-size: 2.1rem;
@@ -217,15 +217,14 @@ header{
   display: flex;
   width: 100%;
   justify-content: center;
-  transition: all 0.6s;
+  transition: all 0.4s ease;
   overflow: hidden;
-  height: 0%;
-  -webkit-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  -ms-transition: all 0.6s;
-  -o-transition: all 0.6s;
+  height: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
 }
-
 .links .links-menu ul{
   display: flex;
   flex-direction: row;
@@ -242,6 +241,17 @@ header{
   -moz-transition: all 0.6s;
   -ms-transition: all 0.6s;
   -o-transition: all 0.6s;
+}
+.links.links.mega-menu .links-menu{
+   visibility: hidden;
+   opacity: 0;
+   
+}
+.links.mega-menu  ul > li:hover div.links-menu {      
+  /* height: 145px ;  */ 
+  height: auto;  
+  visibility: visible;  
+  opacity: 1;  
 }
 .links .links-menu ul li{       
   color: black;
@@ -285,9 +295,7 @@ header{
 .links .back-icon .hide-icon{
   display: none;
 }
-.links ul > li:hover div.links-menu {      
-  height: 145px ;        
-}
+
 
  @media screen and(min-width : 770px) {
   .links.hide{

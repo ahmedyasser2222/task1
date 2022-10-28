@@ -24,14 +24,20 @@
 }
 .box{
   height: 550px;
+ 
 }
 .box > div{
-  width: 48%;
+  width: 48% !important;
+  height: 580px;
+ 
+
 }
-.div-photo {
- height: 550px !important;
+.box .div-photo {
+ height: 100% ;
+
+
 }
-.div-photo img{
+.box .div-photo img{
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
@@ -44,37 +50,80 @@
         max-width: 100vw;
         overflow: hidden;
       }
+      .box{
+        height: 450px;
+          }
+      .box > div{
+        width: 48% !important;
+        height: 480px;
+          
+      }
+      .box .div-photo {
+       height: 100% ;
+         
+      }
 }
 @media screen and (max-width :900px) { 
-.box{
-  height: 450px;
-}
-.box > div{
-  width: 48%;
-}
-.div-photo {
- height: 450px !important;
-}
+    .box{
+      height: 400px;
+     
+    }
+    .box > div{
+      width: 48% !important;
+      height: 400px;
+     
+    
+    }
+    .box .div-photo {
+     height: 100% ;
+    
+    
+    }
 }
 @media screen and (max-width :770px) { 
   .box{
-    height: 400px;
+    height: 280px;
   }
   .box > div{
-    width: 48%;
+    width: 48% !important;
+    height: 280px;
+  
   }
-  .div-photo {
-   height: 400px !important;
+  .box .div-photo {
+   height: 100% ;
+  
+  
   }
   }
   @media screen and (max-width :450px) { 
+    
     .box{
-      height: 150px;
+      height: 200px;
     }
     .box > div{
-      width: 50%;
+      width: 48% !important;
+      height: 200px;
+    
     }
-    .div-photo {
-     height: 150px !important;
+    .box .div-photo {
+     height: 100% ;
+    
+    }
+  }
+  @media screen and (max-width :380px) { 
+    
+    .box{
+      height: 170px;
+      border: 1px solid;
+    }
+    .box > div{
+      width: 48% !important;
+      height: 170px;
+      border: 1px solid;
+    
+    }
+    .box .div-photo {
+     height: 100% ;
+    
     }
   }

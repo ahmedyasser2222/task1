@@ -73,9 +73,10 @@
     flex-direction: row;
     gap: 25px;
     flex-wrap: wrap;
+
 }
 .con-all .product {
-    width: 22%;
+    width: 18%;
 }
 .con-all .pagnation{
     display: flex;

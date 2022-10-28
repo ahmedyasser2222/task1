@@ -1116,6 +1116,11 @@
   dependencies:
     "tslib" "^2.1.0"
 
+"@capacitor/ios@^4.4.0":
+  "integrity" "sha512-x1i9WgaeUANBgXmCHcXoMrqZC49Ef0eu+kaRmcQ0/UkI2r31/PMGr3BVTlHRJLeBsodzwR4TiEeKRK044WX+Hw=="
+  "resolved" "https://registry.npmjs.org/@capacitor/ios/-/ios-4.4.0.tgz"
+  "version" "4.4.0"
+
 "@commitlint/config-validator@^17.1.0":
   "integrity" "sha512-Q1rRRSU09ngrTgeTXHq6ePJs2KrI+axPTgkNYDWSJIuS1Op4w3J30vUfSXjwn5YEJHklK3fSqWNHmBhmTR7Vdg=="
   "resolved" "https://registry.npmjs.org/@commitlint/config-validator/-/config-validator-17.1.0.tgz"

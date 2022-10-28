@@ -28,8 +28,12 @@ body{
   height: max-content; 
   user-select: none;
 }
-
-
+.slide-show{
+  
+}
+.slide-hh{
+ margin-right: -15px;
+}
 .skeleton{
   display: flex;
   gap: 0 20px;

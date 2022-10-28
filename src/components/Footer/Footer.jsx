@@ -37,18 +37,18 @@ export default function FooterComp() {
               الأحكام العامة
             </h2>
             <ul className=" dark:text-gray-400">
-              <li className="mb-4">
-                <a onClick={e=>history('refund-exchange-policy')} className="policy">
+              <li className="mb-4 ">
+                <a onClick={e=>history('refund-exchange-policy')} className="px-0 mx-0 policy">
                   خيارات الدفع و التوصيل
                 </a>
               </li>
               <li className="mb-4">
-                <a onClick={e=>history('refund-exchange-policy')} className="policy">
+                <a onClick={e=>history('refund-exchange-policy')} className="px-0 mx-0 policy">
                   سياسة الاستبدال والاسترجاع
                 </a>
               </li>
               <li className="mb-4">
-                <a onClick={e=>history('refund-exchange-policy')} className="policy">
+                <a onClick={e=>history('refund-exchange-policy')} className="px-0 mx-0 policy">
                   سياسة الخصوصية
                 </a>
               </li>

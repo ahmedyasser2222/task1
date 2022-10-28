@@ -36,7 +36,7 @@ export default function CategorySection(props) {
     );
   }
   
-  var settings = {
+  /* var settings = {
     dots: false,
     infinite: false,
     speed: 500,
@@ -85,17 +85,71 @@ export default function CategorySection(props) {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
-          /* centerMode:true, */
+          
         }
       }
     ]
-  };
+  } */
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 4,
+    initialSlide: 5,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: false
+        }
+      },
+      
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          
+        }
+      }
+    ]
+  }; 
+
   return (
     <div className="category">
-      <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
-      <div className="my-10 xl:h-96 h-96 h-slide " style={{cursor:"grab"}}>
+        <h1 className="text-2xl  font-bold text-prim px-4">{title}</h1>
+        <div className="my-10 xl:h-96 h-96 h-slide slide-show" style={{cursor:"grab"}}>
 
-       {/* products */ 1?
+       {1?
         <Slider {...settings} className={"slide-hh"} >
           {products.map(product =>{
             return(
@@ -104,12 +158,6 @@ export default function CategorySection(props) {
           }) }
           </Slider>
           : 
-          /* <div className="cd">
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton /> 
-          </div>   */
           <Slider {...settings} className={"slide-hh"} >
           <div><CardSkeleton /></div>
           <div><CardSkeleton /></div>
@@ -119,11 +167,8 @@ export default function CategorySection(props) {
           <div><CardSkeleton /></div>
           <div><CardSkeleton /></div>
           <div><CardSkeleton /></div>
-          
           </Slider>
           }
-          
-
         </div>
       <div className="flex items-center justify-center">
         <button className="rounded-xl border border-prim bg-white px-10 py-3 text-lg text-prim">
