@@ -2,6 +2,9 @@
     height: max-content;
     margin-top: 230px;
 }
+.test{
+    font-weight: 100;
+}
 .con-policy .policy{
     margin: 30px 0;
     width: 100%;
