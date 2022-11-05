@@ -6,6 +6,7 @@ import {Products} from "../../data/products"
 import { useState , useEffect } from 'react';
 import { Spinner } from 'flowbite-react';
 import {AiOutlineArrowLeft} from "react-icons/ai"
+
 export default function Cart(props) {
   document.title="سلة المشتريات | صيدلية لي مور | LEMURE PHARMACIE"
    const history=useNavigate()

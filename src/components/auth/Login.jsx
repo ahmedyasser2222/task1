@@ -24,6 +24,11 @@ const Register = () => {
      const [codeNum , setCodeNum]=useState('996')
 
      const submit=async(e)=>{
+      var Num = num ;
+      if(num[0] == 0){
+        const newNum= num.toString().slice(1)
+        Num = newNum
+      }
       if(num === ""){
         refError.current.style.display="flex"
         refError.current.children[0].innerHTML="من فضلك <br/> ادخل رقم الجوال "
@@ -31,17 +36,18 @@ const Register = () => {
         e.target.parentElement.children[1].style.display="block"
         e.target.style.display="none"
        try {
-        const res =await axios.post(`${API}/api/OnlineStore/LoginPatientAsUser`,{mobile:codeNum+num})
-        console.log(res.data)
-        e.target.parentElement.children[1].style.display="node"
+        const res =await axios.post(`${API}/api/OnlineStore/LoginPatientAsUser`,{mobile:codeNum+Num})
+        console.log(res)
+        e.target.parentElement.children[1].style.display="none"
         e.target.style.display="block"
        } catch (error) {
         if(error.response.status === 400 ){
           console.log(error.response.data)
           //history('/check' , {state :{mobile:num , code:codeNum}})
-          e.target.parentElement.children[1].style.display="none"
-          e.target.style.display="block"
+          
         }
+           e.target.parentElement.children[1].style.display="none"
+          e.target.style.display="block"
       }
      // console.log(error.response)
      }

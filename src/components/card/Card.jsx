@@ -3,13 +3,20 @@ import './card.css';
 import Skeleton from "react-loading-skeleton";
 import {increment} from "../../features/cart/cart"
 import { useDispatch  } from 'react-redux';
-
+import axios from 'axios'
+import {API} from  '../../API'
 function Card({product}) {
   const dispatch= useDispatch()
   const history=useNavigate()
 
-    const sendToCart=(product)=>{
+    const sendToCart=async(product)=>{
       dispatch(increment(product.price))
+      try {
+       const res = await axios.post(`${API}/api/OnlineStore/AddItemStockToCart?stockId=${product.id}&qty=1`)
+       console.log(res.data)     
+      } catch (error) {
+       console.log(error.response)     
+      }
     }
     return (
         <div className='card' dir='rtl'>
